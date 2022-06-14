@@ -52,7 +52,7 @@ regions = ISO3166::Country.all.map(&:region).uniq.sort
 subregions = ISO3166::Country.all.map(&:subregion).uniq.sort
 world_regions = ISO3166::Country.all.map(&:world_region).uniq.sort
 
-country_funcs = ISO3166::Country.all.sort_by(&:name).map do |country|
+country_funcs = ISO3166::Country.all.sort_by(&:iso_short_name).map do |country|
   country = ISO3166::Country[country.alpha2]
   postal_code_format =
     if country.postal_code.blank?
@@ -94,7 +94,7 @@ country_funcs = ISO3166::Country.all.sort_by(&:name).map do |country|
         , languagesOfficial = ["#{country.languages_official.join('", "')}"]
         , languagesSpoken = ["#{country.languages_spoken.join('", "')}"]
         , localNames = ["#{country.local_names.reject(&:blank?).join('", "')}"]
-        , name = "#{country.name}"
+        , name = "#{country.iso_short_name}"
         , nanpPrefix = "#{country.nanp_prefix}"
         , nationalDestinationCodeLengths = [#{country.national_destination_code_lengths.join(', ')}]
         , nationalNumberLengths = [#{country.national_number_lengths.join(', ')}]
@@ -114,7 +114,7 @@ country_funcs = ISO3166::Country.all.sort_by(&:name).map do |country|
   TEMPLATE
 
   docs = <<~TEMPLATE
-    #{country.name}
+    #{country.iso_short_name}
   TEMPLATE
 
   ElmFunction.new(
