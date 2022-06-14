@@ -1,8 +1,8 @@
 module ISO3166 exposing
     ( Country, Subdivision
     , all, fromAlpha2, fromAlpha3, findSubdivisionByCode
-    , countryAF, countryAL, countryDZ, countryAS, countryAD, countryAO, countryAI, countryAQ, countryAG, countryAR, countryAM, countryAW, countryAU, countryAT, countryAZ, countryBS, countryBH, countryBD, countryBB, countryBY, countryBE, countryBZ, countryBJ, countryBM, countryBT, countryBO, countryBQ, countryBA, countryBW, countryBV, countryBR, countryIO, countryBN, countryBG, countryBF, countryBI, countryCV, countryKH, countryCM, countryCA, countryKY, countryCF, countryTD, countryCL, countryCN, countryCX, countryCC, countryCO, countryKM, countryCG, countryCD, countryCK, countryCR, countryHR, countryCU, countryCW, countryCY, countryCZ, countryCI, countryDK, countryDJ, countryDM, countryDO, countryEC, countryEG, countrySV, countryGQ, countryER, countryEE, countryET, countryFK, countryFO, countryFJ, countryFI, countryFR, countryGF, countryPF, countryTF, countryGA, countryGM, countryGE, countryDE, countryGH, countryGI, countryGR, countryGL, countryGD, countryGP, countryGU, countryGT, countryGG, countryGN, countryGW, countryGY, countryHT, countryHM, countryVA, countryHN, countryHK, countryHU, countryIS, countryIN, countryID, countryIR, countryIQ, countryIE, countryIM, countryIL, countryIT, countryJM, countryJP, countryJE, countryJO, countryKZ, countryKE, countryKI, countryKP, countryKR, countryKW, countryKG, countryLA, countryLV, countryLB, countryLS, countryLR, countryLY, countryLI, countryLT, countryLU, countryMO, countryMG, countryMW, countryMY, countryMV, countryML, countryMT, countryMH, countryMQ, countryMR, countryMU, countryYT, countryMX, countryFM, countryMD, countryMC, countryMN, countryME, countryMS, countryMA, countryMZ, countryMM, countryNA, countryNR, countryNP, countryNL, countryNC, countryNZ, countryNI, countryNE, countryNG, countryNU, countryNF, countryMK, countryMP, countryNO, countryOM, countryPK, countryPW, countryPS, countryPA, countryPG, countryPY, countryPE, countryPH, countryPN, countryPL, countryPT, countryPR, countryQA, countryRO, countryRU, countryRW, countryRE, countryBL, countrySH, countryKN, countryLC, countryMF, countryPM, countryVC, countryWS, countrySM, countryST, countrySA, countrySN, countryRS, countrySC, countrySL, countrySG, countrySX, countrySK, countrySI, countrySB, countrySO, countryZA, countryGS, countrySS, countryES, countryLK, countrySD, countrySR, countrySJ, countrySE, countryCH, countrySY, countryTW, countryTJ, countryTZ, countryTH, countryTL, countryTG, countryTK, countryTO, countryTT, countryTN, countryTR, countryTM, countryTC, countryTV, countryUG, countryUA, countryAE, countryGB, countryUM, countryUS, countryUY, countryUZ, countryVU, countryVE, countryVN, countryVG, countryVI, countryWF, countryEH, countryYE, countryZM, countryZW, countrySZ, countryAX
-    , countryADSubdivisions, countryAESubdivisions, countryAFSubdivisions, countryAGSubdivisions, countryAISubdivisions, countryALSubdivisions, countryAMSubdivisions, countryAOSubdivisions, countryARSubdivisions, countryASSubdivisions, countryATSubdivisions, countryAUSubdivisions, countryAWSubdivisions, countryAXSubdivisions, countryAZSubdivisions, countryBASubdivisions, countryBBSubdivisions, countryBDSubdivisions, countryBESubdivisions, countryBFSubdivisions, countryBGSubdivisions, countryBHSubdivisions, countryBISubdivisions, countryBJSubdivisions, countryBLSubdivisions, countryBMSubdivisions, countryBNSubdivisions, countryBOSubdivisions, countryBQSubdivisions, countryBRSubdivisions, countryBSSubdivisions, countryBTSubdivisions, countryBWSubdivisions, countryBYSubdivisions, countryBZSubdivisions, countryCASubdivisions, countryCDSubdivisions, countryCFSubdivisions, countryCGSubdivisions, countryCHSubdivisions, countryCISubdivisions, countryCKSubdivisions, countryCLSubdivisions, countryCMSubdivisions, countryCNSubdivisions, countryCOSubdivisions, countryCRSubdivisions, countryCUSubdivisions, countryCVSubdivisions, countryCWSubdivisions, countryCYSubdivisions, countryCZSubdivisions, countryDESubdivisions, countryDJSubdivisions, countryDKSubdivisions, countryDMSubdivisions, countryDOSubdivisions, countryDZSubdivisions, countryECSubdivisions, countryEESubdivisions, countryEGSubdivisions, countryEHSubdivisions, countryERSubdivisions, countryESSubdivisions, countryETSubdivisions, countryFISubdivisions, countryFJSubdivisions, countryFMSubdivisions, countryFOSubdivisions, countryFRSubdivisions, countryGASubdivisions, countryGBSubdivisions, countryGDSubdivisions, countryGESubdivisions, countryGFSubdivisions, countryGGSubdivisions, countryGHSubdivisions, countryGLSubdivisions, countryGMSubdivisions, countryGNSubdivisions, countryGPSubdivisions, countryGQSubdivisions, countryGRSubdivisions, countryGTSubdivisions, countryGUSubdivisions, countryGWSubdivisions, countryGYSubdivisions, countryHKSubdivisions, countryHNSubdivisions, countryHRSubdivisions, countryHTSubdivisions, countryHUSubdivisions, countryIDSubdivisions, countryIESubdivisions, countryILSubdivisions, countryIMSubdivisions, countryINSubdivisions, countryIQSubdivisions, countryIRSubdivisions, countryISSubdivisions, countryITSubdivisions, countryJESubdivisions, countryJMSubdivisions, countryJOSubdivisions, countryJPSubdivisions, countryKESubdivisions, countryKGSubdivisions, countryKHSubdivisions, countryKISubdivisions, countryKMSubdivisions, countryKNSubdivisions, countryKPSubdivisions, countryKRSubdivisions, countryKWSubdivisions, countryKYSubdivisions, countryKZSubdivisions, countryLASubdivisions, countryLBSubdivisions, countryLCSubdivisions, countryLISubdivisions, countryLKSubdivisions, countryLRSubdivisions, countryLSSubdivisions, countryLTSubdivisions, countryLUSubdivisions, countryLVSubdivisions, countryLYSubdivisions, countryMASubdivisions, countryMCSubdivisions, countryMDSubdivisions, countryMESubdivisions, countryMFSubdivisions, countryMGSubdivisions, countryMHSubdivisions, countryMKSubdivisions, countryMLSubdivisions, countryMMSubdivisions, countryMNSubdivisions, countryMOSubdivisions, countryMPSubdivisions, countryMQSubdivisions, countryMRSubdivisions, countryMSSubdivisions, countryMTSubdivisions, countryMUSubdivisions, countryMVSubdivisions, countryMWSubdivisions, countryMXSubdivisions, countryMYSubdivisions, countryMZSubdivisions, countryNASubdivisions, countryNCSubdivisions, countryNESubdivisions, countryNGSubdivisions, countryNISubdivisions, countryNLSubdivisions, countryNOSubdivisions, countryNPSubdivisions, countryNRSubdivisions, countryNZSubdivisions, countryOMSubdivisions, countryPASubdivisions, countryPESubdivisions, countryPFSubdivisions, countryPGSubdivisions, countryPHSubdivisions, countryPKSubdivisions, countryPLSubdivisions, countryPMSubdivisions, countryPRSubdivisions, countryPSSubdivisions, countryPTSubdivisions, countryPWSubdivisions, countryPYSubdivisions, countryQASubdivisions, countryRESubdivisions, countryROSubdivisions, countryRSSubdivisions, countryRUSubdivisions, countryRWSubdivisions, countrySASubdivisions, countrySBSubdivisions, countrySCSubdivisions, countrySDSubdivisions, countrySESubdivisions, countrySGSubdivisions, countrySHSubdivisions, countrySISubdivisions, countrySJSubdivisions, countrySKSubdivisions, countrySLSubdivisions, countrySMSubdivisions, countrySNSubdivisions, countrySOSubdivisions, countrySRSubdivisions, countrySSSubdivisions, countrySTSubdivisions, countrySVSubdivisions, countrySXSubdivisions, countrySYSubdivisions, countrySZSubdivisions, countryTDSubdivisions, countryTFSubdivisions, countryTGSubdivisions, countryTHSubdivisions, countryTJSubdivisions, countryTKSubdivisions, countryTLSubdivisions, countryTMSubdivisions, countryTNSubdivisions, countryTOSubdivisions, countryTRSubdivisions, countryTTSubdivisions, countryTVSubdivisions, countryTWSubdivisions, countryTZSubdivisions, countryUASubdivisions, countryUGSubdivisions, countryUMSubdivisions, countryUSSubdivisions, countryUYSubdivisions, countryUZSubdivisions, countryVCSubdivisions, countryVESubdivisions, countryVISubdivisions, countryVNSubdivisions, countryVUSubdivisions, countryWFSubdivisions, countryWSSubdivisions, countryYESubdivisions, countryYTSubdivisions, countryZASubdivisions, countryZMSubdivisions, countryZWSubdivisions
+    , countryAF, countryAL, countryDZ, countryAS, countryAD, countryAO, countryAI, countryAQ, countryAG, countryAR, countryAM, countryAW, countryAU, countryAT, countryAZ, countryBS, countryBH, countryBD, countryBB, countryBY, countryBE, countryBZ, countryBJ, countryBM, countryBT, countryBO, countryBQ, countryBA, countryBW, countryBV, countryBR, countryIO, countryBN, countryBG, countryBF, countryBI, countryCV, countryKH, countryCM, countryCA, countryKY, countryCF, countryTD, countryCL, countryCN, countryCX, countryCC, countryCO, countryKM, countryCG, countryCD, countryCK, countryCR, countryHR, countryCU, countryCW, countryCY, countryCZ, countryCI, countryDK, countryDJ, countryDM, countryDO, countryEC, countryEG, countrySV, countryGQ, countryER, countryEE, countrySZ, countryET, countryFK, countryFO, countryFJ, countryFI, countryFR, countryGF, countryPF, countryTF, countryGA, countryGM, countryGE, countryDE, countryGH, countryGI, countryGR, countryGL, countryGD, countryGP, countryGU, countryGT, countryGG, countryGN, countryGW, countryGY, countryHT, countryHM, countryVA, countryHN, countryHK, countryHU, countryIS, countryIN, countryID, countryIR, countryIQ, countryIE, countryIM, countryIL, countryIT, countryJM, countryJP, countryJE, countryJO, countryKZ, countryKE, countryKI, countryKP, countryKR, countryKW, countryKG, countryLA, countryLV, countryLB, countryLS, countryLR, countryLY, countryLI, countryLT, countryLU, countryMO, countryMG, countryMW, countryMY, countryMV, countryML, countryMT, countryMH, countryMQ, countryMR, countryMU, countryYT, countryMX, countryFM, countryMD, countryMC, countryMN, countryME, countryMS, countryMA, countryMZ, countryMM, countryNA, countryNR, countryNP, countryNL, countryNC, countryNZ, countryNI, countryNE, countryNG, countryNU, countryNF, countryMK, countryMP, countryNO, countryOM, countryPK, countryPW, countryPS, countryPA, countryPG, countryPY, countryPE, countryPH, countryPN, countryPL, countryPT, countryPR, countryQA, countryRO, countryRU, countryRW, countryRE, countryBL, countrySH, countryKN, countryLC, countryMF, countryPM, countryVC, countryWS, countrySM, countryST, countrySA, countrySN, countryRS, countrySC, countrySL, countrySG, countrySX, countrySK, countrySI, countrySB, countrySO, countryZA, countryGS, countrySS, countryES, countryLK, countrySD, countrySR, countrySJ, countrySE, countryCH, countrySY, countryTW, countryTJ, countryTZ, countryTH, countryTL, countryTG, countryTK, countryTO, countryTT, countryTN, countryTR, countryTM, countryTC, countryTV, countryUG, countryUA, countryAE, countryGB, countryUM, countryUS, countryUY, countryUZ, countryVU, countryVE, countryVN, countryVG, countryVI, countryWF, countryEH, countryYE, countryZM, countryZW, countryAX
+    , countryADSubdivisions, countryAESubdivisions, countryAFSubdivisions, countryAGSubdivisions, countryAISubdivisions, countryALSubdivisions, countryAMSubdivisions, countryAOSubdivisions, countryARSubdivisions, countryATSubdivisions, countryAUSubdivisions, countryAZSubdivisions, countryBASubdivisions, countryBBSubdivisions, countryBDSubdivisions, countryBESubdivisions, countryBFSubdivisions, countryBGSubdivisions, countryBHSubdivisions, countryBISubdivisions, countryBJSubdivisions, countryBMSubdivisions, countryBNSubdivisions, countryBOSubdivisions, countryBQSubdivisions, countryBRSubdivisions, countryBSSubdivisions, countryBTSubdivisions, countryBWSubdivisions, countryBYSubdivisions, countryBZSubdivisions, countryCASubdivisions, countryCDSubdivisions, countryCFSubdivisions, countryCGSubdivisions, countryCHSubdivisions, countryCISubdivisions, countryCKSubdivisions, countryCLSubdivisions, countryCMSubdivisions, countryCNSubdivisions, countryCOSubdivisions, countryCRSubdivisions, countryCUSubdivisions, countryCVSubdivisions, countryCYSubdivisions, countryCZSubdivisions, countryDESubdivisions, countryDJSubdivisions, countryDKSubdivisions, countryDMSubdivisions, countryDOSubdivisions, countryDZSubdivisions, countryECSubdivisions, countryEESubdivisions, countryEGSubdivisions, countryEHSubdivisions, countryERSubdivisions, countryESSubdivisions, countryETSubdivisions, countryFISubdivisions, countryFJSubdivisions, countryFMSubdivisions, countryFRSubdivisions, countryGASubdivisions, countryGBSubdivisions, countryGDSubdivisions, countryGESubdivisions, countryGHSubdivisions, countryGLSubdivisions, countryGMSubdivisions, countryGNSubdivisions, countryGQSubdivisions, countryGRSubdivisions, countryGTSubdivisions, countryGWSubdivisions, countryGYSubdivisions, countryHNSubdivisions, countryHRSubdivisions, countryHTSubdivisions, countryHUSubdivisions, countryIDSubdivisions, countryIESubdivisions, countryILSubdivisions, countryINSubdivisions, countryIQSubdivisions, countryIRSubdivisions, countryISSubdivisions, countryITSubdivisions, countryJMSubdivisions, countryJOSubdivisions, countryJPSubdivisions, countryKESubdivisions, countryKGSubdivisions, countryKHSubdivisions, countryKISubdivisions, countryKMSubdivisions, countryKNSubdivisions, countryKPSubdivisions, countryKRSubdivisions, countryKWSubdivisions, countryKZSubdivisions, countryLASubdivisions, countryLBSubdivisions, countryLCSubdivisions, countryLISubdivisions, countryLKSubdivisions, countryLRSubdivisions, countryLSSubdivisions, countryLTSubdivisions, countryLUSubdivisions, countryLVSubdivisions, countryLYSubdivisions, countryMASubdivisions, countryMCSubdivisions, countryMDSubdivisions, countryMESubdivisions, countryMGSubdivisions, countryMHSubdivisions, countryMKSubdivisions, countryMLSubdivisions, countryMMSubdivisions, countryMNSubdivisions, countryMRSubdivisions, countryMTSubdivisions, countryMUSubdivisions, countryMVSubdivisions, countryMWSubdivisions, countryMXSubdivisions, countryMYSubdivisions, countryMZSubdivisions, countryNASubdivisions, countryNESubdivisions, countryNGSubdivisions, countryNISubdivisions, countryNLSubdivisions, countryNOSubdivisions, countryNPSubdivisions, countryNRSubdivisions, countryNZSubdivisions, countryOMSubdivisions, countryPASubdivisions, countryPESubdivisions, countryPGSubdivisions, countryPHSubdivisions, countryPKSubdivisions, countryPLSubdivisions, countryPSSubdivisions, countryPTSubdivisions, countryPWSubdivisions, countryPYSubdivisions, countryQASubdivisions, countryROSubdivisions, countryRSSubdivisions, countryRUSubdivisions, countryRWSubdivisions, countrySASubdivisions, countrySBSubdivisions, countrySCSubdivisions, countrySDSubdivisions, countrySESubdivisions, countrySGSubdivisions, countrySHSubdivisions, countrySISubdivisions, countrySJSubdivisions, countrySKSubdivisions, countrySLSubdivisions, countrySMSubdivisions, countrySNSubdivisions, countrySOSubdivisions, countrySRSubdivisions, countrySSSubdivisions, countrySTSubdivisions, countrySVSubdivisions, countrySYSubdivisions, countrySZSubdivisions, countryTDSubdivisions, countryTGSubdivisions, countryTHSubdivisions, countryTJSubdivisions, countryTKSubdivisions, countryTLSubdivisions, countryTMSubdivisions, countryTNSubdivisions, countryTOSubdivisions, countryTRSubdivisions, countryTTSubdivisions, countryTVSubdivisions, countryTWSubdivisions, countryTZSubdivisions, countryUASubdivisions, countryUGSubdivisions, countryUMSubdivisions, countryUSSubdivisions, countryUYSubdivisions, countryUZSubdivisions, countryVCSubdivisions, countryVESubdivisions, countryVNSubdivisions, countryVUSubdivisions, countryWFSubdivisions, countryWSSubdivisions, countryYESubdivisions, countryZASubdivisions, countryZMSubdivisions, countryZWSubdivisions
     )
 
 {-| Based upon the country data from <https://github.com/countries/countries>
@@ -21,12 +21,12 @@ Countries is a collection of all sorts of useful information for every country i
 
 # Countries
 
-@docs countryAF, countryAL, countryDZ, countryAS, countryAD, countryAO, countryAI, countryAQ, countryAG, countryAR, countryAM, countryAW, countryAU, countryAT, countryAZ, countryBS, countryBH, countryBD, countryBB, countryBY, countryBE, countryBZ, countryBJ, countryBM, countryBT, countryBO, countryBQ, countryBA, countryBW, countryBV, countryBR, countryIO, countryBN, countryBG, countryBF, countryBI, countryCV, countryKH, countryCM, countryCA, countryKY, countryCF, countryTD, countryCL, countryCN, countryCX, countryCC, countryCO, countryKM, countryCG, countryCD, countryCK, countryCR, countryHR, countryCU, countryCW, countryCY, countryCZ, countryCI, countryDK, countryDJ, countryDM, countryDO, countryEC, countryEG, countrySV, countryGQ, countryER, countryEE, countryET, countryFK, countryFO, countryFJ, countryFI, countryFR, countryGF, countryPF, countryTF, countryGA, countryGM, countryGE, countryDE, countryGH, countryGI, countryGR, countryGL, countryGD, countryGP, countryGU, countryGT, countryGG, countryGN, countryGW, countryGY, countryHT, countryHM, countryVA, countryHN, countryHK, countryHU, countryIS, countryIN, countryID, countryIR, countryIQ, countryIE, countryIM, countryIL, countryIT, countryJM, countryJP, countryJE, countryJO, countryKZ, countryKE, countryKI, countryKP, countryKR, countryKW, countryKG, countryLA, countryLV, countryLB, countryLS, countryLR, countryLY, countryLI, countryLT, countryLU, countryMO, countryMG, countryMW, countryMY, countryMV, countryML, countryMT, countryMH, countryMQ, countryMR, countryMU, countryYT, countryMX, countryFM, countryMD, countryMC, countryMN, countryME, countryMS, countryMA, countryMZ, countryMM, countryNA, countryNR, countryNP, countryNL, countryNC, countryNZ, countryNI, countryNE, countryNG, countryNU, countryNF, countryMK, countryMP, countryNO, countryOM, countryPK, countryPW, countryPS, countryPA, countryPG, countryPY, countryPE, countryPH, countryPN, countryPL, countryPT, countryPR, countryQA, countryRO, countryRU, countryRW, countryRE, countryBL, countrySH, countryKN, countryLC, countryMF, countryPM, countryVC, countryWS, countrySM, countryST, countrySA, countrySN, countryRS, countrySC, countrySL, countrySG, countrySX, countrySK, countrySI, countrySB, countrySO, countryZA, countryGS, countrySS, countryES, countryLK, countrySD, countrySR, countrySJ, countrySE, countryCH, countrySY, countryTW, countryTJ, countryTZ, countryTH, countryTL, countryTG, countryTK, countryTO, countryTT, countryTN, countryTR, countryTM, countryTC, countryTV, countryUG, countryUA, countryAE, countryGB, countryUM, countryUS, countryUY, countryUZ, countryVU, countryVE, countryVN, countryVG, countryVI, countryWF, countryEH, countryYE, countryZM, countryZW, countrySZ, countryAX
+@docs countryAF, countryAL, countryDZ, countryAS, countryAD, countryAO, countryAI, countryAQ, countryAG, countryAR, countryAM, countryAW, countryAU, countryAT, countryAZ, countryBS, countryBH, countryBD, countryBB, countryBY, countryBE, countryBZ, countryBJ, countryBM, countryBT, countryBO, countryBQ, countryBA, countryBW, countryBV, countryBR, countryIO, countryBN, countryBG, countryBF, countryBI, countryCV, countryKH, countryCM, countryCA, countryKY, countryCF, countryTD, countryCL, countryCN, countryCX, countryCC, countryCO, countryKM, countryCG, countryCD, countryCK, countryCR, countryHR, countryCU, countryCW, countryCY, countryCZ, countryCI, countryDK, countryDJ, countryDM, countryDO, countryEC, countryEG, countrySV, countryGQ, countryER, countryEE, countrySZ, countryET, countryFK, countryFO, countryFJ, countryFI, countryFR, countryGF, countryPF, countryTF, countryGA, countryGM, countryGE, countryDE, countryGH, countryGI, countryGR, countryGL, countryGD, countryGP, countryGU, countryGT, countryGG, countryGN, countryGW, countryGY, countryHT, countryHM, countryVA, countryHN, countryHK, countryHU, countryIS, countryIN, countryID, countryIR, countryIQ, countryIE, countryIM, countryIL, countryIT, countryJM, countryJP, countryJE, countryJO, countryKZ, countryKE, countryKI, countryKP, countryKR, countryKW, countryKG, countryLA, countryLV, countryLB, countryLS, countryLR, countryLY, countryLI, countryLT, countryLU, countryMO, countryMG, countryMW, countryMY, countryMV, countryML, countryMT, countryMH, countryMQ, countryMR, countryMU, countryYT, countryMX, countryFM, countryMD, countryMC, countryMN, countryME, countryMS, countryMA, countryMZ, countryMM, countryNA, countryNR, countryNP, countryNL, countryNC, countryNZ, countryNI, countryNE, countryNG, countryNU, countryNF, countryMK, countryMP, countryNO, countryOM, countryPK, countryPW, countryPS, countryPA, countryPG, countryPY, countryPE, countryPH, countryPN, countryPL, countryPT, countryPR, countryQA, countryRO, countryRU, countryRW, countryRE, countryBL, countrySH, countryKN, countryLC, countryMF, countryPM, countryVC, countryWS, countrySM, countryST, countrySA, countrySN, countryRS, countrySC, countrySL, countrySG, countrySX, countrySK, countrySI, countrySB, countrySO, countryZA, countryGS, countrySS, countryES, countryLK, countrySD, countrySR, countrySJ, countrySE, countryCH, countrySY, countryTW, countryTJ, countryTZ, countryTH, countryTL, countryTG, countryTK, countryTO, countryTT, countryTN, countryTR, countryTM, countryTC, countryTV, countryUG, countryUA, countryAE, countryGB, countryUM, countryUS, countryUY, countryUZ, countryVU, countryVE, countryVN, countryVG, countryVI, countryWF, countryEH, countryYE, countryZM, countryZW, countryAX
 
 
 # Subdivisions
 
-@docs countryADSubdivisions, countryAESubdivisions, countryAFSubdivisions, countryAGSubdivisions, countryAISubdivisions, countryALSubdivisions, countryAMSubdivisions, countryAOSubdivisions, countryARSubdivisions, countryASSubdivisions, countryATSubdivisions, countryAUSubdivisions, countryAWSubdivisions, countryAXSubdivisions, countryAZSubdivisions, countryBASubdivisions, countryBBSubdivisions, countryBDSubdivisions, countryBESubdivisions, countryBFSubdivisions, countryBGSubdivisions, countryBHSubdivisions, countryBISubdivisions, countryBJSubdivisions, countryBLSubdivisions, countryBMSubdivisions, countryBNSubdivisions, countryBOSubdivisions, countryBQSubdivisions, countryBRSubdivisions, countryBSSubdivisions, countryBTSubdivisions, countryBWSubdivisions, countryBYSubdivisions, countryBZSubdivisions, countryCASubdivisions, countryCDSubdivisions, countryCFSubdivisions, countryCGSubdivisions, countryCHSubdivisions, countryCISubdivisions, countryCKSubdivisions, countryCLSubdivisions, countryCMSubdivisions, countryCNSubdivisions, countryCOSubdivisions, countryCRSubdivisions, countryCUSubdivisions, countryCVSubdivisions, countryCWSubdivisions, countryCYSubdivisions, countryCZSubdivisions, countryDESubdivisions, countryDJSubdivisions, countryDKSubdivisions, countryDMSubdivisions, countryDOSubdivisions, countryDZSubdivisions, countryECSubdivisions, countryEESubdivisions, countryEGSubdivisions, countryEHSubdivisions, countryERSubdivisions, countryESSubdivisions, countryETSubdivisions, countryFISubdivisions, countryFJSubdivisions, countryFMSubdivisions, countryFOSubdivisions, countryFRSubdivisions, countryGASubdivisions, countryGBSubdivisions, countryGDSubdivisions, countryGESubdivisions, countryGFSubdivisions, countryGGSubdivisions, countryGHSubdivisions, countryGLSubdivisions, countryGMSubdivisions, countryGNSubdivisions, countryGPSubdivisions, countryGQSubdivisions, countryGRSubdivisions, countryGTSubdivisions, countryGUSubdivisions, countryGWSubdivisions, countryGYSubdivisions, countryHKSubdivisions, countryHNSubdivisions, countryHRSubdivisions, countryHTSubdivisions, countryHUSubdivisions, countryIDSubdivisions, countryIESubdivisions, countryILSubdivisions, countryIMSubdivisions, countryINSubdivisions, countryIQSubdivisions, countryIRSubdivisions, countryISSubdivisions, countryITSubdivisions, countryJESubdivisions, countryJMSubdivisions, countryJOSubdivisions, countryJPSubdivisions, countryKESubdivisions, countryKGSubdivisions, countryKHSubdivisions, countryKISubdivisions, countryKMSubdivisions, countryKNSubdivisions, countryKPSubdivisions, countryKRSubdivisions, countryKWSubdivisions, countryKYSubdivisions, countryKZSubdivisions, countryLASubdivisions, countryLBSubdivisions, countryLCSubdivisions, countryLISubdivisions, countryLKSubdivisions, countryLRSubdivisions, countryLSSubdivisions, countryLTSubdivisions, countryLUSubdivisions, countryLVSubdivisions, countryLYSubdivisions, countryMASubdivisions, countryMCSubdivisions, countryMDSubdivisions, countryMESubdivisions, countryMFSubdivisions, countryMGSubdivisions, countryMHSubdivisions, countryMKSubdivisions, countryMLSubdivisions, countryMMSubdivisions, countryMNSubdivisions, countryMOSubdivisions, countryMPSubdivisions, countryMQSubdivisions, countryMRSubdivisions, countryMSSubdivisions, countryMTSubdivisions, countryMUSubdivisions, countryMVSubdivisions, countryMWSubdivisions, countryMXSubdivisions, countryMYSubdivisions, countryMZSubdivisions, countryNASubdivisions, countryNCSubdivisions, countryNESubdivisions, countryNGSubdivisions, countryNISubdivisions, countryNLSubdivisions, countryNOSubdivisions, countryNPSubdivisions, countryNRSubdivisions, countryNZSubdivisions, countryOMSubdivisions, countryPASubdivisions, countryPESubdivisions, countryPFSubdivisions, countryPGSubdivisions, countryPHSubdivisions, countryPKSubdivisions, countryPLSubdivisions, countryPMSubdivisions, countryPRSubdivisions, countryPSSubdivisions, countryPTSubdivisions, countryPWSubdivisions, countryPYSubdivisions, countryQASubdivisions, countryRESubdivisions, countryROSubdivisions, countryRSSubdivisions, countryRUSubdivisions, countryRWSubdivisions, countrySASubdivisions, countrySBSubdivisions, countrySCSubdivisions, countrySDSubdivisions, countrySESubdivisions, countrySGSubdivisions, countrySHSubdivisions, countrySISubdivisions, countrySJSubdivisions, countrySKSubdivisions, countrySLSubdivisions, countrySMSubdivisions, countrySNSubdivisions, countrySOSubdivisions, countrySRSubdivisions, countrySSSubdivisions, countrySTSubdivisions, countrySVSubdivisions, countrySXSubdivisions, countrySYSubdivisions, countrySZSubdivisions, countryTDSubdivisions, countryTFSubdivisions, countryTGSubdivisions, countryTHSubdivisions, countryTJSubdivisions, countryTKSubdivisions, countryTLSubdivisions, countryTMSubdivisions, countryTNSubdivisions, countryTOSubdivisions, countryTRSubdivisions, countryTTSubdivisions, countryTVSubdivisions, countryTWSubdivisions, countryTZSubdivisions, countryUASubdivisions, countryUGSubdivisions, countryUMSubdivisions, countryUSSubdivisions, countryUYSubdivisions, countryUZSubdivisions, countryVCSubdivisions, countryVESubdivisions, countryVISubdivisions, countryVNSubdivisions, countryVUSubdivisions, countryWFSubdivisions, countryWSSubdivisions, countryYESubdivisions, countryYTSubdivisions, countryZASubdivisions, countryZMSubdivisions, countryZWSubdivisions
+@docs countryADSubdivisions, countryAESubdivisions, countryAFSubdivisions, countryAGSubdivisions, countryAISubdivisions, countryALSubdivisions, countryAMSubdivisions, countryAOSubdivisions, countryARSubdivisions, countryATSubdivisions, countryAUSubdivisions, countryAZSubdivisions, countryBASubdivisions, countryBBSubdivisions, countryBDSubdivisions, countryBESubdivisions, countryBFSubdivisions, countryBGSubdivisions, countryBHSubdivisions, countryBISubdivisions, countryBJSubdivisions, countryBMSubdivisions, countryBNSubdivisions, countryBOSubdivisions, countryBQSubdivisions, countryBRSubdivisions, countryBSSubdivisions, countryBTSubdivisions, countryBWSubdivisions, countryBYSubdivisions, countryBZSubdivisions, countryCASubdivisions, countryCDSubdivisions, countryCFSubdivisions, countryCGSubdivisions, countryCHSubdivisions, countryCISubdivisions, countryCKSubdivisions, countryCLSubdivisions, countryCMSubdivisions, countryCNSubdivisions, countryCOSubdivisions, countryCRSubdivisions, countryCUSubdivisions, countryCVSubdivisions, countryCYSubdivisions, countryCZSubdivisions, countryDESubdivisions, countryDJSubdivisions, countryDKSubdivisions, countryDMSubdivisions, countryDOSubdivisions, countryDZSubdivisions, countryECSubdivisions, countryEESubdivisions, countryEGSubdivisions, countryEHSubdivisions, countryERSubdivisions, countryESSubdivisions, countryETSubdivisions, countryFISubdivisions, countryFJSubdivisions, countryFMSubdivisions, countryFRSubdivisions, countryGASubdivisions, countryGBSubdivisions, countryGDSubdivisions, countryGESubdivisions, countryGHSubdivisions, countryGLSubdivisions, countryGMSubdivisions, countryGNSubdivisions, countryGQSubdivisions, countryGRSubdivisions, countryGTSubdivisions, countryGWSubdivisions, countryGYSubdivisions, countryHNSubdivisions, countryHRSubdivisions, countryHTSubdivisions, countryHUSubdivisions, countryIDSubdivisions, countryIESubdivisions, countryILSubdivisions, countryINSubdivisions, countryIQSubdivisions, countryIRSubdivisions, countryISSubdivisions, countryITSubdivisions, countryJMSubdivisions, countryJOSubdivisions, countryJPSubdivisions, countryKESubdivisions, countryKGSubdivisions, countryKHSubdivisions, countryKISubdivisions, countryKMSubdivisions, countryKNSubdivisions, countryKPSubdivisions, countryKRSubdivisions, countryKWSubdivisions, countryKZSubdivisions, countryLASubdivisions, countryLBSubdivisions, countryLCSubdivisions, countryLISubdivisions, countryLKSubdivisions, countryLRSubdivisions, countryLSSubdivisions, countryLTSubdivisions, countryLUSubdivisions, countryLVSubdivisions, countryLYSubdivisions, countryMASubdivisions, countryMCSubdivisions, countryMDSubdivisions, countryMESubdivisions, countryMGSubdivisions, countryMHSubdivisions, countryMKSubdivisions, countryMLSubdivisions, countryMMSubdivisions, countryMNSubdivisions, countryMRSubdivisions, countryMTSubdivisions, countryMUSubdivisions, countryMVSubdivisions, countryMWSubdivisions, countryMXSubdivisions, countryMYSubdivisions, countryMZSubdivisions, countryNASubdivisions, countryNESubdivisions, countryNGSubdivisions, countryNISubdivisions, countryNLSubdivisions, countryNOSubdivisions, countryNPSubdivisions, countryNRSubdivisions, countryNZSubdivisions, countryOMSubdivisions, countryPASubdivisions, countryPESubdivisions, countryPGSubdivisions, countryPHSubdivisions, countryPKSubdivisions, countryPLSubdivisions, countryPSSubdivisions, countryPTSubdivisions, countryPWSubdivisions, countryPYSubdivisions, countryQASubdivisions, countryROSubdivisions, countryRSSubdivisions, countryRUSubdivisions, countryRWSubdivisions, countrySASubdivisions, countrySBSubdivisions, countrySCSubdivisions, countrySDSubdivisions, countrySESubdivisions, countrySGSubdivisions, countrySHSubdivisions, countrySISubdivisions, countrySJSubdivisions, countrySKSubdivisions, countrySLSubdivisions, countrySMSubdivisions, countrySNSubdivisions, countrySOSubdivisions, countrySRSubdivisions, countrySSSubdivisions, countrySTSubdivisions, countrySVSubdivisions, countrySYSubdivisions, countrySZSubdivisions, countryTDSubdivisions, countryTGSubdivisions, countryTHSubdivisions, countryTJSubdivisions, countryTKSubdivisions, countryTLSubdivisions, countryTMSubdivisions, countryTNSubdivisions, countryTOSubdivisions, countryTRSubdivisions, countryTTSubdivisions, countryTVSubdivisions, countryTWSubdivisions, countryTZSubdivisions, countryUASubdivisions, countryUGSubdivisions, countryUMSubdivisions, countryUSSubdivisions, countryUYSubdivisions, countryUZSubdivisions, countryVCSubdivisions, countryVESubdivisions, countryVNSubdivisions, countryVUSubdivisions, countryWFSubdivisions, countryWSSubdivisions, countryYESubdivisions, countryZASubdivisions, countryZMSubdivisions, countryZWSubdivisions
 
 -}
 
@@ -141,7 +141,7 @@ type alias Subdivision =
 -}
 all : List Country
 all =
-    [ countryAF, countryAL, countryDZ, countryAS, countryAD, countryAO, countryAI, countryAQ, countryAG, countryAR, countryAM, countryAW, countryAU, countryAT, countryAZ, countryBS, countryBH, countryBD, countryBB, countryBY, countryBE, countryBZ, countryBJ, countryBM, countryBT, countryBO, countryBQ, countryBA, countryBW, countryBV, countryBR, countryIO, countryBN, countryBG, countryBF, countryBI, countryCV, countryKH, countryCM, countryCA, countryKY, countryCF, countryTD, countryCL, countryCN, countryCX, countryCC, countryCO, countryKM, countryCG, countryCD, countryCK, countryCR, countryHR, countryCU, countryCW, countryCY, countryCZ, countryCI, countryDK, countryDJ, countryDM, countryDO, countryEC, countryEG, countrySV, countryGQ, countryER, countryEE, countryET, countryFK, countryFO, countryFJ, countryFI, countryFR, countryGF, countryPF, countryTF, countryGA, countryGM, countryGE, countryDE, countryGH, countryGI, countryGR, countryGL, countryGD, countryGP, countryGU, countryGT, countryGG, countryGN, countryGW, countryGY, countryHT, countryHM, countryVA, countryHN, countryHK, countryHU, countryIS, countryIN, countryID, countryIR, countryIQ, countryIE, countryIM, countryIL, countryIT, countryJM, countryJP, countryJE, countryJO, countryKZ, countryKE, countryKI, countryKP, countryKR, countryKW, countryKG, countryLA, countryLV, countryLB, countryLS, countryLR, countryLY, countryLI, countryLT, countryLU, countryMO, countryMG, countryMW, countryMY, countryMV, countryML, countryMT, countryMH, countryMQ, countryMR, countryMU, countryYT, countryMX, countryFM, countryMD, countryMC, countryMN, countryME, countryMS, countryMA, countryMZ, countryMM, countryNA, countryNR, countryNP, countryNL, countryNC, countryNZ, countryNI, countryNE, countryNG, countryNU, countryNF, countryMK, countryMP, countryNO, countryOM, countryPK, countryPW, countryPS, countryPA, countryPG, countryPY, countryPE, countryPH, countryPN, countryPL, countryPT, countryPR, countryQA, countryRO, countryRU, countryRW, countryRE, countryBL, countrySH, countryKN, countryLC, countryMF, countryPM, countryVC, countryWS, countrySM, countryST, countrySA, countrySN, countryRS, countrySC, countrySL, countrySG, countrySX, countrySK, countrySI, countrySB, countrySO, countryZA, countryGS, countrySS, countryES, countryLK, countrySD, countrySR, countrySJ, countrySE, countryCH, countrySY, countryTW, countryTJ, countryTZ, countryTH, countryTL, countryTG, countryTK, countryTO, countryTT, countryTN, countryTR, countryTM, countryTC, countryTV, countryUG, countryUA, countryAE, countryGB, countryUM, countryUS, countryUY, countryUZ, countryVU, countryVE, countryVN, countryVG, countryVI, countryWF, countryEH, countryYE, countryZM, countryZW, countrySZ, countryAX ]
+    [ countryAF, countryAL, countryDZ, countryAS, countryAD, countryAO, countryAI, countryAQ, countryAG, countryAR, countryAM, countryAW, countryAU, countryAT, countryAZ, countryBS, countryBH, countryBD, countryBB, countryBY, countryBE, countryBZ, countryBJ, countryBM, countryBT, countryBO, countryBQ, countryBA, countryBW, countryBV, countryBR, countryIO, countryBN, countryBG, countryBF, countryBI, countryCV, countryKH, countryCM, countryCA, countryKY, countryCF, countryTD, countryCL, countryCN, countryCX, countryCC, countryCO, countryKM, countryCG, countryCD, countryCK, countryCR, countryHR, countryCU, countryCW, countryCY, countryCZ, countryCI, countryDK, countryDJ, countryDM, countryDO, countryEC, countryEG, countrySV, countryGQ, countryER, countryEE, countrySZ, countryET, countryFK, countryFO, countryFJ, countryFI, countryFR, countryGF, countryPF, countryTF, countryGA, countryGM, countryGE, countryDE, countryGH, countryGI, countryGR, countryGL, countryGD, countryGP, countryGU, countryGT, countryGG, countryGN, countryGW, countryGY, countryHT, countryHM, countryVA, countryHN, countryHK, countryHU, countryIS, countryIN, countryID, countryIR, countryIQ, countryIE, countryIM, countryIL, countryIT, countryJM, countryJP, countryJE, countryJO, countryKZ, countryKE, countryKI, countryKP, countryKR, countryKW, countryKG, countryLA, countryLV, countryLB, countryLS, countryLR, countryLY, countryLI, countryLT, countryLU, countryMO, countryMG, countryMW, countryMY, countryMV, countryML, countryMT, countryMH, countryMQ, countryMR, countryMU, countryYT, countryMX, countryFM, countryMD, countryMC, countryMN, countryME, countryMS, countryMA, countryMZ, countryMM, countryNA, countryNR, countryNP, countryNL, countryNC, countryNZ, countryNI, countryNE, countryNG, countryNU, countryNF, countryMK, countryMP, countryNO, countryOM, countryPK, countryPW, countryPS, countryPA, countryPG, countryPY, countryPE, countryPH, countryPN, countryPL, countryPT, countryPR, countryQA, countryRO, countryRU, countryRW, countryRE, countryBL, countrySH, countryKN, countryLC, countryMF, countryPM, countryVC, countryWS, countrySM, countryST, countrySA, countrySN, countryRS, countrySC, countrySL, countrySG, countrySX, countrySK, countrySI, countrySB, countrySO, countryZA, countryGS, countrySS, countryES, countryLK, countrySD, countrySR, countrySJ, countrySE, countryCH, countrySY, countryTW, countryTJ, countryTZ, countryTH, countryTL, countryTG, countryTK, countryTO, countryTT, countryTN, countryTR, countryTM, countryTC, countryTV, countryUG, countryUA, countryAE, countryGB, countryUM, countryUS, countryUY, countryUZ, countryVU, countryVE, countryVN, countryVG, countryVI, countryWF, countryEH, countryYE, countryZM, countryZW, countryAX ]
 
 
 {-| Find a country by it's alpha2 code.
@@ -316,7 +316,7 @@ countryAS =
     , postalCodeFormat = "(96799)(?:[ \\-](\\d{4}))?"
     , region = Region.Oceania
     , startOfWeek = Time.Mon
-    , subdivisions = countryASSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Polynesia
     , unLocode = "AS"
     , unofficialNames = [ "American Samoa", "Amerikanisch-Samoa", "Samoa américaines", "Samoa Americana", "アメリカ領サモア", "Amerikaans Samoa" ]
@@ -609,7 +609,7 @@ countryAW =
     , postalCodeFormat = ""
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryAWSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "AW"
     , unofficialNames = [ "Aruba", "アルバ" ]
@@ -1570,7 +1570,7 @@ countryKH =
     , nationality = "Cambodian"
     , number = "116"
     , postalCode = True
-    , postalCodeFormat = "\\d{5}"
+    , postalCodeFormat = "\\d{5,6}"
     , region = Region.Asia
     , startOfWeek = Time.Mon
     , subdivisions = countryKHSubdivisions
@@ -1685,7 +1685,7 @@ countryKY =
     , postalCodeFormat = "KY\\d-\\d{4}"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryKYSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "KY"
     , unofficialNames = [ "Cayman Islands", "Kaimaninseln", "Îles Caïmans", "Islas Caimán", "ケイマン諸島", "Caymaneilanden" ]
@@ -2037,7 +2037,7 @@ countryCD =
     , ioc = "COD"
     , languagesOfficial = [ "fr", "ln", "kg", "sw", "lu" ]
     , languagesSpoken = [ "fr", "ln", "kg", "sw", "lu" ]
-    , localNames = [ "République démocratique du Congo", "Congo" ]
+    , localNames = [ "République démocratique du Congo", "Congo, The Democratic Republic of the" ]
     , name = "Congo (Democratic Republic of the)"
     , nanpPrefix = ""
     , nationalDestinationCodeLengths = [ 2 ]
@@ -2233,7 +2233,7 @@ countryCW =
     , postalCodeFormat = ""
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryCWSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "CW"
     , unofficialNames = [ "Curaçao", "キュラソー島" ]
@@ -2277,7 +2277,7 @@ countryCY =
     }
 
 
-{-| Czech Republic
+{-| Czechia
 -}
 countryCZ : Country
 countryCZ =
@@ -2298,7 +2298,7 @@ countryCZ =
     , languagesOfficial = [ "cs", "sk" ]
     , languagesSpoken = [ "cs", "sk" ]
     , localNames = [ "Česko", "Česko" ]
-    , name = "Czech Republic"
+    , name = "Czechia"
     , nanpPrefix = ""
     , nationalDestinationCodeLengths = [ 2 ]
     , nationalNumberLengths = [ 9 ]
@@ -2722,6 +2722,42 @@ countryEE =
     }
 
 
+{-| Eswatini
+-}
+countrySZ : Country
+countrySZ =
+    { addressFormat = ""
+    , alpha2 = "SZ"
+    , alpha3 = "SWZ"
+    , continent = Continent.Africa
+    , countryCode = "268"
+    , currencyCode = "SZL"
+    , emoji = "🇸🇿"
+    , gec = "WZ"
+    , internationalPrefix = "00"
+    , ioc = "SWZ"
+    , languagesOfficial = [ "en", "ss" ]
+    , languagesSpoken = [ "en", "ss" ]
+    , localNames = [ "Eswatini" ]
+    , name = "Eswatini"
+    , nanpPrefix = ""
+    , nationalDestinationCodeLengths = [ 2 ]
+    , nationalNumberLengths = [ 7 ]
+    , nationalPrefix = "None"
+    , nationality = "Swazi"
+    , number = "748"
+    , postalCode = True
+    , postalCodeFormat = "[HLMS]\\d{3}"
+    , region = Region.Africa
+    , startOfWeek = Time.Mon
+    , subdivisions = countrySZSubdivisions
+    , subregion = Subregion.SouthernAfrica
+    , unLocode = "SZ"
+    , unofficialNames = [ "Swaziland", "Swasiland", "Suazilandia", "スワジランド" ]
+    , worldRegion = WorldRegion.Emea
+    }
+
+
 {-| Ethiopia
 -}
 countryET : Country
@@ -2822,7 +2858,7 @@ countryFO =
     , postalCodeFormat = "\\d{3}"
     , region = Region.Europe
     , startOfWeek = Time.Mon
-    , subdivisions = countryFOSubdivisions
+    , subdivisions = []
     , subregion = Subregion.NorthernEurope
     , unLocode = "FO"
     , unofficialNames = [ "Faroe Islands", "Färöer-Inseln", "Îles Féroé", "Islas Faroe", "フェロー諸島", "Faeröer" ]
@@ -2846,7 +2882,7 @@ countryFJ =
     , ioc = "FIJ"
     , languagesOfficial = [ "en", "fj", "hi", "ur" ]
     , languagesSpoken = [ "en", "fj", "hi", "ur" ]
-    , localNames = [ "Fiji", "फिजी", "فجی" ]
+    , localNames = [ "Fiji", "फ़िजी", "فجی" ]
     , name = "Fiji"
     , nanpPrefix = ""
     , nationalDestinationCodeLengths = [ 2 ]
@@ -2974,7 +3010,7 @@ countryGF =
     , postalCodeFormat = "9[78]3\\d{2}"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryGFSubdivisions
+    , subdivisions = []
     , subregion = Subregion.SouthAmerica
     , unLocode = "GF"
     , unofficialNames = [ "French Guiana", "Französisch Guyana", "Guayana Francesa", "フランス領ギアナ", "Frans-Guyana" ]
@@ -3010,7 +3046,7 @@ countryPF =
     , postalCodeFormat = "987\\d{2}"
     , region = Region.Oceania
     , startOfWeek = Time.Mon
-    , subdivisions = countryPFSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Polynesia
     , unLocode = "PF"
     , unofficialNames = [ "French Polynesia", "Französisch-Polynesien", "Polynésie Française", "Polinesia Francesa", "フランス領ポリネシア", "Frans-Polynesië" ]
@@ -3025,7 +3061,7 @@ countryTF =
     { addressFormat = ""
     , alpha2 = "TF"
     , alpha3 = "ATF"
-    , continent = Continent.Antarctica
+    , continent = Continent.Africa
     , countryCode = "262"
     , currencyCode = "EUR"
     , emoji = "🇹🇫"
@@ -3044,13 +3080,13 @@ countryTF =
     , number = "260"
     , postalCode = False
     , postalCodeFormat = ""
-    , region = Region.None
+    , region = Region.Africa
     , startOfWeek = Time.Mon
-    , subdivisions = countryTFSubdivisions
-    , subregion = Subregion.None
+    , subdivisions = []
+    , subregion = Subregion.EasternAfrica
     , unLocode = "TF"
     , unofficialNames = [ "French Southern Territories", "Französische Süd- und Antarktisgebiete", "Terres Australes Françaises", "Territorios Franceses del Sur", "フランス領南方・南極地域", "Franse Gebieden in de zuidelijke Indische Oceaan", "French Southern and Antarctic Lands" ]
-    , worldRegion = WorldRegion.Apac
+    , worldRegion = WorldRegion.Emea
     }
 
 
@@ -3334,7 +3370,7 @@ countryGL =
     , ioc = ""
     , languagesOfficial = [ "kl" ]
     , languagesSpoken = [ "kl" ]
-    , localNames = [ "Kalaallit Nunaat" ]
+    , localNames = [ "Greenland" ]
     , name = "Greenland"
     , nanpPrefix = ""
     , nationalDestinationCodeLengths = [ 2 ]
@@ -3418,7 +3454,7 @@ countryGP =
     , postalCodeFormat = "9[78][01]\\d{2}"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryGPSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "GP"
     , unofficialNames = [ "Guadeloupe", "Guadalupe", "グアドループ" ]
@@ -3454,7 +3490,7 @@ countryGU =
     , postalCodeFormat = "(969(?:[12]\\d|3[12]))(?:[ \\-](\\d{4}))?"
     , region = Region.Oceania
     , startOfWeek = Time.Mon
-    , subdivisions = countryGUSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Micronesia
     , unLocode = "GU"
     , unofficialNames = [ "Guam", "グアム" ]
@@ -3526,7 +3562,7 @@ countryGG =
     , postalCodeFormat = "GY\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}"
     , region = Region.Europe
     , startOfWeek = Time.Mon
-    , subdivisions = countryGGSubdivisions
+    , subdivisions = []
     , subregion = Subregion.NorthernEurope
     , unLocode = "GG"
     , unofficialNames = [ "Guernsey and Alderney", "Guernsey und Alderney", "Guernsey et Alderney", "Guernsey y Alderney", "ガーンジー", "Guernsey" ]
@@ -3818,7 +3854,7 @@ countryHK =
     , postalCodeFormat = ""
     , region = Region.Asia
     , startOfWeek = Time.Mon
-    , subdivisions = countryHKSubdivisions
+    , subdivisions = []
     , subregion = Subregion.EasternAsia
     , unLocode = "HK"
     , unofficialNames = [ "Hong Kong", "香港", "Hongkong" ]
@@ -4110,7 +4146,7 @@ countryIM =
     , alpha3 = "IMN"
     , continent = Continent.Europe
     , countryCode = "44"
-    , currencyCode = "IMP"
+    , currencyCode = "GBP"
     , emoji = "🇮🇲"
     , gec = "IM"
     , internationalPrefix = ""
@@ -4129,7 +4165,7 @@ countryIM =
     , postalCodeFormat = "IM\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}"
     , region = Region.Europe
     , startOfWeek = Time.Mon
-    , subdivisions = countryIMSubdivisions
+    , subdivisions = []
     , subregion = Subregion.NorthernEurope
     , unLocode = "IM"
     , unofficialNames = [ "Isle of Man", "Insel Man", "Île de Man", "Isla de Man", "マン島" ]
@@ -4302,7 +4338,7 @@ countryJE =
     , alpha3 = "JEY"
     , continent = Continent.Europe
     , countryCode = "44"
-    , currencyCode = "JEP"
+    , currencyCode = "GBP"
     , emoji = "🇯🇪"
     , gec = "JE"
     , internationalPrefix = ""
@@ -4321,7 +4357,7 @@ countryJE =
     , postalCodeFormat = "JE\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}"
     , region = Region.Europe
     , startOfWeek = Time.Mon
-    , subdivisions = countryJESubdivisions
+    , subdivisions = []
     , subregion = Subregion.NorthernEurope
     , unLocode = "JE"
     , unofficialNames = [ "Jersey", "ジャージー" ]
@@ -4996,7 +5032,7 @@ countryMO =
     , postalCodeFormat = ""
     , region = Region.Asia
     , startOfWeek = Time.Mon
-    , subdivisions = countryMOSubdivisions
+    , subdivisions = []
     , subregion = Subregion.EasternAsia
     , unLocode = "MO"
     , unofficialNames = [ "Macao", "Macau", "マカオ" ]
@@ -5284,7 +5320,7 @@ countryMQ =
     , postalCodeFormat = "9[78]2\\d{2}"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryMQSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "MQ"
     , unofficialNames = [ "Martinique", "Martinica", "マルティニーク" ]
@@ -5392,7 +5428,7 @@ countryYT =
     , postalCodeFormat = "976\\d{2}"
     , region = Region.Africa
     , startOfWeek = Time.Mon
-    , subdivisions = countryYTSubdivisions
+    , subdivisions = []
     , subregion = Subregion.EasternAfrica
     , unLocode = "YT"
     , unofficialNames = [ "Mayotte", "マヨット" ]
@@ -5648,7 +5684,7 @@ countryMS =
     , postalCodeFormat = ""
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryMSSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "MS"
     , unofficialNames = [ "Montserrat", "モントセラト" ]
@@ -5945,7 +5981,7 @@ countryNC =
     , postalCodeFormat = "988\\d{2}"
     , region = Region.Oceania
     , startOfWeek = Time.Mon
-    , subdivisions = countryNCSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Melanesia
     , unLocode = "NC"
     , unofficialNames = [ "New Caledonia", "Neukaledonien", "Nouvelle-Calédonie", "Nueva Caledonia", "ニューカレドニア", "Nieuw-Caledonië" ]
@@ -6194,7 +6230,7 @@ countryMK =
     , ioc = "MKD"
     , languagesOfficial = [ "mk" ]
     , languagesSpoken = [ "mk" ]
-    , localNames = [ "Нова Каледонија" ]
+    , localNames = [ "Северна Македонија" ]
     , name = "North Macedonia"
     , nanpPrefix = ""
     , nationalDestinationCodeLengths = [ 2 ]
@@ -6242,7 +6278,7 @@ countryMP =
     , postalCodeFormat = "(9695[012])(?:[ \\-](\\d{4}))?"
     , region = Region.Oceania
     , startOfWeek = Time.Mon
-    , subdivisions = countryMPSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Micronesia
     , unLocode = "MP"
     , unofficialNames = [ "Northern Mariana Islands", "Nördliche Marianen", "Mariannes du Nord", "Islas Marianas del Norte", "北マリアナ諸島", "Noordelijke Marianeneilanden" ]
@@ -6768,7 +6804,7 @@ countryPR =
     , postalCodeFormat = "(00[679]\\d{2})(?:[ \\-](\\d{4}))?"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryPRSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "PR"
     , unofficialNames = [ "Puerto Rico", "プエルトリコ" ]
@@ -6960,7 +6996,7 @@ countryRE =
     , postalCodeFormat = "9[78]4\\d{2}"
     , region = Region.Africa
     , startOfWeek = Time.Mon
-    , subdivisions = countryRESubdivisions
+    , subdivisions = []
     , subregion = Subregion.EasternAfrica
     , unLocode = "RE"
     , unofficialNames = [ "Réunion", "Reunión", "Reunion", "レユニオン" ]
@@ -6996,7 +7032,7 @@ countryBL =
     , postalCodeFormat = "9[78][01]\\d{2}"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryBLSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "BL"
     , unofficialNames = [ "Saint Barthélemy", "Saint-Barthélemy", "サン・バルテルミー" ]
@@ -7140,7 +7176,7 @@ countryMF =
     , postalCodeFormat = "9[78][01]\\d{2}"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryMFSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "MF"
     , unofficialNames = [ "Saint Martin", "サン・マルタン（フランス領）", "Saint-Martin" ]
@@ -7176,7 +7212,7 @@ countryPM =
     , postalCodeFormat = "9[78]5\\d{2}"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryPMSubdivisions
+    , subdivisions = []
     , subregion = Subregion.NorthernAmerica
     , unLocode = "PM"
     , unofficialNames = [ "Saint Pierre and Miquelon", "Saint-Pierre und Miquelon", "Saint-Pierre-et-Miquelon", "San Pedro y Miquelón", "サンピエール島・ミクロン島", "Saint Pierre en Miquelon" ]
@@ -7580,7 +7616,7 @@ countrySX =
     , postalCodeFormat = ""
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countrySXSubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "SX"
     , unofficialNames = [ "Sint Maarten", "セント・マーチン島" ]
@@ -8188,7 +8224,7 @@ countryTW =
     , nationality = "Taiwanese"
     , number = "158"
     , postalCode = True
-    , postalCodeFormat = "\\d{3}(?:\\d{2})?"
+    , postalCodeFormat = "\\d{3}(?:\\d{2,3})?"
     , region = Region.Asia
     , startOfWeek = Time.Mon
     , subdivisions = countryTWSubdivisions
@@ -8779,7 +8815,7 @@ countryAE =
     , postalCode = False
     , postalCodeFormat = ""
     , region = Region.Asia
-    , startOfWeek = Time.Sun
+    , startOfWeek = Time.Mon
     , subdivisions = countryAESubdivisions
     , subregion = Subregion.WesternAsia
     , unLocode = "AE"
@@ -8825,7 +8861,7 @@ countryGB =
     , subdivisions = countryGBSubdivisions
     , subregion = Subregion.NorthernEurope
     , unLocode = "GB"
-    , unofficialNames = [ "United Kingdom", "The United Kingdom", "Vereinigtes Königreich", "Royaume-Uni", "Reino Unido", "イギリス", "Verenigd Koninkrijk", "Great Britain (UK)", "UK", "Великобритания" ]
+    , unofficialNames = [ "United Kingdom", "The United Kingdom", "England", "Großbritannien", "Vereinigtes Königreich", "Royaume-Uni", "Reino Unido", "イギリス", "Verenigd Koninkrijk", "Great Britain (UK)", "UK", "Великобритания" ]
     , worldRegion = WorldRegion.Emea
     }
 
@@ -8901,7 +8937,7 @@ countryUS =
     , subdivisions = countryUSSubdivisions
     , subregion = Subregion.NorthernAmerica
     , unLocode = "US"
-    , unofficialNames = [ "United States", "Murica", "Vereinigte Staaten von Amerika", "États-Unis", "Estados Unidos", "アメリカ合衆国", "Verenigde Staten" ]
+    , unofficialNames = [ "United States", "USA", "Murica", "Vereinigte Staaten von Amerika", "États-Unis", "Estados Unidos", "アメリカ合衆国", "Verenigde Staten" ]
     , worldRegion = WorldRegion.Amer
     }
 
@@ -9155,7 +9191,7 @@ countryVI =
     , postalCodeFormat = "(008(?:(?:[0-4]\\d)|(?:5[01])))(?:[ \\-](\\d{4}))?"
     , region = Region.Americas
     , startOfWeek = Time.Mon
-    , subdivisions = countryVISubdivisions
+    , subdivisions = []
     , subregion = Subregion.Caribbean
     , unLocode = "VI"
     , unofficialNames = [ "Virgin Islands of the United States", "Amerikanische Jungferninseln", "Îles Vierges américaines", "Islas Vírgenes de los Estados Unidos", "アメリカ領ヴァージン諸島", "Amerikaanse Maagdeneilanden", "Virgin Islands (U.S.)", "United States Virgin Islands" ]
@@ -9347,42 +9383,6 @@ countryZW =
     }
 
 
-{-| eSwatini
--}
-countrySZ : Country
-countrySZ =
-    { addressFormat = ""
-    , alpha2 = "SZ"
-    , alpha3 = "SWZ"
-    , continent = Continent.Africa
-    , countryCode = "268"
-    , currencyCode = "SZL"
-    , emoji = "🇸🇿"
-    , gec = "WZ"
-    , internationalPrefix = "00"
-    , ioc = "SWZ"
-    , languagesOfficial = [ "en", "ss" ]
-    , languagesSpoken = [ "en", "ss" ]
-    , localNames = [ "Eswatini" ]
-    , name = "eSwatini"
-    , nanpPrefix = ""
-    , nationalDestinationCodeLengths = [ 2 ]
-    , nationalNumberLengths = [ 7 ]
-    , nationalPrefix = "None"
-    , nationality = "Swazi"
-    , number = "748"
-    , postalCode = True
-    , postalCodeFormat = "[HLMS]\\d{3}"
-    , region = Region.Africa
-    , startOfWeek = Time.Mon
-    , subdivisions = countrySZSubdivisions
-    , subregion = Subregion.SouthernAfrica
-    , unLocode = "SZ"
-    , unofficialNames = [ "Swaziland", "Swasiland", "Suazilandia", "スワジランド" ]
-    , worldRegion = WorldRegion.Emea
-    }
-
-
 {-| Åland Islands
 -}
 countryAX : Country
@@ -9411,7 +9411,7 @@ countryAX =
     , postalCodeFormat = "22\\d{3}"
     , region = Region.Europe
     , startOfWeek = Time.Mon
-    , subdivisions = countryAXSubdivisions
+    , subdivisions = []
     , subregion = Subregion.NorthernEurope
     , unLocode = "AX"
     , unofficialNames = [ "Åland Islands", "Åland", "オーランド諸島", "Ålandeilanden" ]
@@ -9626,6 +9626,14 @@ countryAFSubdivisions =
       , code = "ZAB"
       , unofficialNames = [ "Zabol", "Zabul", "Zābol" ]
       }
+    , { name = "لوګر ولايت"
+      , code = "LOG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "روزګان ولايت"
+      , code = "URU"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -9663,6 +9671,10 @@ countryAGSubdivisions =
     , { name = "Redonda"
       , code = "X2~"
       , unofficialNames = [ "Redonda" ]
+      }
+    , { name = "Redonda"
+      , code = "11"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -9733,148 +9745,52 @@ countryAISubdivisions =
 countryALSubdivisions : List Subdivision
 countryALSubdivisions =
     [ { name = "Berat"
-      , code = "BR"
-      , unofficialNames = [ "Berat" ]
-      }
-    , { name = "Bulqizë"
-      , code = "BU"
-      , unofficialNames = [ "Bulqizë" ]
-      }
-    , { name = "Dibër"
-      , code = "DI"
-      , unofficialNames = [ "Dibër" ]
-      }
-    , { name = "Delvinë"
-      , code = "DL"
-      , unofficialNames = [ "Delvinë" ]
+      , code = "01"
+      , unofficialNames = [ "" ]
       }
     , { name = "Durrës"
-      , code = "DR"
-      , unofficialNames = [ "Durrës" ]
-      }
-    , { name = "Devoll"
-      , code = "DV"
-      , unofficialNames = [ "Devoli" ]
+      , code = "02"
+      , unofficialNames = [ "" ]
       }
     , { name = "Elbasan"
-      , code = "EL"
-      , unofficialNames = [ "Elbasan" ]
-      }
-    , { name = "Kolonjë"
-      , code = "ER"
-      , unofficialNames = [ "Kolonjë" ]
+      , code = "03"
+      , unofficialNames = [ "" ]
       }
     , { name = "Fier"
-      , code = "FR"
-      , unofficialNames = [ "Fier" ]
+      , code = "04"
+      , unofficialNames = [ "" ]
       }
     , { name = "Gjirokastër"
-      , code = "GJ"
-      , unofficialNames = [ "Gjirokastër" ]
-      }
-    , { name = "Gramsh"
-      , code = "GR"
-      , unofficialNames = [ "Gramsh" ]
-      }
-    , { name = "Has"
-      , code = "HA"
-      , unofficialNames = [ "Has" ]
-      }
-    , { name = "Kavajë"
-      , code = "KA"
-      , unofficialNames = [ "Kavajë" ]
-      }
-    , { name = "Kurbin"
-      , code = "KB"
-      , unofficialNames = [ "Kurbin" ]
-      }
-    , { name = "Kuçovë"
-      , code = "KC"
-      , unofficialNames = [ "Kuçovë" ]
+      , code = "05"
+      , unofficialNames = [ "" ]
       }
     , { name = "Korçë"
-      , code = "KO"
-      , unofficialNames = [ "Korçë" ]
-      }
-    , { name = "Krujë"
-      , code = "KR"
-      , unofficialNames = [ "Krujë" ]
+      , code = "06"
+      , unofficialNames = [ "" ]
       }
     , { name = "Kukës"
-      , code = "KU"
-      , unofficialNames = [ "Kukës" ]
-      }
-    , { name = "Librazhd"
-      , code = "LB"
-      , unofficialNames = [ "Librazhd" ]
+      , code = "07"
+      , unofficialNames = [ "" ]
       }
     , { name = "Lezhë"
-      , code = "LE"
-      , unofficialNames = [ "Lezhë" ]
+      , code = "08"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Lushnjë"
-      , code = "LU"
-      , unofficialNames = [ "Lushnjë" ]
-      }
-    , { name = "Mallakastër"
-      , code = "MK"
-      , unofficialNames = [ "Mallakastër" ]
-      }
-    , { name = "Malësi e Madhe"
-      , code = "MM"
-      , unofficialNames = [ "Malesia e Madhe" ]
-      }
-    , { name = "Mirditë"
-      , code = "MR"
-      , unofficialNames = [ "Mirditë" ]
-      }
-    , { name = "Mat"
-      , code = "MT"
-      , unofficialNames = [ "Mat" ]
-      }
-    , { name = "Pogradec"
-      , code = "PG"
-      , unofficialNames = [ "Pogradec" ]
-      }
-    , { name = "Peqin"
-      , code = "PQ"
-      , unofficialNames = [ "Peqin" ]
-      }
-    , { name = "Përmet"
-      , code = "PR"
-      , unofficialNames = [ "Përmet" ]
-      }
-    , { name = "Pukë"
-      , code = "PU"
-      , unofficialNames = [ "Pukë" ]
+    , { name = "Dibër"
+      , code = "09"
+      , unofficialNames = [ "" ]
       }
     , { name = "Shkodër"
-      , code = "SH"
-      , unofficialNames = [ "Shkodër" ]
-      }
-    , { name = "Skrapar"
-      , code = "SK"
-      , unofficialNames = [ "Skrapar" ]
-      }
-    , { name = "Sarandë"
-      , code = "SR"
-      , unofficialNames = [ "Sarandë" ]
-      }
-    , { name = "Tepelenë"
-      , code = "TE"
-      , unofficialNames = [ "Tepelenë" ]
-      }
-    , { name = "Tropojë"
-      , code = "TP"
-      , unofficialNames = [ "Tropojë" ]
+      , code = "10"
+      , unofficialNames = [ "" ]
       }
     , { name = "Tiranë"
-      , code = "TR"
+      , code = "11"
       , unofficialNames = [ "Tiranë", "Tirana", "Tirana" ]
       }
     , { name = "Vlorë"
-      , code = "VL"
-      , unofficialNames = [ "Vlorë" ]
+      , code = "12"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -10110,32 +10026,6 @@ countryARSubdivisions =
 
 
 {-| -}
-countryASSubdivisions : List Subdivision
-countryASSubdivisions =
-    [ { name = "Eastern District"
-      , code = "010"
-      , unofficialNames = [ "Eastern District" ]
-      }
-    , { name = "Manu'a District"
-      , code = "020"
-      , unofficialNames = [ "Manu'a District" ]
-      }
-    , { name = "Rose Atoll"
-      , code = "030"
-      , unofficialNames = [ "Rose Atoll" ]
-      }
-    , { name = "Swains Island"
-      , code = "040"
-      , unofficialNames = [ "Swains Island" ]
-      }
-    , { name = "Western District"
-      , code = "050"
-      , unofficialNames = [ "Western District" ]
-      }
-    ]
-
-
-{-| -}
 countryATSubdivisions : List Subdivision
 countryATSubdivisions =
     [ { name = "Burgenland"
@@ -10211,30 +10101,6 @@ countryAUSubdivisions =
     , { name = "Western Australia"
       , code = "WA"
       , unofficialNames = [ "Western Australia" ]
-      }
-    ]
-
-
-{-| -}
-countryAWSubdivisions : List Subdivision
-countryAWSubdivisions =
-    []
-
-
-{-| -}
-countryAXSubdivisions : List Subdivision
-countryAXSubdivisions =
-    [ { name = "Mariehamn"
-      , code = "211"
-      , unofficialNames = [ "Mariehamn" ]
-      }
-    , { name = "Alands landsbygd"
-      , code = "212"
-      , unofficialNames = [ "Alands landsbygd" ]
-      }
-    , { name = "Alands skaergard"
-      , code = "213"
-      , unofficialNames = [ "Alands skaergard" ]
       }
     ]
 
@@ -10550,6 +10416,26 @@ countryAZSubdivisions =
       , code = "ZAR"
       , unofficialNames = [ "Zärdab" ]
       }
+    , { name = "Naxçıvan"
+      , code = "NV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kəngərli"
+      , code = "KAN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Şabran (rayon)"
+      , code = "SBN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Şirvan"
+      , code = "SR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Göygöl"
+      , code = "GYG"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -10563,6 +10449,50 @@ countryBASubdivisions =
     , { name = "Republika Srpska"
       , code = "SRP"
       , unofficialNames = [ "Republika Srpska" ]
+      }
+    , { name = "Brčko Distrikt"
+      , code = "BRC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Una-Sana"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Posavina"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tuzlanski"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Zenica-Doboj"
+      , code = "04"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bosnian Podrinje"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central Bosnia"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Herzegovina-Neretva"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "West Herzegovina"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sarajevo"
+      , code = "09"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Livanjski"
+      , code = "10"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -10876,6 +10806,38 @@ countryBDSubdivisions =
       , code = "64"
       , unofficialNames = [ "Thakurgaon" ]
       }
+    , { name = "বরিশাল বিভাগ"
+      , code = "A"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "চট্টগ্রাম বিভাগ"
+      , code = "B"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "ঢাকা বিভাগ"
+      , code = "C"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "খুলনা বিভাগ"
+      , code = "D"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "রংপুর বিভাগ"
+      , code = "F"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "রাজশাহী বিভাগ"
+      , code = "E"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "সিলেট বিভাগ"
+      , code = "G"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "ময়মনসিংহ বিভাগ"
+      , code = "H"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -10925,6 +10887,14 @@ countryBESubdivisions =
     , { name = "Namur (fr)"
       , code = "WNA"
       , unofficialNames = [ "Namen" ]
+      }
+    , { name = "Wallonië"
+      , code = "WAL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vlaams Gewest"
+      , code = "VLG"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -11111,6 +11081,58 @@ countryBFSubdivisions =
     , { name = "Zoundwéogo"
       , code = "ZOU"
       , unofficialNames = [ "Zoundwéogo" ]
+      }
+    , { name = "Boucle du Mouhoun"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cascades"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Centre"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Centre-Est"
+      , code = "04"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Centre-Nord"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Centre-Ouest"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Centre-Sud"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Est"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hauts-Bassins"
+      , code = "09"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Plateau-Central"
+      , code = "11"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sahel"
+      , code = "12"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sud-Ouest"
+      , code = "13"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nord"
+      , code = "10"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -11326,6 +11348,18 @@ countryBISubdivisions =
       , code = "RY"
       , unofficialNames = [ "Ruyigi" ]
       }
+    , { name = "province de Bujumbura rural"
+      , code = "BL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "province de Bujumbura Mairie"
+      , code = "BM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Province de Rumonge"
+      , code = "RM"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -11381,12 +11415,6 @@ countryBJSubdivisions =
       , unofficialNames = [ "Zou" ]
       }
     ]
-
-
-{-| -}
-countryBLSubdivisions : List Subdivision
-countryBLSubdivisions =
-    []
 
 
 {-| -}
@@ -11722,6 +11750,94 @@ countryBSSubdivisions =
       , code = "SR"
       , unofficialNames = [ "San Salvador and Rum Cay" ]
       }
+    , { name = "Acklins"
+      , code = "AK"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Black Point"
+      , code = "BP"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Berry Islands"
+      , code = "BY"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central Eleuthera"
+      , code = "CE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Crooked Island"
+      , code = "CK"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central Abaco"
+      , code = "CO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central Andros"
+      , code = "CS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "East Grand Bahama"
+      , code = "EG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Grand Cay"
+      , code = "GC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hope Town"
+      , code = "HT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mangrove Cay"
+      , code = "MC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Moore’s Island"
+      , code = "MI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "North Eleuthera"
+      , code = "NE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "North Abaco"
+      , code = "NO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "North Andros"
+      , code = "NS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rum Cay"
+      , code = "RC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "South Andros"
+      , code = "SA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "South Eleuthera"
+      , code = "SE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "South Abaco"
+      , code = "SO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "San Salvador"
+      , code = "SS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Spanish Wells"
+      , code = "SW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "West Grand Bahama"
+      , code = "WG"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -11850,6 +11966,34 @@ countryBWSubdivisions =
       , code = "SO"
       , unofficialNames = [ "Southern" ]
       }
+    , { name = "Francistown"
+      , code = "FR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Gaborone"
+      , code = "GA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jwaneng"
+      , code = "JW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lobatse"
+      , code = "LO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Selibe Phikwe"
+      , code = "SP"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sowa Town"
+      , code = "ST"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Chobe"
+      , code = "CH"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -11883,6 +12027,10 @@ countryBYSubdivisions =
     , { name = "Horad Minsk"
       , code = "X1~"
       , unofficialNames = [ "Gorod Minsk", "Horad Minsk", "Mensk" ]
+      }
+    , { name = "Мінск"
+      , code = "HM"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -12022,6 +12170,82 @@ countryCDSubdivisions =
       , code = "SK"
       , unofficialNames = [ "Sud-Kivu" ]
       }
+    , { name = "Bas-Uele"
+      , code = "BU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Haut-Katanga"
+      , code = "HK"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Haut-Lomami"
+      , code = "HL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Haut-Uele"
+      , code = "HU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lulua"
+      , code = "KC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kwango"
+      , code = "KG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kwilu"
+      , code = "KL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kabinda"
+      , code = "LO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lualaba"
+      , code = "LU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mai-Ndombe"
+      , code = "MN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mongala"
+      , code = "MO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nord-Ubangi"
+      , code = "NU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sankuru"
+      , code = "SA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sud-Ubangi"
+      , code = "SU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tanganyika"
+      , code = "TA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tshopo"
+      , code = "TO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tshuapa"
+      , code = "TU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ituri"
+      , code = "IT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kasaï"
+      , code = "KS"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -12145,6 +12369,10 @@ countryCGSubdivisions =
     , { name = "Brazzaville"
       , code = "BZV"
       , unofficialNames = [ "Brazzaville" ]
+      }
+    , { name = "Pointe-Noire"
+      , code = "16"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -12337,6 +12565,62 @@ countryCISubdivisions =
     , { name = "Moyen-Cavally (Région du)"
       , code = "19"
       , unofficialNames = [ "Moyen-Cavally (Région du)" ]
+      }
+    , { name = "Abidjan"
+      , code = "AB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Yamoussoukro"
+      , code = "YM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "District du Bas-Sassandra"
+      , code = "BS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Denguélé"
+      , code = "DN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Savanes"
+      , code = "SV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vallée du Bandama"
+      , code = "VB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "District de la Comoé"
+      , code = "CM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Gôh-Djiboua"
+      , code = "GD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "District des Lacs"
+      , code = "LC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "District des Lagunes"
+      , code = "LG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "District des Montagnes"
+      , code = "MG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "District du Sassandra-Marahoué"
+      , code = "SM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "District du Woroba"
+      , code = "WR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Zanzan"
+      , code = "ZZ"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -12962,13 +13246,43 @@ countryCVSubdivisions =
       , code = "TA"
       , unofficialNames = [ "Tarrafal" ]
       }
+    , { name = "Santa Catarina do Fogo"
+      , code = "CF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ribeira Brava"
+      , code = "RB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ribeira Grande de Santiago"
+      , code = "RS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ilhas de Sotavento"
+      , code = "S"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "São Lourenço dos Órgãos"
+      , code = "SO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "São Salvador do Mundo"
+      , code = "SS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tarrafal de São Nicolau"
+      , code = "TS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "São Miguel"
+      , code = "SM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ilhas de Barlavento"
+      , code = "B"
+      , unofficialNames = [ "" ]
+      }
     ]
-
-
-{-| -}
-countryCWSubdivisions : List Subdivision
-countryCWSubdivisions =
-    []
 
 
 {-| -}
@@ -13004,61 +13318,365 @@ countryCYSubdivisions =
 {-| -}
 countryCZSubdivisions : List Subdivision
 countryCZSubdivisions =
-    [ { name = "Jihočeský kraj"
-      , code = "JC"
-      , unofficialNames = [ "Budějovický", "Českobudějovický" ]
-      }
-    , { name = "Jihomoravský kraj "
-      , code = "JM"
-      , unofficialNames = [ "Brněnský" ]
-      }
-    , { name = "Karlovarský kraj"
-      , code = "KA"
-      , unofficialNames = [ "Karlovarský kraj" ]
-      }
-    , { name = "Královéhradecký kraj"
-      , code = "KR"
-      , unofficialNames = [ "Královéhradecký kraj" ]
-      }
-    , { name = "Liberecký kraj"
-      , code = "LI"
-      , unofficialNames = [ "Liberecký kraj" ]
-      }
-    , { name = "Moravskoslezský kraj"
-      , code = "MO"
-      , unofficialNames = [ "Ostravský" ]
-      }
-    , { name = "Olomoucký kraj"
-      , code = "OL"
-      , unofficialNames = [ "Olomoucký kraj" ]
-      }
-    , { name = "Pardubický kraj"
-      , code = "PA"
-      , unofficialNames = [ "Pardubický kraj" ]
-      }
-    , { name = "Plzeňský kraj"
-      , code = "PL"
-      , unofficialNames = [ "Plzeňský kraj" ]
-      }
-    , { name = "Praha, hlavní město"
-      , code = "PR"
+    [ { name = "Praha, Hlavní město"
+      , code = "10"
       , unofficialNames = [ "Hlavní město Praha", "Praha", "Prag", "Prague" ]
       }
     , { name = "Středočeský kraj"
-      , code = "ST"
+      , code = "20"
       , unofficialNames = [ "Central Bohemia", "Mittelböhmen", "Středočeský" ]
       }
+    , { name = "Benešov"
+      , code = "201"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Beroun"
+      , code = "202"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kladno"
+      , code = "203"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kolín"
+      , code = "204"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kutná Hora"
+      , code = "205"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mělník"
+      , code = "206"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mladá Boleslav"
+      , code = "207"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nymburk"
+      , code = "208"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Praha-východ"
+      , code = "209"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Praha-západ"
+      , code = "20A"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Příbram"
+      , code = "20B"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rakovník"
+      , code = "20C"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jihočeský kraj"
+      , code = "31"
+      , unofficialNames = [ "Budějovický", "Českobudějovický" ]
+      }
+    , { name = "České Budějovice"
+      , code = "311"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Český Krumlov"
+      , code = "312"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jindřichův Hradec"
+      , code = "313"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Písek"
+      , code = "314"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Prachatice"
+      , code = "315"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Strakonice"
+      , code = "316"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tábor"
+      , code = "317"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Plzeňský kraj"
+      , code = "32"
+      , unofficialNames = [ "Plzeňský kraj" ]
+      }
+    , { name = "Domažlice"
+      , code = "321"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Klatovy"
+      , code = "322"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Plzeň-město"
+      , code = "323"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Plzeň-jih"
+      , code = "324"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Plzeň-sever"
+      , code = "325"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rokycany"
+      , code = "326"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tachov"
+      , code = "327"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Karlovarský kraj"
+      , code = "41"
+      , unofficialNames = [ "Karlovarský kraj" ]
+      }
+    , { name = "Cheb"
+      , code = "411"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Karlovy Vary"
+      , code = "412"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sokolov"
+      , code = "413"
+      , unofficialNames = [ "" ]
+      }
     , { name = "Ústecký kraj"
-      , code = "US"
+      , code = "42"
       , unofficialNames = [ "Ústecký kraj" ]
       }
-    , { name = "Vysočina"
-      , code = "VY"
+    , { name = "Děčín"
+      , code = "421"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Chomutov"
+      , code = "422"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Litoměřice"
+      , code = "423"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Louny"
+      , code = "424"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Most"
+      , code = "425"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Teplice"
+      , code = "426"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ústí nad Labem"
+      , code = "427"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Liberecký kraj"
+      , code = "51"
+      , unofficialNames = [ "Liberecký kraj" ]
+      }
+    , { name = "Česká Lípa"
+      , code = "511"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jablonec nad Nisou"
+      , code = "512"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Liberec"
+      , code = "513"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Semily"
+      , code = "514"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Královéhradecký kraj"
+      , code = "52"
+      , unofficialNames = [ "Královéhradecký kraj" ]
+      }
+    , { name = "Hradec Králové"
+      , code = "521"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jičín"
+      , code = "522"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Náchod"
+      , code = "523"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rychnov nad Kněžnou"
+      , code = "524"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Trutnov"
+      , code = "525"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Pardubický kraj"
+      , code = "53"
+      , unofficialNames = [ "Pardubický kraj" ]
+      }
+    , { name = "Chrudim"
+      , code = "531"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Pardubice"
+      , code = "532"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Svitavy"
+      , code = "533"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ústí nad Orlicí"
+      , code = "534"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kraj Vysočina"
+      , code = "63"
       , unofficialNames = [ "Jihlavský" ]
       }
+    , { name = "Havlíčkův Brod"
+      , code = "631"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jihlava"
+      , code = "632"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Pelhřimov"
+      , code = "633"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Třebíč"
+      , code = "634"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Žďár nad Sázavou"
+      , code = "635"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jihomoravský kraj"
+      , code = "64"
+      , unofficialNames = [ "Brněnský" ]
+      }
+    , { name = "Blansko"
+      , code = "641"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Brno-město"
+      , code = "642"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Brno-venkov"
+      , code = "643"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Břeclav"
+      , code = "644"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hodonín"
+      , code = "645"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vyškov"
+      , code = "646"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Znojmo"
+      , code = "647"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Olomoucký kraj"
+      , code = "71"
+      , unofficialNames = [ "Olomoucký kraj" ]
+      }
+    , { name = "Jeseník"
+      , code = "711"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Olomouc"
+      , code = "712"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Prostějov"
+      , code = "713"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Přerov"
+      , code = "714"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Šumperk"
+      , code = "715"
+      , unofficialNames = [ "" ]
+      }
     , { name = "Zlínský kraj"
-      , code = "ZL"
+      , code = "72"
       , unofficialNames = [ "Zlínský kraj" ]
+      }
+    , { name = "Kroměříž"
+      , code = "721"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Uherské Hradiště"
+      , code = "722"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vsetín"
+      , code = "723"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Zlín"
+      , code = "724"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Moravskoslezský kraj"
+      , code = "80"
+      , unofficialNames = [ "Ostravský" ]
+      }
+    , { name = "Bruntál"
+      , code = "801"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Frýdek-Místek"
+      , code = "802"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Karviná"
+      , code = "803"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nový Jičín"
+      , code = "804"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Opava"
+      , code = "805"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ostrava-město"
+      , code = "806"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -13166,89 +13784,25 @@ countryDJSubdivisions =
 {-| -}
 countryDKSubdivisions : List Subdivision
 countryDKSubdivisions =
-    [ { name = "København"
-      , code = "015"
-      , unofficialNames = [ "København" ]
-      }
-    , { name = "Frederiksborg"
-      , code = "020"
-      , unofficialNames = [ "Frederiksborg" ]
-      }
-    , { name = "Roskilde"
-      , code = "025"
-      , unofficialNames = [ "Roskilde" ]
-      }
-    , { name = "Vestsjælland"
-      , code = "030"
-      , unofficialNames = [ "Vestsjælland" ]
-      }
-    , { name = "Storstrøm"
-      , code = "035"
-      , unofficialNames = [ "Storstrøm" ]
-      }
-    , { name = "Bornholm"
-      , code = "040"
-      , unofficialNames = [ "Bornholm" ]
-      }
-    , { name = "Fyn"
-      , code = "042"
-      , unofficialNames = [ "Fyn" ]
-      }
-    , { name = "Sønderjylland"
-      , code = "050"
-      , unofficialNames = [ "Sønderjylland" ]
-      }
-    , { name = "Ribe"
-      , code = "055"
-      , unofficialNames = [ "Ribe" ]
-      }
-    , { name = "Vejle"
-      , code = "060"
-      , unofficialNames = [ "Vejle" ]
-      }
-    , { name = "Ringkøbing"
-      , code = "065"
-      , unofficialNames = [ "Ringkøbing" ]
-      }
-    , { name = "Århus"
-      , code = "070"
-      , unofficialNames = [ "Århus" ]
-      }
-    , { name = "Viborg"
-      , code = "076"
-      , unofficialNames = [ "Viborg" ]
-      }
-    , { name = "Nordjylland"
-      , code = "080"
-      , unofficialNames = [ "Nordjylland" ]
-      }
-    , { name = "København City"
-      , code = "101"
-      , unofficialNames = [ "København City" ]
-      }
-    , { name = "Frederiksberg City"
-      , code = "147"
-      , unofficialNames = [ "Frederiksberg City" ]
-      }
-    , { name = "North Jutland"
+    [ { name = "Nordjylland"
       , code = "81"
-      , unofficialNames = [ "Nordjylland" ]
+      , unofficialNames = [ "North Jutland", "North Denmark Region", "North Denmark" ]
       }
-    , { name = "Central Jutland"
+    , { name = "Midtjylland"
       , code = "82"
-      , unofficialNames = [ "Midtjylland" ]
+      , unofficialNames = [ "Central Denmark", "Central Jutland Region", "Central Jutland", "Mid Jutland" ]
       }
-    , { name = "South Denmark"
+    , { name = "Syddanmark"
       , code = "83"
-      , unofficialNames = [ "Syddanmark" ]
+      , unofficialNames = [ "South Denmark" ]
       }
-    , { name = "Capital"
+    , { name = "Hovedstaden"
       , code = "84"
-      , unofficialNames = [ "Region Hovedstaden" ]
+      , unofficialNames = [ "Capital Region", "Region Hovedstaden" ]
       }
-    , { name = "Zeeland"
+    , { name = "Sjælland"
       , code = "85"
-      , unofficialNames = [ "Sjælland" ]
+      , unofficialNames = [ "Zeeland" ]
       }
     ]
 
@@ -13425,6 +13979,50 @@ countryDOSubdivisions =
     , { name = "San Jose de Ocoa"
       , code = "31"
       , unofficialNames = [ "San Jose de Ocoa" ]
+      }
+    , { name = "Santo Domingo"
+      , code = "32"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cibao Nordeste"
+      , code = "33"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cibao Noroeste"
+      , code = "34"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cibao Norte"
+      , code = "35"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cibao Sur"
+      , code = "36"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "El Valle"
+      , code = "37"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Enriquillo"
+      , code = "38"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Higüamo"
+      , code = "39"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ozama"
+      , code = "40"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Valdesia"
+      , code = "41"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Yuma"
+      , code = "42"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -13734,63 +14332,379 @@ countryEESubdivisions : List Subdivision
 countryEESubdivisions =
     [ { name = "Harjumaa"
       , code = "37"
-      , unofficialNames = [ "Harjumaa" ]
+      , unofficialNames = [ "Harjumaa", "Harju" ]
       }
     , { name = "Hiiumaa"
       , code = "39"
-      , unofficialNames = [ "Dagden", "Dagö" ]
+      , unofficialNames = [ "Dagden", "Dagö", "Hiiu", "Hiiumaa" ]
       }
     , { name = "Ida-Virumaa"
-      , code = "44"
-      , unofficialNames = [ "Ida-Virumaa" ]
+      , code = "45"
+      , unofficialNames = [ "Ida-Virumaa", "Ida-Viru", "И́да-Ви́руский уезд" ]
       }
     , { name = "Jõgevamaa"
-      , code = "49"
+      , code = "50"
       , unofficialNames = [ "Jogevamaa" ]
       }
     , { name = "Järvamaa"
-      , code = "51"
-      , unofficialNames = [ "Järvamaa" ]
+      , code = "52"
+      , unofficialNames = [ "Järvamaa", "Järva", "Jerwen" ]
       }
     , { name = "Läänemaa"
-      , code = "57"
-      , unofficialNames = [ "Läänemaa" ]
+      , code = "56"
+      , unofficialNames = [ "Läänemaa", "Lääne", "Wiek", "Wieck" ]
       }
     , { name = "Lääne-Virumaa"
-      , code = "59"
-      , unofficialNames = [ "Lääne-Virumaa" ]
+      , code = "60"
+      , unofficialNames = [ "Lääne-Virumaa", "Lääne-Viru" ]
       }
     , { name = "Põlvamaa"
-      , code = "65"
-      , unofficialNames = [ "Polvamaa" ]
+      , code = "64"
+      , unofficialNames = [ "Polvamaa", "Põlva County" ]
       }
     , { name = "Pärnumaa"
-      , code = "67"
-      , unofficialNames = [ "Pärnumaa" ]
+      , code = "68"
+      , unofficialNames = [ "Pärnumaa", "Pärnu" ]
       }
     , { name = "Raplamaa"
-      , code = "70"
-      , unofficialNames = [ "Raplamaa" ]
+      , code = "71"
+      , unofficialNames = [ "Raplamaa", "Rapla" ]
       }
     , { name = "Saaremaa"
       , code = "74"
-      , unofficialNames = [ "Saare", "Ösel" ]
+      , unofficialNames = [ "Saare", "Ösel", "Oesel" ]
       }
     , { name = "Tartumaa"
-      , code = "78"
-      , unofficialNames = [ "Tartumaa" ]
+      , code = "79"
+      , unofficialNames = [ "Tartumaa", "Tartu" ]
       }
     , { name = "Valgamaa"
-      , code = "82"
-      , unofficialNames = [ "Valgamaa" ]
+      , code = "81"
+      , unofficialNames = [ "Valgamaa", "Valga" ]
       }
     , { name = "Viljandimaa"
       , code = "84"
-      , unofficialNames = [ "Viljandimaa" ]
+      , unofficialNames = [ "Viljandimaa", "Viljandi" ]
       }
     , { name = "Võrumaa"
-      , code = "86"
-      , unofficialNames = [ "Vorumaa" ]
+      , code = "87"
+      , unofficialNames = [ "Võrumaa", "Võru" ]
+      }
+    , { name = "Alutaguse"
+      , code = "130"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Anija"
+      , code = "141"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Antsla"
+      , code = "142"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Elva"
+      , code = "171"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Haapsalu"
+      , code = "184"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Haljala"
+      , code = "191"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Harku"
+      , code = "198"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hiiumaa"
+      , code = "205"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Häädemeeste"
+      , code = "214"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jõelähtme"
+      , code = "245"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jõgeva"
+      , code = "247"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jõhvi"
+      , code = "251"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Järva"
+      , code = "255"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kadrina"
+      , code = "272"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kambja"
+      , code = "283"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kanepi"
+      , code = "284"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kastre"
+      , code = "291"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kehtna"
+      , code = "293"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Keila"
+      , code = "296"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kihnu"
+      , code = "303"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kiili"
+      , code = "305"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kohila"
+      , code = "317"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kohtla-Järve"
+      , code = "321"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kose"
+      , code = "338"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kuusalu"
+      , code = "353"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Loksa"
+      , code = "424"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lääneranna"
+      , code = "430"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lääne-Harju"
+      , code = "431"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Luunja"
+      , code = "432"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lääne-Nigula"
+      , code = "441"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lüganuse"
+      , code = "442"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Maardu"
+      , code = "446"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Muhu"
+      , code = "478"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mulgi"
+      , code = "480"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mustvee"
+      , code = "486"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Märjamaa"
+      , code = "503"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Narva"
+      , code = "511"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Narva-Jõesuu"
+      , code = "514"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nõo"
+      , code = "528"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Otepää"
+      , code = "557"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Paide"
+      , code = "567"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Peipsiääre"
+      , code = "586"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Põhja-Sakala"
+      , code = "615"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Põltsamaa"
+      , code = "618"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Põlva"
+      , code = "622"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Pärnu"
+      , code = "624"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Põhja-Pärnumaa"
+      , code = "638"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Raasiku"
+      , code = "651"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rae"
+      , code = "653"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rakvere"
+      , code = "661"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rakvere"
+      , code = "663"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rapla"
+      , code = "668"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ruhnu"
+      , code = "689"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rõuge"
+      , code = "698"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Räpina"
+      , code = "708"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Saarde"
+      , code = "712"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Saaremaa"
+      , code = "714"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Saku"
+      , code = "719"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Saue"
+      , code = "726"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Setomaa"
+      , code = "732"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sillamäe"
+      , code = "735"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tallinn"
+      , code = "784"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tapa"
+      , code = "792"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tartu"
+      , code = "793"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tartu"
+      , code = "796"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Toila"
+      , code = "803"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tori"
+      , code = "809"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tõrva"
+      , code = "824"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Türi"
+      , code = "834"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Valga"
+      , code = "855"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Viimsi"
+      , code = "890"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Viljandi"
+      , code = "897"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Viljandi"
+      , code = "899"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vinni"
+      , code = "901"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Viru-Nigula"
+      , code = "903"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vormsi"
+      , code = "907"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Võru"
+      , code = "917"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Võru"
+      , code = "919"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Väike-Maarja"
+      , code = "928"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -14172,6 +15086,74 @@ countryESSubdivisions =
       , code = "ZA"
       , unofficialNames = [ "Zamora" ]
       }
+    , { name = "Andalucía"
+      , code = "AN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Principado de Asturias"
+      , code = "AS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Castilla y León"
+      , code = "CL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cataluña"
+      , code = "CT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Extremadura"
+      , code = "EX"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Galicia"
+      , code = "GA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Islas Baleares"
+      , code = "IB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "País Vasco"
+      , code = "PV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Aragón"
+      , code = "AR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cantabria"
+      , code = "CB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Castilla-La Mancha"
+      , code = "CM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Región de Murcia"
+      , code = "MC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Comunidad de Madrid"
+      , code = "MD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Navarra"
+      , code = "NC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "La Rioja²"
+      , code = "RI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Comunidad Valenciana"
+      , code = "VC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Canary Islands"
+      , code = "CN"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -14228,29 +15210,81 @@ countryETSubdivisions =
 {-| -}
 countryFISubdivisions : List Subdivision
 countryFISubdivisions =
-    [ { name = "Ahvenanmaan lääni"
-      , code = "AL"
+    [ { name = "Ahvenanmaan maakunta"
+      , code = "01"
       , unofficialNames = [ "Åland" ]
       }
-    , { name = "Etelä-Suomen lääni"
-      , code = "ES"
-      , unofficialNames = [ "Etelä-Suomen lääni" ]
+    , { name = "Etelä-Karjala"
+      , code = "02"
+      , unofficialNames = [ "Södra Karelen" ]
       }
-    , { name = "Itä-Suomen lääni"
-      , code = "IS"
-      , unofficialNames = [ "Östra Nyland", "Itä-Uusimaa", "Uusima de lʿEst" ]
+    , { name = "Etelä-Pohjanmaa"
+      , code = "03"
+      , unofficialNames = [ "Södra Österbotten" ]
       }
-    , { name = "Lapin lääni"
-      , code = "LL"
+    , { name = "Etelä-Savo"
+      , code = "04"
+      , unofficialNames = [ "Södra Savolax" ]
+      }
+    , { name = "Kainuu"
+      , code = "05"
+      , unofficialNames = [ "Kajanaland" ]
+      }
+    , { name = "Kanta-Häme"
+      , code = "06"
+      , unofficialNames = [ "Egentliga Tavastland" ]
+      }
+    , { name = "Keski-Pohjanmaa"
+      , code = "07"
+      , unofficialNames = [ "Mellersta Österbotten" ]
+      }
+    , { name = "Keski-Suomi"
+      , code = "08"
+      , unofficialNames = [ "Mellersta Finland" ]
+      }
+    , { name = "Kymenlaakso"
+      , code = "09"
+      , unofficialNames = [ "Kymmenedalen" ]
+      }
+    , { name = "Lappi"
+      , code = "10"
       , unofficialNames = [ "Lappland", "Lappi", "Lappland", "Laponie" ]
       }
-    , { name = "Länsi-Suomen lääni"
-      , code = "LS"
-      , unofficialNames = [ "Länsi-Suomen lääni" ]
+    , { name = "Pirkanmaa"
+      , code = "11"
+      , unofficialNames = [ "Birkaland" ]
       }
-    , { name = "Oulun lääni"
-      , code = "OL"
-      , unofficialNames = [ "Oulun lääni" ]
+    , { name = "Pohjanmaa"
+      , code = "12"
+      , unofficialNames = [ "Österbotten" ]
+      }
+    , { name = "Pohjois-Karjala"
+      , code = "13"
+      , unofficialNames = [ "Norra Karelen" ]
+      }
+    , { name = "Pohjois-Pohjanmaa"
+      , code = "14"
+      , unofficialNames = [ "Norra Österbotten" ]
+      }
+    , { name = "Pohjois-Savo"
+      , code = "15"
+      , unofficialNames = [ "Norra Savolax" ]
+      }
+    , { name = "Päijät-Häme"
+      , code = "16"
+      , unofficialNames = [ "Päijänne-Tavastland" ]
+      }
+    , { name = "Satakunta"
+      , code = "17"
+      , unofficialNames = [ "Satakunda" ]
+      }
+    , { name = "Uusimaa"
+      , code = "18"
+      , unofficialNames = [ "Nyland" ]
+      }
+    , { name = "Varsinais-Suomi"
+      , code = "19"
+      , unofficialNames = [ "Egentliga Finland" ]
       }
     ]
 
@@ -14278,6 +15312,62 @@ countryFJSubdivisions =
       , code = "W"
       , unofficialNames = [ "Western" ]
       }
+    , { name = "Cakaudrove"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tailevu"
+      , code = "14"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ba"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bua"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kadavu"
+      , code = "04"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lau"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lomaiviti"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Macuata"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nadroga-Navosa"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Naitasiri"
+      , code = "09"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Namosi"
+      , code = "10"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ra"
+      , code = "11"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rewa"
+      , code = "12"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Serua"
+      , code = "13"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -14299,36 +15389,6 @@ countryFMSubdivisions =
     , { name = "Yap"
       , code = "YAP"
       , unofficialNames = [ "Yap" ]
-      }
-    ]
-
-
-{-| -}
-countryFOSubdivisions : List Subdivision
-countryFOSubdivisions =
-    [ { name = "Nordoyar"
-      , code = "NO"
-      , unofficialNames = [ "Nordoyar" ]
-      }
-    , { name = "Eysturoyar"
-      , code = "OS"
-      , unofficialNames = [ "Eysturoyar" ]
-      }
-    , { name = "Sandoyar"
-      , code = "SA"
-      , unofficialNames = [ "Sandoyar" ]
-      }
-    , { name = "Streymoyar"
-      , code = "ST"
-      , unofficialNames = [ "Streymoyar" ]
-      }
-    , { name = "Suduroyar"
-      , code = "SU"
-      , unofficialNames = [ "Suduroyar" ]
-      }
-    , { name = "Vaga"
-      , code = "VG"
-      , unofficialNames = [ "Vaga" ]
       }
     ]
 
@@ -14411,6 +15471,10 @@ countryFRSubdivisions =
     , { name = "Corrèze"
       , code = "19"
       , unofficialNames = [ "Corrèze" ]
+      }
+    , { name = "Corse"
+      , code = "20R"
+      , unofficialNames = [ "Corse", "Corsica" ]
       }
     , { name = "Côte-d'Or"
       , code = "21"
@@ -14720,29 +15784,21 @@ countryFRSubdivisions =
       , code = "95"
       , unofficialNames = [ "Val-d'Oise" ]
       }
-    , { name = "Nouvelle-Calédonie"
-      , code = "NC"
-      , unofficialNames = [ "Nouvelle-Calédonie" ]
+    , { name = "Guadeloupe"
+      , code = "971"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Polynésie française"
-      , code = "PF"
-      , unofficialNames = [ "Polynésie française" ]
+    , { name = "Guyane (française)"
+      , code = "973"
+      , unofficialNames = [ "La Guyane" ]
       }
-    , { name = "Saint-Pierre-et-Miquelon"
-      , code = "PM"
-      , unofficialNames = [ "Saint-Pierre-et-Miquelon" ]
-      }
-    , { name = "Terres Australes Françaises"
-      , code = "TF"
-      , unofficialNames = [ "Terres Australes Françaises" ]
-      }
-    , { name = "Wallis et Futuna"
-      , code = "WF"
-      , unofficialNames = [ "Wallis et Futuna" ]
+    , { name = "La Réunion"
+      , code = "974"
+      , unofficialNames = [ "Île Bourbon" ]
       }
     , { name = "Mayotte"
-      , code = "YT"
-      , unofficialNames = [ "Mayotte" ]
+      , code = "976"
+      , unofficialNames = [ "" ]
       }
     , { name = "Auvergne-Rhône-Alpes"
       , code = "ARA"
@@ -14752,21 +15808,21 @@ countryFRSubdivisions =
       , code = "BFC"
       , unofficialNames = [ "Bourgogne-Franche-Comté", "Borgogne-Franche-Comtât" ]
       }
+    , { name = "Saint-Barthélemy"
+      , code = "BL"
+      , unofficialNames = [ "St. Barthélemy", "Saint Barthélemy" ]
+      }
     , { name = "Bretagne"
       , code = "BRE"
       , unofficialNames = [ "Bretagne", "Breizh" ]
       }
+    , { name = "Clipperton"
+      , code = "CP"
+      , unofficialNames = [ "Clipperton Island" ]
+      }
     , { name = "Centre-Val de Loire"
       , code = "CVL"
-      , unofficialNames = [ "Centre-Val de Loire" ]
-      }
-    , { name = "Corse"
-      , code = "COR"
-      , unofficialNames = [ "Corse", "Corsica" ]
-      }
-    , { name = "Grand Est"
-      , code = "GES"
-      , unofficialNames = [ "Grand Est" ]
+      , unofficialNames = [ "Centre-Val de Loire", "Centre Region", "Centre-Loire Valley" ]
       }
     , { name = "Hauts-de-France"
       , code = "HDF"
@@ -14780,21 +15836,49 @@ countryFRSubdivisions =
       , code = "NOR"
       , unofficialNames = [ "Normandie", "Normaundie" ]
       }
+    , { name = "Saint-Martin"
+      , code = "MF"
+      , unofficialNames = [ "St. Martin", "Saint Martin" ]
+      }
     , { name = "Nouvelle-Aquitaine"
       , code = "NAQ"
       , unofficialNames = [ "Nouvelle-Aquitaine" ]
       }
+    , { name = "New Caledonia"
+      , code = "NC"
+      , unofficialNames = [ "Nouvelle-Calédonie" ]
+      }
     , { name = "Occitanie"
       , code = "OCC"
-      , unofficialNames = [ "Occitanie", "Occitània" ]
+      , unofficialNames = [ "Occitanie", "Occitania", "Occitània" ]
+      }
+    , { name = "Provence-Alpes-Côte d'Azur"
+      , code = "PAC"
+      , unofficialNames = [ "Provence-Alpes-Côte d'Azur", "PACA", "Région Sud" ]
       }
     , { name = "Pays de la Loire"
       , code = "PDL"
       , unofficialNames = [ "Pays de la Loire", "Broioù al Liger" ]
       }
-    , { name = "Provence-Alpes-Côte d'Azur"
-      , code = "PAC"
-      , unofficialNames = [ "Provence-Alpes-Côte d'Azur", "PACA" ]
+    , { name = "Grand Est"
+      , code = "GES"
+      , unofficialNames = [ "Grand Est" ]
+      }
+    , { name = "Polynésie française"
+      , code = "PF"
+      , unofficialNames = [ "Polynésie française", "La Polynésie française" ]
+      }
+    , { name = "Saint-Pierre-et-Miquelon"
+      , code = "PM"
+      , unofficialNames = [ "Saint Pierre et Miquelon", "St. Pierre and Miquelon" ]
+      }
+    , { name = "Terres Australes Françaises"
+      , code = "TF"
+      , unofficialNames = [ "Terres Australes Françaises" ]
+      }
+    , { name = "Wallis-et-Futuna"
+      , code = "WF"
+      , unofficialNames = [ "Wallis et Futuna", "Wallis and Futuna" ]
       }
     ]
 
@@ -15764,6 +16848,90 @@ countryGBSubdivisions =
       , code = "ZET"
       , unofficialNames = [ "Shetland Islands" ]
       }
+    , { name = "England"
+      , code = "ENG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Great Britain"
+      , code = "GBN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Northern Ireland"
+      , code = "NIR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Scotland"
+      , code = "SCT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "United Kingdom"
+      , code = "UKM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Wales"
+      , code = "WLS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cheshire East"
+      , code = "CHE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "England and Wales"
+      , code = "EAW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central Bedfordshire"
+      , code = "CBF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Armagh, Banbridge and Craigavon"
+      , code = "ABC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ards and North Down"
+      , code = "AND"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Antrim and Newtownabbey"
+      , code = "ANN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Causeway Coast and Glens"
+      , code = "CCG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cheshire West and Chester"
+      , code = "CHW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Derry and Strabane"
+      , code = "DRS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Fermanagh and Omagh"
+      , code = "FMO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lisburn and Castlereagh"
+      , code = "LBC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mid and East Antrim"
+      , code = "MEA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mid Ulster"
+      , code = "MUL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Newry, Mourne and Down"
+      , code = "NMD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bournemouth, Christchurch and Poole"
+      , code = "BCP"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -15856,62 +17024,6 @@ countryGESubdivisions =
 
 
 {-| -}
-countryGFSubdivisions : List Subdivision
-countryGFSubdivisions =
-    []
-
-
-{-| -}
-countryGGSubdivisions : List Subdivision
-countryGGSubdivisions =
-    [ { name = "Saint Pierre du Bois"
-      , code = "1"
-      , unofficialNames = [ "Saint Pierre du Bois" ]
-      }
-    , { name = "Torteval"
-      , code = "2"
-      , unofficialNames = [ "Torteval" ]
-      }
-    , { name = "Saint Saviour"
-      , code = "3"
-      , unofficialNames = [ "Saint Saviour" ]
-      }
-    , { name = "Forest"
-      , code = "4"
-      , unofficialNames = [ "Forest" ]
-      }
-    , { name = "Saint Martin"
-      , code = "5"
-      , unofficialNames = [ "Saint Martin" ]
-      }
-    , { name = "Saint Andrew"
-      , code = "6"
-      , unofficialNames = [ "Saint Andrew" ]
-      }
-    , { name = "Saint Peter Port"
-      , code = "7"
-      , unofficialNames = [ "Saint Peter Port" ]
-      }
-    , { name = "Castel"
-      , code = "8"
-      , unofficialNames = [ "Castel" ]
-      }
-    , { name = "Vale"
-      , code = "9"
-      , unofficialNames = [ "Vale" ]
-      }
-    , { name = "Saint Sampson"
-      , code = "10"
-      , unofficialNames = [ "Saint Sampson" ]
-      }
-    , { name = "Alderney"
-      , code = "11"
-      , unofficialNames = [ "Alderney" ]
-      }
-    ]
-
-
-{-| -}
 countryGHSubdivisions : List Subdivision
 countryGHSubdivisions =
     [ { name = "Greater Accra"
@@ -15954,13 +17066,65 @@ countryGHSubdivisions =
       , code = "WP"
       , unofficialNames = [ "Western" ]
       }
+    , { name = "Ahafo"
+      , code = "AF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bono East"
+      , code = "BE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bono"
+      , code = "BO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "North East"
+      , code = "NE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Oti"
+      , code = "OT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Savannah"
+      , code = "SV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Western North"
+      , code = "WN"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
 {-| -}
 countryGLSubdivisions : List Subdivision
 countryGLSubdivisions =
-    []
+    [ { name = "Kujalleq"
+      , code = "KU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Qaasuitsup"
+      , code = "QA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Qeqqata"
+      , code = "QE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sermersooq"
+      , code = "SM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Avannaata Kommunia"
+      , code = "AV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kommune Qeqertalik"
+      , code = "QT"
+      , unofficialNames = [ "" ]
+      }
+    ]
 
 
 {-| -}
@@ -16132,13 +17296,35 @@ countryGNSubdivisions =
       , code = "YO"
       , unofficialNames = [ "Yomou" ]
       }
+    , { name = "Région de Boké"
+      , code = "B"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Région de Kindia"
+      , code = "D"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Région de Kankan"
+      , code = "K"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Région de Mamou"
+      , code = "M"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Région de Nzérékoré"
+      , code = "N"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Région de Faranah"
+      , code = "F"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Région de Labé"
+      , code = "L"
+      , unofficialNames = [ "" ]
+      }
     ]
-
-
-{-| -}
-countryGPSubdivisions : List Subdivision
-countryGPSubdivisions =
-    []
 
 
 {-| -}
@@ -16180,219 +17366,71 @@ countryGQSubdivisions =
       , code = "WN"
       , unofficialNames = [ "Wele-Nzás" ]
       }
+    , { name = "Djibloho"
+      , code = "DJ"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
 {-| -}
 countryGRSubdivisions : List Subdivision
 countryGRSubdivisions =
-    [ { name = "Aitolia-Akarnania"
-      , code = "01"
-      , unofficialNames = [ "Aetolia and Acarnania", "Áitoloakarnanía" ]
+    [ { name = "Anatolikí Makedonía kai Thráki"
+      , code = "A"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Voiotia"
-      , code = "03"
-      , unofficialNames = [ "Boeotia" ]
+    , { name = "Kentrikí Makedonía"
+      , code = "B"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Evvoia"
-      , code = "04"
-      , unofficialNames = [ "Euboea", "Evvoia" ]
+    , { name = "Dytikí Makedonía"
+      , code = "C"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Evrytania"
-      , code = "05"
-      , unofficialNames = [ "Evrytania" ]
+    , { name = "Ípeiros"
+      , code = "D"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Fthiotis"
-      , code = "06"
-      , unofficialNames = [ "Phtiotis" ]
+    , { name = "Thessalía"
+      , code = "E"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Fokis"
-      , code = "07"
-      , unofficialNames = [ "Phocis", "Phokis" ]
+    , { name = "Ionía Nísia"
+      , code = "F"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Argolis"
-      , code = "11"
-      , unofficialNames = [ "Argolis" ]
+    , { name = "Dytikí Elláda"
+      , code = "G"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Arkadia"
-      , code = "12"
-      , unofficialNames = [ "Arcadia" ]
+    , { name = "Stereá Elláda"
+      , code = "H"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Achaïa"
-      , code = "13"
-      , unofficialNames = [ "Achaia", "Akhaia" ]
+    , { name = "Attikí"
+      , code = "I"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Ileia"
-      , code = "14"
-      , unofficialNames = [ "Elia" ]
+    , { name = "Pelopónnisos"
+      , code = "J"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Korinthia"
-      , code = "15"
-      , unofficialNames = [ "Corinth", "Korinth", "Kórinthos" ]
+    , { name = "Vóreio Aigaío"
+      , code = "K"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Lakonia"
-      , code = "16"
-      , unofficialNames = [ "Laconia" ]
+    , { name = "Nótio Aigaío"
+      , code = "L"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Messinia"
-      , code = "17"
-      , unofficialNames = [ "Messenia" ]
+    , { name = "Kríti"
+      , code = "M"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Zakynthos"
-      , code = "21"
-      , unofficialNames = [ "Zakynthos", "Zante", "Zanti" ]
-      }
-    , { name = "Kerkyra"
-      , code = "22"
-      , unofficialNames = [ "Corfu", "Kerkyra", "Korfu" ]
-      }
-    , { name = "Kefallinia"
-      , code = "23"
-      , unofficialNames = [ "Cephalonia", "Kefallinia" ]
-      }
-    , { name = "Lefkas"
-      , code = "24"
-      , unofficialNames = [ "Leucas", "Levkáda", "Santa Maura" ]
-      }
-    , { name = "Arta"
-      , code = "31"
-      , unofficialNames = [ "Arta" ]
-      }
-    , { name = "Thesprotia"
-      , code = "32"
-      , unofficialNames = [ "Thesprotia" ]
-      }
-    , { name = "Ioannina"
-      , code = "33"
-      , unofficialNames = [ "Yannina" ]
-      }
-    , { name = "Preveza"
-      , code = "34"
-      , unofficialNames = [ "Preveza" ]
-      }
-    , { name = "Karditsa"
-      , code = "41"
-      , unofficialNames = [ "Karditsa" ]
-      }
-    , { name = "Larisa"
-      , code = "42"
-      , unofficialNames = [ "Larissa" ]
-      }
-    , { name = "Magnisia"
-      , code = "43"
-      , unofficialNames = [ "Magnesia", "Magnessia" ]
-      }
-    , { name = "Trikala"
-      , code = "44"
-      , unofficialNames = [ "Trikala", "Trikkala" ]
-      }
-    , { name = "Grevena"
-      , code = "51"
-      , unofficialNames = [ "Grevena" ]
-      }
-    , { name = "Drama"
-      , code = "52"
-      , unofficialNames = [ "Drama" ]
-      }
-    , { name = "Imathia"
-      , code = "53"
-      , unofficialNames = [ "Imathia" ]
-      }
-    , { name = "Thessaloniki"
-      , code = "54"
-      , unofficialNames = [ "Salonika", "Salonike", "Saloniki", "Thessalonike" ]
-      }
-    , { name = "Kavalla"
-      , code = "55"
-      , unofficialNames = [ "Cavalla", "Kaválla" ]
-      }
-    , { name = "Kastoria"
-      , code = "56"
-      , unofficialNames = [ "Kastoria" ]
-      }
-    , { name = "Kilkis"
-      , code = "57"
-      , unofficialNames = [ "Kilkis" ]
-      }
-    , { name = "Kozani"
-      , code = "58"
-      , unofficialNames = [ "Kozani" ]
-      }
-    , { name = "Pella"
-      , code = "59"
-      , unofficialNames = [ "Pella" ]
-      }
-    , { name = "Pieria"
-      , code = "61"
-      , unofficialNames = [ "Pieria" ]
-      }
-    , { name = "Serrai"
-      , code = "62"
-      , unofficialNames = [ "Serres" ]
-      }
-    , { name = "Florina"
-      , code = "63"
-      , unofficialNames = [ "Florina" ]
-      }
-    , { name = "Chalkidiki"
-      , code = "64"
-      , unofficialNames = [ "Chalcidice", "Khalkikdiki" ]
-      }
-    , { name = "Agio Oros"
+    , { name = "Ágion Óros"
       , code = "69"
       , unofficialNames = [ "Aghion Oros", "Agion Oros", "Akte", "Aktí", "Athos", "Mount Athos" ]
-      }
-    , { name = "Evros"
-      , code = "71"
-      , unofficialNames = [ "Evros" ]
-      }
-    , { name = "Xanthi"
-      , code = "72"
-      , unofficialNames = [ "Xanthi" ]
-      }
-    , { name = "Rodopi"
-      , code = "73"
-      , unofficialNames = [ "Rhodope" ]
-      }
-    , { name = "Dodekanisos"
-      , code = "81"
-      , unofficialNames = [ "Dodecanese", "Dodekanes" ]
-      }
-    , { name = "Kyklades"
-      , code = "82"
-      , unofficialNames = [ "Cyclades", "Kykladen" ]
-      }
-    , { name = "Lesvos"
-      , code = "83"
-      , unofficialNames = [ "Lesbos" ]
-      }
-    , { name = "Samos"
-      , code = "84"
-      , unofficialNames = [ "Samos" ]
-      }
-    , { name = "Chios"
-      , code = "85"
-      , unofficialNames = [ "Chios", "Khios" ]
-      }
-    , { name = "Irakleion"
-      , code = "91"
-      , unofficialNames = [ "Candia", "Herakleion", "Heraklion", "Iraclion", "Iraklio" ]
-      }
-    , { name = "Lasithion"
-      , code = "92"
-      , unofficialNames = [ "Lassithi" ]
-      }
-    , { name = "Rethymnon"
-      , code = "93"
-      , unofficialNames = [ "Rethymnon" ]
-      }
-    , { name = "Chania"
-      , code = "94"
-      , unofficialNames = [ "Canea", "Chania", "Khaniá", "La Canée" ]
-      }
-    , { name = "Attiki"
-      , code = "A1"
-      , unofficialNames = [ "Attica", "Attika" ]
       }
     ]
 
@@ -16492,88 +17530,6 @@ countryGTSubdivisions =
 
 
 {-| -}
-countryGUSubdivisions : List Subdivision
-countryGUSubdivisions =
-    [ { name = "Agana Heights"
-      , code = "AH"
-      , unofficialNames = [ "Agana Heights" ]
-      }
-    , { name = "Hagatna"
-      , code = "AN"
-      , unofficialNames = [ "Hagatna" ]
-      }
-    , { name = "Asan-Maina"
-      , code = "AS"
-      , unofficialNames = [ "Asan-Maina" ]
-      }
-    , { name = "Agat"
-      , code = "AT"
-      , unofficialNames = [ "Agat" ]
-      }
-    , { name = "Barrigada"
-      , code = "BA"
-      , unofficialNames = [ "Barrigada" ]
-      }
-    , { name = "Chalan Pago-Ordot"
-      , code = "CP"
-      , unofficialNames = [ "Chalan Pago-Ordot" ]
-      }
-    , { name = "Dededo"
-      , code = "DD"
-      , unofficialNames = [ "Dededo" ]
-      }
-    , { name = "Inarajan"
-      , code = "IN"
-      , unofficialNames = [ "Inarajan" ]
-      }
-    , { name = "Mangilao"
-      , code = "MA"
-      , unofficialNames = [ "Mangilao" ]
-      }
-    , { name = "Merizo"
-      , code = "ME"
-      , unofficialNames = [ "Merizo" ]
-      }
-    , { name = "Mongmong-Toto-Maite"
-      , code = "MT"
-      , unofficialNames = [ "Mongmong-Toto-Maite" ]
-      }
-    , { name = "Piti"
-      , code = "PI"
-      , unofficialNames = [ "Piti" ]
-      }
-    , { name = "Sinajana"
-      , code = "SJ"
-      , unofficialNames = [ "Sinajana" ]
-      }
-    , { name = "Santa Rita"
-      , code = "SR"
-      , unofficialNames = [ "Santa Rita" ]
-      }
-    , { name = "Talofofo"
-      , code = "TF"
-      , unofficialNames = [ "Talofofo" ]
-      }
-    , { name = "Tamuning"
-      , code = "TM"
-      , unofficialNames = [ "Tamuning" ]
-      }
-    , { name = "Umatac"
-      , code = "UM"
-      , unofficialNames = [ "Umatac" ]
-      }
-    , { name = "Yigo"
-      , code = "YG"
-      , unofficialNames = [ "Yigo" ]
-      }
-    , { name = "Yona"
-      , code = "YN"
-      , unofficialNames = [ "Yona" ]
-      }
-    ]
-
-
-{-| -}
 countryGWSubdivisions : List Subdivision
 countryGWSubdivisions =
     [ { name = "Bafatá"
@@ -16611,6 +17567,18 @@ countryGWSubdivisions =
     , { name = "Tombali"
       , code = "TO"
       , unofficialNames = [ "Tombali" ]
+      }
+    , { name = "Leste"
+      , code = "L"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Norte"
+      , code = "N"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sul"
+      , code = "S"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -16657,84 +17625,6 @@ countryGYSubdivisions =
     , { name = "Upper Takutu-Upper Essequibo"
       , code = "UT"
       , unofficialNames = [ "Upper Takutu-Upper Essequibo" ]
-      }
-    ]
-
-
-{-| -}
-countryHKSubdivisions : List Subdivision
-countryHKSubdivisions =
-    [ { name = "Central and Western District"
-      , code = "HCW"
-      , unofficialNames = [ "Central and Western District" ]
-      }
-    , { name = "Eastern"
-      , code = "HEA"
-      , unofficialNames = [ "Eastern" ]
-      }
-    , { name = "Southern"
-      , code = "HSO"
-      , unofficialNames = [ "Southern" ]
-      }
-    , { name = "Wan Chai"
-      , code = "HWC"
-      , unofficialNames = [ "Wan Chai" ]
-      }
-    , { name = "Sham Shui Po"
-      , code = "KSS"
-      , unofficialNames = [ "Sham Shui Po" ]
-      }
-    , { name = "Kowloon City"
-      , code = "KKC"
-      , unofficialNames = [ "Kowloon City" ]
-      }
-    , { name = "Kwun Tong"
-      , code = "KKT"
-      , unofficialNames = [ "Kwun Tong" ]
-      }
-    , { name = "Wong Tai Sin"
-      , code = "KWT"
-      , unofficialNames = [ "Wong Tai Sin" ]
-      }
-    , { name = "Yau Tsim Mong"
-      , code = "KYT"
-      , unofficialNames = [ "Yau Tsim Mong" ]
-      }
-    , { name = "Islands District"
-      , code = "NIS"
-      , unofficialNames = [ "Islands District" ]
-      }
-    , { name = "Kwai Tsing"
-      , code = "NKT"
-      , unofficialNames = [ "Kwai Tsing" ]
-      }
-    , { name = "North"
-      , code = "NNO"
-      , unofficialNames = [ "North" ]
-      }
-    , { name = "Sai Kung District"
-      , code = "NSK"
-      , unofficialNames = [ "Sai Kung District" ]
-      }
-    , { name = "Sha Tin"
-      , code = "NST"
-      , unofficialNames = [ "Sha Tin" ]
-      }
-    , { name = "Tuen Mun"
-      , code = "NTM"
-      , unofficialNames = [ "Tuen Mun" ]
-      }
-    , { name = "Tai Po District"
-      , code = "NTP"
-      , unofficialNames = [ "Tai Po District" ]
-      }
-    , { name = "Tsuen Wan District"
-      , code = "NTW"
-      , unofficialNames = [ "Tsuen Wan District" ]
-      }
-    , { name = "Yuen Long District"
-      , code = "NYL"
-      , unofficialNames = [ "Yuen Long District" ]
       }
     ]
 
@@ -16946,6 +17836,10 @@ countryHTSubdivisions =
       , code = "SE"
       , unofficialNames = [ "Sud-Est" ]
       }
+    , { name = "Nippes"
+      , code = "NI"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -17130,7 +18024,171 @@ countryHUSubdivisions =
 {-| -}
 countryIDSubdivisions : List Subdivision
 countryIDSubdivisions =
-    []
+    [ { name = "Aceh"
+      , code = "AC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kepulauan Bangka Belitung"
+      , code = "BB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bengkulu"
+      , code = "BE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Banten"
+      , code = "BT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Gorontalo"
+      , code = "GO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jambi"
+      , code = "JA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jawa Barat"
+      , code = "JB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jawa Timur"
+      , code = "JI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Daerah Khusus Ibukota Jakarta"
+      , code = "JK"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jawa Tengah"
+      , code = "JT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jawa"
+      , code = "JW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalimantan Barat"
+      , code = "KB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalimantan Timur"
+      , code = "KI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kepulauan Riau"
+      , code = "KR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalimantan Selatan"
+      , code = "KS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalimantan Tengah"
+      , code = "KT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lampung"
+      , code = "LA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Maluku"
+      , code = "MA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kepulauan Maluku"
+      , code = "ML"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Maluku Utara"
+      , code = "MU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nusa Tenggara Barat"
+      , code = "NB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nusa Tenggara Timur"
+      , code = "NT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kepulauan Nusa Tenggara"
+      , code = "NU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Papua"
+      , code = "PA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Papua Barat"
+      , code = "PB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Papua bagian barat"
+      , code = "PP"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Riau"
+      , code = "RI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sulawesi Utara"
+      , code = "SA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sumatera Barat"
+      , code = "SB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sulawesi Tenggara"
+      , code = "SG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sulawesi"
+      , code = "SL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sumatera"
+      , code = "SM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sulawesi Selatan"
+      , code = "SN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sulawesi Barat"
+      , code = "SR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sumatera Selatan"
+      , code = "SS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sulawesi Tengah"
+      , code = "ST"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sumatera Utara"
+      , code = "SU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Yogyakarta"
+      , code = "YO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalimantan Utara"
+      , code = "KU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bali"
+      , code = "BA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalimantan"
+      , code = "KA"
+      , unofficialNames = [ "" ]
+      }
+    ]
 
 
 {-| -}
@@ -17147,6 +18205,10 @@ countryIESubdivisions =
     , { name = "Cavan"
       , code = "CN"
       , unofficialNames = [ "An Cabhán" ]
+      }
+    , { name = "Cork"
+      , code = "CO"
+      , unofficialNames = [ "Corcaigh", "County Cork" ]
       }
     , { name = "Carlow"
       , code = "CW"
@@ -17176,6 +18238,10 @@ countryIESubdivisions =
       , code = "KY"
       , unofficialNames = [ "Ciarraighe", "Ciarraí" ]
       }
+    , { name = "Leinster"
+      , code = "L"
+      , unofficialNames = [ "" ]
+      }
     , { name = "Longford"
       , code = "LD"
       , unofficialNames = [ "Longphort", "Longphuirt" ]
@@ -17195,6 +18261,10 @@ countryIESubdivisions =
     , { name = "Laois"
       , code = "LS"
       , unofficialNames = [ "Laoighis", "Queenʿs" ]
+      }
+    , { name = "Munster"
+      , code = "M"
+      , unofficialNames = [ "" ]
       }
     , { name = "Meath"
       , code = "MH"
@@ -17240,9 +18310,9 @@ countryIESubdivisions =
       , code = "WX"
       , unofficialNames = [ "Loch Garman" ]
       }
-    , { name = "Cork"
-      , code = "CO"
-      , unofficialNames = [ "Corcaigh", "County Cork" ]
+    , { name = "Ulster"
+      , code = "U"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -17273,108 +18343,6 @@ countryILSubdivisions =
     , { name = "HaZafon"
       , code = "Z"
       , unofficialNames = [ "Northern" ]
-      }
-    ]
-
-
-{-| -}
-countryIMSubdivisions : List Subdivision
-countryIMSubdivisions =
-    [ { name = "Andreas"
-      , code = "1"
-      , unofficialNames = [ "Andreas" ]
-      }
-    , { name = "Arbory"
-      , code = "2"
-      , unofficialNames = [ "Arbory" ]
-      }
-    , { name = "Ballaugh"
-      , code = "3"
-      , unofficialNames = [ "Ballaugh" ]
-      }
-    , { name = "Braddan"
-      , code = "4"
-      , unofficialNames = [ "Braddan" ]
-      }
-    , { name = "Bride"
-      , code = "5"
-      , unofficialNames = [ "Bride" ]
-      }
-    , { name = "Castletown"
-      , code = "6"
-      , unofficialNames = [ "Castletown" ]
-      }
-    , { name = "Douglas"
-      , code = "7"
-      , unofficialNames = [ "Douglas" ]
-      }
-    , { name = "German"
-      , code = "8"
-      , unofficialNames = [ "German" ]
-      }
-    , { name = "Jurby"
-      , code = "9"
-      , unofficialNames = [ "Jurby" ]
-      }
-    , { name = "Laxey"
-      , code = "10"
-      , unofficialNames = [ "Laxey" ]
-      }
-    , { name = "Lezayre"
-      , code = "11"
-      , unofficialNames = [ "Lezayre" ]
-      }
-    , { name = "Lonan"
-      , code = "12"
-      , unofficialNames = [ "Lonan" ]
-      }
-    , { name = "Malew"
-      , code = "13"
-      , unofficialNames = [ "Malew" ]
-      }
-    , { name = "Marown"
-      , code = "14"
-      , unofficialNames = [ "Marown" ]
-      }
-    , { name = "Maughold"
-      , code = "15"
-      , unofficialNames = [ "Maughold" ]
-      }
-    , { name = "Michael"
-      , code = "16"
-      , unofficialNames = [ "Michael" ]
-      }
-    , { name = "Onchan"
-      , code = "17"
-      , unofficialNames = [ "Onchan" ]
-      }
-    , { name = "Patrick"
-      , code = "18"
-      , unofficialNames = [ "Patrick" ]
-      }
-    , { name = "Peel"
-      , code = "19"
-      , unofficialNames = [ "Peel" ]
-      }
-    , { name = "Port Erin"
-      , code = "20"
-      , unofficialNames = [ "Port Erin" ]
-      }
-    , { name = "Port St Mary"
-      , code = "21"
-      , unofficialNames = [ "Port St Mary" ]
-      }
-    , { name = "Ramsey"
-      , code = "22"
-      , unofficialNames = [ "Ramsey" ]
-      }
-    , { name = "Rushen"
-      , code = "23"
-      , unofficialNames = [ "Rushen" ]
-      }
-    , { name = "Santon"
-      , code = "24"
-      , unofficialNames = [ "Santon" ]
       }
     ]
 
@@ -17526,6 +18494,22 @@ countryINSubdivisions =
       , code = "WB"
       , unofficialNames = [ "West Bengal" ]
       }
+    , { name = "तेलंगाना"
+      , code = "TG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "उत्तराखण्ड"
+      , code = "UT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ladakh"
+      , code = "LA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Dādra and Nagar Haveli and Damān and Diu"
+      , code = "DH"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -17603,6 +18587,10 @@ countryIQSubdivisions =
     , { name = "Wasit"
       , code = "WA"
       , unofficialNames = [ "Wasit" ]
+      }
+    , { name = "كركوك"
+      , code = "KI"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -17734,6 +18722,14 @@ countryIRSubdivisions =
       , code = "31"
       , unofficialNames = [ "Khorasan-e Shemali" ]
       }
+    , { name = "استان البرز"
+      , code = "32"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Markazī"
+      , code = "00"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -17776,6 +18772,294 @@ countryISSubdivisions =
       , code = "8"
       , unofficialNames = [ "Suðurland" ]
       }
+    , { name = "Akrahreppur"
+      , code = "AKH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Akraneskaupstaður"
+      , code = "AKN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Akureyrarbær"
+      , code = "AKU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Árneshreppur"
+      , code = "ARN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ásahreppur"
+      , code = "ASA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Borgarfjarðarhreppur"
+      , code = "BFJ"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bláskógabyggð"
+      , code = "BLA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Blönduósbær"
+      , code = "BLO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Borgarbyggð"
+      , code = "BOG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bolungarvíkurkaupstaður"
+      , code = "BOL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Dalabyggð"
+      , code = "DAB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Dalvíkurbyggð"
+      , code = "DAV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Djúpavogshreppur"
+      , code = "DJU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Eyja- og Miklaholtshreppur"
+      , code = "EOM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Eyjafjarðarsveit"
+      , code = "EYF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Fjarðabyggð"
+      , code = "FJD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Fjallabyggð"
+      , code = "FJL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Flóahreppur"
+      , code = "FLA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Fljótsdalshérað"
+      , code = "FLD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Fljótsdalshreppur"
+      , code = "FLR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Garðabær"
+      , code = "GAR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Grímsnes- og Grafningshreppur"
+      , code = "GOG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Grindavíkurbær"
+      , code = "GRN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Grundarfjarðarbær"
+      , code = "GRU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Grýtubakkahreppur"
+      , code = "GRY"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hafnarfjarðarkaupstaður"
+      , code = "HAF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Helgafellssveit"
+      , code = "HEL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hörgársveit"
+      , code = "HRG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hrunamannahreppur"
+      , code = "HRU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Húnavatnshreppur"
+      , code = "HUT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Húnaþing vestra"
+      , code = "HUV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hvalfjarðarsveit"
+      , code = "HVA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hveragerðisbær"
+      , code = "HVE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ísafjarðarbær"
+      , code = "ISA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kaldrananeshreppur"
+      , code = "KAL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kjósarhreppur"
+      , code = "KJO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kópavogsbær"
+      , code = "KOP"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Langanesbyggð"
+      , code = "LAN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mosfellsbær"
+      , code = "MOS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mýrdalshreppur"
+      , code = "MYR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Norðurþing"
+      , code = "NOR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rangárþing eystra"
+      , code = "RGE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rangárþing ytra"
+      , code = "RGY"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Reykhólahreppur"
+      , code = "RHH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Reykjanesbær"
+      , code = "RKN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Reykjavíkurborg"
+      , code = "RKV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Svalbarðshreppur"
+      , code = "SBH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Svalbarðsstrandarhreppur"
+      , code = "SBT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Suðurnesjabær"
+      , code = "SDN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Súðavíkurhreppur"
+      , code = "SDV"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Seltjarnarnesbær"
+      , code = "SEL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Seyðisfjarðarkaupstaður"
+      , code = "SEY"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sveitarfélagið Árborg"
+      , code = "SFA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sveitarfélagið Hornafjörður"
+      , code = "SHF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Skaftárhreppur"
+      , code = "SKF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Skagabyggð"
+      , code = "SKG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Skorradalshreppur"
+      , code = "SKO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Skútustaðahreppur"
+      , code = "SKU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Snæfellsbær"
+      , code = "SNF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Skeiða- og Gnúpverjahreppur"
+      , code = "SOG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sveitarfélagið Ölfus"
+      , code = "SOL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sveitarfélagið Skagafjörður"
+      , code = "SSF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sveitarfélagið Skagaströnd"
+      , code = "SSS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Strandabyggð"
+      , code = "STR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Stykkishólmsbær"
+      , code = "STY"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sveitarfélagið Vogar"
+      , code = "SVG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tálknafjarðarhreppur"
+      , code = "TAL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Þingeyjarsveit"
+      , code = "THG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tjörneshreppur"
+      , code = "TJO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vestmannaeyjabær"
+      , code = "VEM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vesturbyggð"
+      , code = "VER"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vopnafjarðarhreppur"
+      , code = "VOP"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -17784,23 +19068,23 @@ countryITSubdivisions : List Subdivision
 countryITSubdivisions =
     [ { name = "Agrigento"
       , code = "AG"
-      , unofficialNames = [ "Agrigento" ]
+      , unofficialNames = [ "Province of Agrigento" ]
       }
     , { name = "Alessandria"
       , code = "AL"
-      , unofficialNames = [ "Alessandria" ]
+      , unofficialNames = [ "Province of Alessandria" ]
       }
     , { name = "Ancona"
       , code = "AN"
-      , unofficialNames = [ "Ancona" ]
+      , unofficialNames = [ "Province of Ancona" ]
       }
     , { name = "Aosta"
       , code = "AO"
-      , unofficialNames = [ "Aosta" ]
+      , unofficialNames = [ "" ]
       }
     , { name = "Ascoli Piceno"
       , code = "AP"
-      , unofficialNames = [ "Ascoli Piceno" ]
+      , unofficialNames = [ "Province of Ascoli Piceno" ]
       }
     , { name = "L'Aquila"
       , code = "AQ"
@@ -17808,107 +19092,107 @@ countryITSubdivisions =
       }
     , { name = "Arezzo"
       , code = "AR"
-      , unofficialNames = [ "Arezzo" ]
+      , unofficialNames = [ "Province of Arezzo" ]
       }
     , { name = "Asti"
       , code = "AT"
-      , unofficialNames = [ "Asti" ]
+      , unofficialNames = [ "Province of Asti" ]
       }
     , { name = "Avellino"
       , code = "AV"
-      , unofficialNames = [ "Avellino" ]
+      , unofficialNames = [ "Province of Avellino" ]
       }
     , { name = "Bari"
       , code = "BA"
-      , unofficialNames = [ "Bari" ]
+      , unofficialNames = [ "Metropolitan City of Bari", "Città Metropolitana di Bari" ]
       }
     , { name = "Bergamo"
       , code = "BG"
-      , unofficialNames = [ "Bergamo" ]
+      , unofficialNames = [ "Province of Bergamo" ]
       }
     , { name = "Biella"
       , code = "BI"
-      , unofficialNames = [ "Biella" ]
+      , unofficialNames = [ "Province of Biella" ]
       }
     , { name = "Belluno"
       , code = "BL"
-      , unofficialNames = [ "Belluno" ]
+      , unofficialNames = [ "Province of Belluno" ]
       }
     , { name = "Benevento"
       , code = "BN"
-      , unofficialNames = [ "Benevento" ]
+      , unofficialNames = [ "Province of Benevento" ]
       }
     , { name = "Bologna"
       , code = "BO"
-      , unofficialNames = [ "Bologna" ]
+      , unofficialNames = [ "Metropolitan City of Bologna" ]
       }
     , { name = "Brindisi"
       , code = "BR"
-      , unofficialNames = [ "Brindisi" ]
+      , unofficialNames = [ "Province of Brindisi" ]
       }
     , { name = "Brescia"
       , code = "BS"
-      , unofficialNames = [ "Brescia" ]
+      , unofficialNames = [ "Province of Brescia" ]
       }
     , { name = "Barletta-Andria-Trani"
       , code = "BT"
-      , unofficialNames = [ "Barletta-Andria-Trani" ]
+      , unofficialNames = [ "Province of Barletta-Andria-Trani" ]
       }
     , { name = "Bolzano"
       , code = "BZ"
-      , unofficialNames = [ "Bolzano" ]
+      , unofficialNames = [ "Autonome Provinz Bozen – Südtirol", "Provincia autonoma di Bolzano – Alto Adige", "Provincia autonoma di Bolzano – Alto Adige", "South Tyrol" ]
       }
     , { name = "Cagliari"
       , code = "CA"
-      , unofficialNames = [ "Cagliari" ]
+      , unofficialNames = [ "Metropolitan City of Cagliari", "Ciudad Metropolitana de Cagliari" ]
       }
     , { name = "Campobasso"
       , code = "CB"
-      , unofficialNames = [ "Campobasso" ]
+      , unofficialNames = [ "Province of Campobasso" ]
       }
     , { name = "Caserta"
       , code = "CE"
-      , unofficialNames = [ "Caserta" ]
+      , unofficialNames = [ "Province of Caserta" ]
       }
     , { name = "Chieti"
       , code = "CH"
-      , unofficialNames = [ "Chieti" ]
-      }
-    , { name = "Carbonia-Iglesias"
-      , code = "CI"
-      , unofficialNames = [ "Carbonia-Iglesias" ]
+      , unofficialNames = [ "Province of Chieti" ]
       }
     , { name = "Caltanissetta"
       , code = "CL"
-      , unofficialNames = [ "Caltanissetta" ]
+      , unofficialNames = [ "Province of Caltanissetta" ]
       }
     , { name = "Cuneo"
       , code = "CN"
-      , unofficialNames = [ "Cuneo" ]
+      , unofficialNames = [ "Province of Cuneo" ]
       }
     , { name = "Como"
       , code = "CO"
-      , unofficialNames = [ "Como" ]
+      , unofficialNames = [ "Province of Como" ]
       }
     , { name = "Cremona"
       , code = "CR"
-      , unofficialNames = [ "Cremona" ]
+      , unofficialNames = [ "Province of Cremona" ]
       }
     , { name = "Cosenza"
       , code = "CS"
-      , unofficialNames = [ "Cosenza" ]
+      , unofficialNames = [ "Province of Cosenza" ]
       }
     , { name = "Catania"
       , code = "CT"
-      , unofficialNames = [ "Catania" ]
+      , unofficialNames = [ "Metropolitan City of Catania" ]
       }
     , { name = "Catanzaro"
       , code = "CZ"
-      , unofficialNames = [ "Catanzaro" ]
+      , unofficialNames = [ "Province of Catanzaro" ]
       }
     , { name = "Enna"
       , code = "EN"
-      , unofficialNames = [ "Enna" ]
+      , unofficialNames = [ "Province of Enna" ]
+      }
+    , { name = "Forlì-Cesena"
+      , code = "FC"
+      , unofficialNames = [ "province of Forlì-Cesena" ]
       }
     , { name = "Ferrara"
       , code = "FE"
@@ -17916,83 +19200,75 @@ countryITSubdivisions =
       }
     , { name = "Foggia"
       , code = "FG"
-      , unofficialNames = [ "Foggia" ]
+      , unofficialNames = [ "Province of Foggia" ]
       }
     , { name = "Firenze"
       , code = "FI"
-      , unofficialNames = [ "Firenze" ]
-      }
-    , { name = "Forlì-Cesena"
-      , code = "FC"
-      , unofficialNames = [ "Forlì-Cesena" ]
+      , unofficialNames = [ "Metropolitan City of Florence" ]
       }
     , { name = "Fermo"
       , code = "FM"
-      , unofficialNames = [ "Fermo" ]
+      , unofficialNames = [ "Province of Fermo" ]
       }
     , { name = "Frosinone"
       , code = "FR"
-      , unofficialNames = [ "Frosinone" ]
+      , unofficialNames = [ "Province of Frosinone" ]
       }
     , { name = "Genova"
       , code = "GE"
-      , unofficialNames = [ "Genova" ]
-      }
-    , { name = "Gorizia"
-      , code = "GO"
-      , unofficialNames = [ "Gorizia" ]
+      , unofficialNames = [ "Metropolitan City of Genoa" ]
       }
     , { name = "Grosseto"
       , code = "GR"
-      , unofficialNames = [ "Grosseto" ]
+      , unofficialNames = [ "Province of Grosseto" ]
       }
     , { name = "Imperia"
       , code = "IM"
-      , unofficialNames = [ "Imperia" ]
+      , unofficialNames = [ "Province of Imperia" ]
       }
     , { name = "Isernia"
       , code = "IS"
-      , unofficialNames = [ "Isernia" ]
+      , unofficialNames = [ "Province of Isernia" ]
       }
     , { name = "Crotone"
       , code = "KR"
-      , unofficialNames = [ "Crotone" ]
+      , unofficialNames = [ "Province of Crotone" ]
       }
     , { name = "Lecco"
       , code = "LC"
-      , unofficialNames = [ "Lecco" ]
+      , unofficialNames = [ "Province of Lecco" ]
       }
     , { name = "Lecce"
       , code = "LE"
-      , unofficialNames = [ "Lecce" ]
+      , unofficialNames = [ "Province of Lecce" ]
       }
     , { name = "Livorno"
       , code = "LI"
-      , unofficialNames = [ "Livorno" ]
+      , unofficialNames = [ "Province of Livorno" ]
       }
     , { name = "Lodi"
       , code = "LO"
-      , unofficialNames = [ "Lodi" ]
+      , unofficialNames = [ "Province of Lodi" ]
       }
     , { name = "Latina"
       , code = "LT"
-      , unofficialNames = [ "Latina" ]
+      , unofficialNames = [ "Province of Latina" ]
       }
     , { name = "Lucca"
       , code = "LU"
-      , unofficialNames = [ "Lucca" ]
+      , unofficialNames = [ "Lucca", "Province of Lucca" ]
       }
     , { name = "Monza e Brianza"
       , code = "MB"
-      , unofficialNames = [ "Monza e Brianza" ]
+      , unofficialNames = [ "Province of Monza and Brianza" ]
       }
     , { name = "Macerata"
       , code = "MC"
-      , unofficialNames = [ "Macerata" ]
+      , unofficialNames = [ "Province of Macerata" ]
       }
     , { name = "Messina"
       , code = "ME"
-      , unofficialNames = [ "Messina" ]
+      , unofficialNames = [ "Province of Messina" ]
       }
     , { name = "Milano"
       , code = "MI"
@@ -18000,281 +19276,283 @@ countryITSubdivisions =
       }
     , { name = "Mantova"
       , code = "MN"
-      , unofficialNames = [ "Mantova" ]
+      , unofficialNames = [ "Province of Mantua" ]
       }
     , { name = "Modena"
       , code = "MO"
-      , unofficialNames = [ "Modena" ]
+      , unofficialNames = [ "Province of Modena" ]
       }
     , { name = "Massa-Carrara"
       , code = "MS"
-      , unofficialNames = [ "Massa-Carrara" ]
+      , unofficialNames = [ "Province of Massa-Carrara" ]
       }
     , { name = "Matera"
       , code = "MT"
-      , unofficialNames = [ "Matera" ]
+      , unofficialNames = [ "Province of Matera" ]
       }
     , { name = "Napoli"
       , code = "NA"
-      , unofficialNames = [ "Napoli" ]
+      , unofficialNames = [ "Metropolitan City of Naples" ]
       }
     , { name = "Novara"
       , code = "NO"
-      , unofficialNames = [ "Novara" ]
+      , unofficialNames = [ "Novara", "Province of Novara" ]
       }
     , { name = "Nuoro"
       , code = "NU"
-      , unofficialNames = [ "Nuoro" ]
-      }
-    , { name = "Ogliastra"
-      , code = "OG"
-      , unofficialNames = [ "Ogliastra" ]
+      , unofficialNames = [ "Province of Nuoro" ]
       }
     , { name = "Oristano"
       , code = "OR"
-      , unofficialNames = [ "Oristano" ]
-      }
-    , { name = "Olbia-Tempio"
-      , code = "OT"
-      , unofficialNames = [ "Olbia-Tempio" ]
+      , unofficialNames = [ "Province of Oristano" ]
       }
     , { name = "Palermo"
       , code = "PA"
-      , unofficialNames = [ "Palermo" ]
+      , unofficialNames = [ "Metropolitan City of Palermo" ]
       }
     , { name = "Piacenza"
       , code = "PC"
-      , unofficialNames = [ "Piacenza" ]
+      , unofficialNames = [ "Province of Piacenza" ]
       }
     , { name = "Padova"
       , code = "PD"
-      , unofficialNames = [ "Padova" ]
+      , unofficialNames = [ "Province of Padua" ]
       }
     , { name = "Pescara"
       , code = "PE"
-      , unofficialNames = [ "Pescara" ]
+      , unofficialNames = [ "Province of Pescara" ]
       }
     , { name = "Perugia"
       , code = "PG"
-      , unofficialNames = [ "Perugia" ]
+      , unofficialNames = [ "Province of Perugia" ]
       }
     , { name = "Pisa"
       , code = "PI"
-      , unofficialNames = [ "Pisa" ]
-      }
-    , { name = "Pordenone"
-      , code = "PN"
-      , unofficialNames = [ "Pordenone" ]
+      , unofficialNames = [ "Province of Pisa" ]
       }
     , { name = "Prato"
       , code = "PO"
-      , unofficialNames = [ "Prato" ]
+      , unofficialNames = [ "Province of Prato" ]
       }
     , { name = "Parma"
       , code = "PR"
-      , unofficialNames = [ "Parma" ]
-      }
-    , { name = "Pesaro e Urbino"
-      , code = "PU"
-      , unofficialNames = [ "Pesaro e Urbino" ]
+      , unofficialNames = [ "Province of Parma" ]
       }
     , { name = "Pistoia"
       , code = "PT"
-      , unofficialNames = [ "Pistoia" ]
+      , unofficialNames = [ "Province of Pistoia" ]
+      }
+    , { name = "Pesaro e Urbino"
+      , code = "PU"
+      , unofficialNames = [ "Province of Pesaro and Urbino" ]
       }
     , { name = "Pavia"
       , code = "PV"
-      , unofficialNames = [ "Pavia" ]
+      , unofficialNames = [ "Province of Pavia" ]
       }
     , { name = "Potenza"
       , code = "PZ"
-      , unofficialNames = [ "Potenza" ]
+      , unofficialNames = [ "Province of Potenza" ]
       }
     , { name = "Ravenna"
       , code = "RA"
-      , unofficialNames = [ "Ravenna" ]
+      , unofficialNames = [ "Province of Ravenna" ]
       }
     , { name = "Reggio Calabria"
       , code = "RC"
-      , unofficialNames = [ "Reggio Calabria" ]
+      , unofficialNames = [ "Metropolitan City of Reggio Calabria" ]
       }
     , { name = "Reggio Emilia"
       , code = "RE"
-      , unofficialNames = [ "Reggio Emilia" ]
+      , unofficialNames = [ "Reggio Emilia", "Province of Reggio Emilia" ]
       }
     , { name = "Ragusa"
       , code = "RG"
-      , unofficialNames = [ "Ragusa" ]
+      , unofficialNames = [ "Province of Ragusa" ]
       }
     , { name = "Rieti"
       , code = "RI"
-      , unofficialNames = [ "Rieti" ]
+      , unofficialNames = [ "Province of Rieti" ]
       }
     , { name = "Roma"
       , code = "RM"
-      , unofficialNames = [ "Roma" ]
+      , unofficialNames = [ "Metropolitan City of Rome Capital" ]
       }
     , { name = "Rimini"
       , code = "RN"
-      , unofficialNames = [ "Rimini" ]
+      , unofficialNames = [ "Province of Rimini" ]
       }
     , { name = "Rovigo"
       , code = "RO"
-      , unofficialNames = [ "Rovigo" ]
+      , unofficialNames = [ "Province of Rovigo" ]
       }
     , { name = "Salerno"
       , code = "SA"
-      , unofficialNames = [ "Salerno" ]
+      , unofficialNames = [ "Province of Salerno" ]
       }
     , { name = "Siena"
       , code = "SI"
-      , unofficialNames = [ "Siena" ]
+      , unofficialNames = [ "Province of Siena" ]
       }
     , { name = "Sondrio"
       , code = "SO"
-      , unofficialNames = [ "Sondrio" ]
+      , unofficialNames = [ "Province of Sondrio" ]
       }
     , { name = "La Spezia"
       , code = "SP"
-      , unofficialNames = [ "La Spezia" ]
+      , unofficialNames = [ "Province of La Spezia" ]
       }
     , { name = "Siracusa"
       , code = "SR"
-      , unofficialNames = [ "Siracusa" ]
+      , unofficialNames = [ "Province of Syracuse" ]
       }
     , { name = "Sassari"
       , code = "SS"
-      , unofficialNames = [ "Sassari" ]
+      , unofficialNames = [ "Province of Sassari" ]
       }
     , { name = "Savona"
       , code = "SV"
-      , unofficialNames = [ "Savona" ]
+      , unofficialNames = [ "Province of Savona" ]
       }
     , { name = "Taranto"
       , code = "TA"
-      , unofficialNames = [ "Taranto" ]
+      , unofficialNames = [ "Province of Taranto" ]
       }
     , { name = "Teramo"
       , code = "TE"
-      , unofficialNames = [ "Teramo" ]
+      , unofficialNames = [ "Province of Teramo" ]
       }
     , { name = "Trento"
       , code = "TN"
-      , unofficialNames = [ "Trento" ]
+      , unofficialNames = [ "Autonomous Province of Trento" ]
       }
     , { name = "Torino"
       , code = "TO"
-      , unofficialNames = [ "Torino" ]
+      , unofficialNames = [ "Metropolitan City of Turin" ]
       }
     , { name = "Trapani"
       , code = "TP"
-      , unofficialNames = [ "Trapani" ]
+      , unofficialNames = [ "Province of Trapani" ]
       }
     , { name = "Terni"
       , code = "TR"
-      , unofficialNames = [ "Terni" ]
-      }
-    , { name = "Trieste"
-      , code = "TS"
-      , unofficialNames = [ "Trieste" ]
+      , unofficialNames = [ "Province of Terni" ]
       }
     , { name = "Treviso"
       , code = "TV"
-      , unofficialNames = [ "Treviso" ]
-      }
-    , { name = "Udine"
-      , code = "UD"
-      , unofficialNames = [ "Udine" ]
+      , unofficialNames = [ "Province of Treviso" ]
       }
     , { name = "Varese"
       , code = "VA"
-      , unofficialNames = [ "Varese" ]
+      , unofficialNames = [ "Province of Varese" ]
       }
     , { name = "Verbano-Cusio-Ossola"
       , code = "VB"
-      , unofficialNames = [ "Verbano-Cusio-Ossola" ]
+      , unofficialNames = [ "Province of Verbano-Cusio-Ossola" ]
       }
     , { name = "Vercelli"
       , code = "VC"
-      , unofficialNames = [ "Vercelli" ]
+      , unofficialNames = [ "Province of Vercelli" ]
       }
     , { name = "Venezia"
       , code = "VE"
-      , unofficialNames = [ "Venezia" ]
+      , unofficialNames = [ "Metropolitan City of Venice" ]
       }
     , { name = "Vicenza"
       , code = "VI"
-      , unofficialNames = [ "Vicenza" ]
+      , unofficialNames = [ "Province of Vicenza" ]
       }
     , { name = "Verona"
       , code = "VR"
-      , unofficialNames = [ "Verona" ]
-      }
-    , { name = "Medio Campidano"
-      , code = "VS"
-      , unofficialNames = [ "Medio Campidano" ]
+      , unofficialNames = [ "Province of Verona" ]
       }
     , { name = "Viterbo"
       , code = "VT"
-      , unofficialNames = [ "Viterbo" ]
+      , unofficialNames = [ "Province of Viterbo" ]
       }
     , { name = "Vibo Valentia"
       , code = "VV"
-      , unofficialNames = [ "Vibo Valentia" ]
+      , unofficialNames = [ "Province of Vibo Valentia" ]
       }
-    ]
-
-
-{-| -}
-countryJESubdivisions : List Subdivision
-countryJESubdivisions =
-    [ { name = "Saint Clement"
-      , code = "1"
-      , unofficialNames = [ "Saint Clement" ]
+    , { name = "Piemonte"
+      , code = "21"
+      , unofficialNames = [ "Piemonte" ]
       }
-    , { name = "Saint Saviour"
-      , code = "2"
-      , unofficialNames = [ "Saint Saviour" ]
+    , { name = "Valle d'Aosta"
+      , code = "23"
+      , unofficialNames = [ "Val d'Aosta", "Val d'Aoste", "Val d'Outa", "Val d'Osta", "Aosta Valley" ]
       }
-    , { name = "Saint Brelade"
-      , code = "3"
-      , unofficialNames = [ "Saint Brelade" ]
+    , { name = "Lombardia"
+      , code = "25"
+      , unofficialNames = [ "Lombardéa", "Lombardy" ]
       }
-    , { name = "Grouville"
-      , code = "4"
-      , unofficialNames = [ "Grouville" ]
+    , { name = "Trentino-Alto Adige"
+      , code = "32"
+      , unofficialNames = [ "Trentino-South Tyrol" ]
       }
-    , { name = "Saint Mary"
-      , code = "5"
-      , unofficialNames = [ "Saint Mary" ]
+    , { name = "Veneto"
+      , code = "34"
+      , unofficialNames = [ "Vèneto", "Venetia" ]
       }
-    , { name = "Saint Lawrence"
-      , code = "6"
-      , unofficialNames = [ "Saint Lawrence" ]
+    , { name = "Friuli Venezia Giulia"
+      , code = "36"
+      , unofficialNames = [ "Friûl Vignesie Julie", "Furlanija Julijska krajina", "Friuli-Venezia Giulia" ]
       }
-    , { name = "Saint Peter"
-      , code = "7"
-      , unofficialNames = [ "Saint Peter" ]
+    , { name = "Liguria"
+      , code = "42"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Saint Ouen"
-      , code = "8"
-      , unofficialNames = [ "Saint Ouen" ]
+    , { name = "Emilia-Romagna"
+      , code = "45"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Saint John"
-      , code = "9"
-      , unofficialNames = [ "Saint John" ]
+    , { name = "Toscana"
+      , code = "52"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Trinity"
-      , code = "10"
-      , unofficialNames = [ "Trinity" ]
+    , { name = "Umbria"
+      , code = "55"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Saint Martin"
-      , code = "11"
-      , unofficialNames = [ "Saint Martin" ]
+    , { name = "Marche"
+      , code = "57"
+      , unofficialNames = [ "Marches" ]
       }
-    , { name = "Saint Helier"
-      , code = "12"
-      , unofficialNames = [ "Saint Helier" ]
+    , { name = "Lazio"
+      , code = "62"
+      , unofficialNames = [ "Latium" ]
+      }
+    , { name = "Abruzzo"
+      , code = "65"
+      , unofficialNames = [ "Abbrùzze", "Abbrìzze", "Abbrèzze", "Abruzzese", "Abbrùzzu", "Abruzzi" ]
+      }
+    , { name = "Molise"
+      , code = "67"
+      , unofficialNames = [ "Mulise" ]
+      }
+    , { name = "Campania"
+      , code = "72"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Puglia"
+      , code = "75"
+      , unofficialNames = [ "Pùglia", "Ἀπουλία", "Apoulía", "Apulia" ]
+      }
+    , { name = "Basilicata"
+      , code = "77"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Calabria"
+      , code = "78"
+      , unofficialNames = [ "Calavría", "Calàbbria", "Kalavrì" ]
+      }
+    , { name = "Sicilia"
+      , code = "82"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sardegna"
+      , code = "88"
+      , unofficialNames = [ "Sardìnnia", "Sardhigna", "Saldigna", "Sardenya", "Sardegna" ]
       }
     ]
 
@@ -18592,37 +19870,193 @@ countryJPSubdivisions =
 {-| -}
 countryKESubdivisions : List Subdivision
 countryKESubdivisions =
-    [ { name = "Nairobi Municipality"
-      , code = "110"
+    [ { name = "Baringo"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bomet"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bungoma"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Busia"
+      , code = "04"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Elgeyo/Marakwet"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Embu"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Garissa"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Homa Bay"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Isiolo"
+      , code = "09"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kajiado"
+      , code = "10"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kakamega"
+      , code = "11"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kericho"
+      , code = "12"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kiambu"
+      , code = "13"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kilifi"
+      , code = "14"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kirinyaga"
+      , code = "15"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kisii"
+      , code = "16"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kisumu"
+      , code = "17"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kitui"
+      , code = "18"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kwale"
+      , code = "19"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Laikipia"
+      , code = "20"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lamu"
+      , code = "21"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Machakos"
+      , code = "22"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Makueni"
+      , code = "23"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mandera"
+      , code = "24"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Marsabit"
+      , code = "25"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Meru"
+      , code = "26"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Migori"
+      , code = "27"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mombasa"
+      , code = "28"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Murang’a"
+      , code = "29"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nairobi City"
+      , code = "30"
       , unofficialNames = [ "Nairobi Municipality" ]
       }
-    , { name = "Central"
-      , code = "200"
-      , unofficialNames = [ "Central" ]
+    , { name = "Nakuru"
+      , code = "31"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Coast"
-      , code = "300"
-      , unofficialNames = [ "Coast" ]
+    , { name = "Nandi"
+      , code = "32"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Eastern"
-      , code = "400"
-      , unofficialNames = [ "Eastern" ]
+    , { name = "Narok"
+      , code = "33"
+      , unofficialNames = [ "" ]
       }
-    , { name = "North-Eastern"
-      , code = "500"
-      , unofficialNames = [ "North-Eastern" ]
+    , { name = "Nyamira"
+      , code = "34"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Nyanza"
-      , code = "600"
-      , unofficialNames = [ "Nyanza" ]
+    , { name = "Nyandarua"
+      , code = "35"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Rift Valley"
-      , code = "700"
-      , unofficialNames = [ "Rift Valley" ]
+    , { name = "Nyeri"
+      , code = "36"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Western"
-      , code = "900"
-      , unofficialNames = [ "Western" ]
+    , { name = "Samburu"
+      , code = "37"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Siaya"
+      , code = "38"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Taita-Taveta"
+      , code = "39"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tana River"
+      , code = "40"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tharaka-Nithi"
+      , code = "41"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Trans-Nzoia"
+      , code = "42"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Turkana"
+      , code = "43"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Uasin Gishu"
+      , code = "44"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vihiga"
+      , code = "45"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Wajir"
+      , code = "46"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "West Pokot"
+      , code = "47"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -18661,6 +20095,10 @@ countryKGSubdivisions =
     , { name = "Ysyk-Köl"
       , code = "Y"
       , unofficialNames = [ "Balikchi", "Balykchy", "Balıkçı", "Issyk-Kul" ]
+      }
+    , { name = "Ош"
+      , code = "GO"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -18764,6 +20202,10 @@ countryKHSubdivisions =
       , code = "9"
       , unofficialNames = [ "Koh Kong", "kk", "k.k" ]
       }
+    , { name = "Tbong Khmum"
+      , code = "25"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -18862,6 +20304,14 @@ countryKNSubdivisions =
       , code = "15"
       , unofficialNames = [ "Trinity Palmetto Point" ]
       }
+    , { name = "Saint Kitts"
+      , code = "K"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nevis"
+      , code = "N"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -18923,6 +20373,54 @@ countryKPSubdivisions =
     , { name = "Yanggang-do"
       , code = "YAN"
       , unofficialNames = [ "Ryanggang" ]
+      }
+    , { name = "평양직할시"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "평안남도"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "평안북도"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "자강도"
+      , code = "04"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "황해남도"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "황해북도"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "강원도"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "함경남도"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "함경북도"
+      , code = "09"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "량강도"
+      , code = "10"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "라선특별시"
+      , code = "13"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "남포특별시"
+      , code = "14"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -18994,6 +20492,10 @@ countryKRSubdivisions =
       , code = "49"
       , unofficialNames = [ "Jeju", "Quelpart" ]
       }
+    , { name = "세종특별자치시"
+      , code = "50"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -19023,36 +20525,6 @@ countryKWSubdivisions =
     , { name = "Mubarak al-Kabir"
       , code = "MU"
       , unofficialNames = [ "Mubarak al-Kabir" ]
-      }
-    ]
-
-
-{-| -}
-countryKYSubdivisions : List Subdivision
-countryKYSubdivisions =
-    [ { name = "Bodden Town"
-      , code = "01~"
-      , unofficialNames = [ "Bodden Town" ]
-      }
-    , { name = "Cayman Brac"
-      , code = "02~"
-      , unofficialNames = [ "Cayman Brac" ]
-      }
-    , { name = "East End"
-      , code = "03~"
-      , unofficialNames = [ "East End" ]
-      }
-    , { name = "George Town"
-      , code = "04~"
-      , unofficialNames = [ "George Town" ]
-      }
-    , { name = "North Side"
-      , code = "06~"
-      , unofficialNames = [ "North Side" ]
-      }
-    , { name = "West Bay"
-      , code = "07~"
-      , unofficialNames = [ "West Bay" ]
       }
     ]
 
@@ -19127,6 +20599,10 @@ countryKZSubdivisions =
     , { name = "Zhambyl oblysy"
       , code = "ZHA"
       , unofficialNames = [ "Aulie-Ata", "Auliye-Ata", "Cambil", "Cambıl", "Djambul", "Dzhambul", "Zhambul", "Zhambyl", "Zhambül" ]
+      }
+    , { name = "Shymkent"
+      , code = "SHY"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -19206,6 +20682,10 @@ countryLASubdivisions =
       , code = "XN"
       , unofficialNames = [ "Xaisômboun" ]
       }
+    , { name = "ແຂວງໄຊສົມບູນ"
+      , code = "XS"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -19236,13 +20716,61 @@ countryLBSubdivisions =
       , code = "NA"
       , unofficialNames = [ "Nabatiyeh" ]
       }
+    , { name = "محافظة عكار"
+      , code = "AK"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة بعلبك الهرمل"
+      , code = "BH"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
 {-| -}
 countryLCSubdivisions : List Subdivision
 countryLCSubdivisions =
-    []
+    [ { name = "Anse la Raye"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Dennery"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Gros Islet"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Laborie"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Micoud"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vieux Fort"
+      , code = "11"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Canaries"
+      , code = "12"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Castries"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Choiseul"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Soufrière"
+      , code = "10"
+      , unofficialNames = [ "" ]
+      }
+    ]
 
 
 {-| -}
@@ -19398,6 +20926,42 @@ countryLKSubdivisions =
       , code = "92"
       , unofficialNames = [ "Kegalle" ]
       }
+    , { name = "බස්නාහිර පළාත, ශ් රී ලංකාව"
+      , code = "1"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "මධ්\u{200D}යම පළාත, ශ්\u{200D}රී ලංකාව"
+      , code = "2"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "දකුණු පළාත"
+      , code = "3"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "උතුරු පළාත"
+      , code = "4"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "නැගෙනහිර පළාත, ශ් රී ලංකාව"
+      , code = "5"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "වයඹ පළාත, ශ්\u{200D}රී ලංකාව"
+      , code = "6"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "උතුරු මැද පළාත"
+      , code = "7"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "ඌව පළාත"
+      , code = "8"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "සබරගමුව පළාත"
+      , code = "9"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -19463,6 +21027,14 @@ countryLRSubdivisions =
     , { name = "River Gee"
       , code = "X2~"
       , unofficialNames = [ "River Gee" ]
+      }
+    , { name = "Gbarpolu"
+      , code = "GP"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "River Gee"
+      , code = "RG"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -19556,23 +21128,299 @@ countryLTSubdivisions =
       , code = "VL"
       , unofficialNames = [ "Vilniaus Apskritis" ]
       }
+    , { name = "Švenčionių rajono savivaldybė"
+      , code = "49"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Anykščių rajono savivaldybė"
+      , code = "04"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Akmenės rajono savivaldybė"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Alytaus rajono savivaldybė"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Biržų rajono savivaldybė"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Druskininkų savivaldybė"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ignalinos rajono savivaldybė"
+      , code = "09"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jonavos rajono savivaldybė"
+      , code = "10"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalvarijos savivaldybė"
+      , code = "14"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kauno miesto savivaldybė"
+      , code = "15"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kauno rajono savivaldybė"
+      , code = "16"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kėdainių rajono savivaldybė"
+      , code = "18"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kelmės rajono savivaldybė"
+      , code = "19"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Klaipėdos rajono savivaldybė"
+      , code = "21"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kretingos rajono savivaldybė"
+      , code = "22"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kupiškio rajono savivaldybė"
+      , code = "23"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Marijampolės savivaldybė"
+      , code = "25"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mažeikių rajono savivaldybė"
+      , code = "26"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Pagėgių savivaldybė"
+      , code = "29"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Pakruojo rajono savivaldybė"
+      , code = "30"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Panevėžio rajono savivaldybė"
+      , code = "33"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Pasvalio rajono savivaldybė"
+      , code = "34"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Prienų rajono savivaldybė"
+      , code = "36"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Radviliškio rajono savivaldybė"
+      , code = "37"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Raseinių rajono savivaldybė"
+      , code = "38"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rokiškio rajono savivaldybė"
+      , code = "40"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Šiaulių rajono savivaldybė"
+      , code = "44"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Šilutės rajono savivaldybė"
+      , code = "46"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Širvintų rajono savivaldybė"
+      , code = "47"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tauragės rajono savivaldybė"
+      , code = "50"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Telšių rajono savivaldybė"
+      , code = "51"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Trakų rajono savivaldybė"
+      , code = "52"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ukmergės rajono savivaldybė"
+      , code = "53"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Varėnos rajono savivaldybė"
+      , code = "55"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vilniaus miesto savivaldybė"
+      , code = "57"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vilniaus rajono savivaldybė"
+      , code = "58"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Zarasų rajono savivaldybė"
+      , code = "60"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Birštono savivaldybė"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Elektrėnų savivaldybė"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Joniškio rajono savivaldybė"
+      , code = "11"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jurbarko rajono savivaldybė"
+      , code = "12"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kaišiadorių rajono savivaldybė"
+      , code = "13"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kazlų Rūdos savivaldybė"
+      , code = "17"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lazdijų rajono savivaldybė"
+      , code = "24"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Molėtų rajono savivaldybė"
+      , code = "27"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Plungės rajono savivaldybė"
+      , code = "35"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rietavo savivaldybė"
+      , code = "39"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Šakių rajono savivaldybė"
+      , code = "41"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Šalčininkų rajono savivaldybė"
+      , code = "42"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Šilalės rajono savivaldybė"
+      , code = "45"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Skuodo rajono savivaldybė"
+      , code = "48"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Utenos rajono savivaldybė"
+      , code = "54"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vilkaviškio rajono savivaldybė"
+      , code = "56"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Visagino savivaldybė"
+      , code = "59"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Šiaulių miesto savivaldybė"
+      , code = "43"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Alytaus miesto savivaldybė"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Klaipėdos miesto savivaldybė"
+      , code = "20"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Neringos savivaldybė"
+      , code = "28"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Palangos miesto savivaldybė"
+      , code = "31"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Panevėžio miesto savivaldybė"
+      , code = "32"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
 {-| -}
 countryLUSubdivisions : List Subdivision
 countryLUSubdivisions =
-    [ { name = "Diekirch"
-      , code = "D"
-      , unofficialNames = [ "Diekirch" ]
+    [ { name = "Kapellen"
+      , code = "CA"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Grevenmacher"
-      , code = "G"
-      , unofficialNames = [ "Grevenmacher" ]
+    , { name = "Klierf"
+      , code = "CL"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Luxembourg (fr)"
-      , code = "L"
-      , unofficialNames = [ "Luxemburg" ]
+    , { name = "Diekrech"
+      , code = "DI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Iechternach"
+      , code = "EC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Esch-Uelzecht"
+      , code = "ES"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Gréivemaacher"
+      , code = "GR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lëtzebuerg"
+      , code = "LU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Miersch"
+      , code = "ME"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Réiden-Atert"
+      , code = "RD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Réimech"
+      , code = "RM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Veianen"
+      , code = "VD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Wolz"
+      , code = "WI"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -19580,137 +21428,177 @@ countryLUSubdivisions =
 {-| -}
 countryLVSubdivisions : List Subdivision
 countryLVSubdivisions =
-    [ { name = "Aizkraukles Aprinkis"
-      , code = "AI"
-      , unofficialNames = [ "Aizkraukles Aprinkis" ]
-      }
-    , { name = "Aluksnes Aprinkis"
-      , code = "AL"
-      , unofficialNames = [ "Aluksnes Aprinkis" ]
-      }
-    , { name = "Balvu Aprinkis"
-      , code = "BL"
-      , unofficialNames = [ "Balvu Aprinkis" ]
-      }
-    , { name = "Bauskas Aprinkis"
-      , code = "BU"
-      , unofficialNames = [ "Bauskas Aprinkis" ]
-      }
-    , { name = "Cesu Aprinkis"
-      , code = "CE"
-      , unofficialNames = [ "Cesu Aprinkis" ]
-      }
-    , { name = "Daugavpils Aprinkis"
-      , code = "DA"
-      , unofficialNames = [ "Daugavpils Aprinkis" ]
-      }
-    , { name = "Daugavpils"
+    [ { name = "Daugavpils"
       , code = "DGV"
       , unofficialNames = [ "Daugavpils" ]
-      }
-    , { name = "Dobeles Aprinkis"
-      , code = "DO"
-      , unofficialNames = [ "Dobeles Aprinkis" ]
-      }
-    , { name = "Gulbenes Aprinkis"
-      , code = "GU"
-      , unofficialNames = [ "Gulbenes Aprinkis" ]
       }
     , { name = "Jelgava"
       , code = "JEL"
       , unofficialNames = [ "Jelgava" ]
       }
-    , { name = "Jekabpils Aprinkis"
-      , code = "JK"
-      , unofficialNames = [ "Jekabpils Aprinkis" ]
-      }
-    , { name = "Jelgavas Aprinkis"
-      , code = "JL"
-      , unofficialNames = [ "Jelgavas Aprinkis" ]
-      }
     , { name = "Jurmala"
       , code = "JUR"
       , unofficialNames = [ "Jurmala" ]
-      }
-    , { name = "Kraslavas Aprinkis"
-      , code = "KR"
-      , unofficialNames = [ "Kraslavas Aprinkis" ]
-      }
-    , { name = "Kuldigas Aprinkis"
-      , code = "KU"
-      , unofficialNames = [ "Kuldigas Aprinkis" ]
-      }
-    , { name = "Liepajas Aprinkis"
-      , code = "LE"
-      , unofficialNames = [ "Liepajas Aprinkis" ]
-      }
-    , { name = "Limbažu Aprinkis"
-      , code = "LM"
-      , unofficialNames = [ "Limbažu Aprinkis" ]
       }
     , { name = "Liepaja"
       , code = "LPX"
       , unofficialNames = [ "Liepaja" ]
       }
-    , { name = "Ludzas Aprinkis"
-      , code = "LU"
-      , unofficialNames = [ "Ludzas Aprinkis" ]
-      }
-    , { name = "Madonas Aprinkis"
-      , code = "MA"
-      , unofficialNames = [ "Madonas Aprinkis" ]
-      }
-    , { name = "Ogres Aprinkis"
-      , code = "OG"
-      , unofficialNames = [ "Ogres Aprinkis" ]
-      }
-    , { name = "Preilu Aprinkis"
-      , code = "PR"
-      , unofficialNames = [ "Preiju" ]
-      }
-    , { name = "Rezeknes Aprinkis"
-      , code = "RE"
-      , unofficialNames = [ "Rezeknes Aprinkis" ]
-      }
     , { name = "Rezekne"
       , code = "REZ"
       , unofficialNames = [ "Rezekne" ]
-      }
-    , { name = "Rigas Aprinkis"
-      , code = "RI"
-      , unofficialNames = [ "Rigas Aprinkis" ]
       }
     , { name = "Riga"
       , code = "RIX"
       , unofficialNames = [ "Riga" ]
       }
-    , { name = "Saldus Aprinkis"
-      , code = "SA"
-      , unofficialNames = [ "Saldus Aprinkis" ]
-      }
-    , { name = "Talsu Aprinkis"
-      , code = "TA"
-      , unofficialNames = [ "Talsu Aprinkis" ]
-      }
-    , { name = "Tukuma Aprinkis"
-      , code = "TU"
-      , unofficialNames = [ "Tukuma Aprinkis" ]
-      }
-    , { name = "Ventspils Aprinkis"
-      , code = "VE"
-      , unofficialNames = [ "Ventspils Aprinkis" ]
-      }
     , { name = "Ventspils"
       , code = "VEN"
       , unofficialNames = [ "Ventspils" ]
       }
-    , { name = "Valkas Aprinkis"
-      , code = "VK"
-      , unofficialNames = [ "Valkas Aprinkis" ]
+    , { name = "Aizkraukles novads"
+      , code = "002"
+      , unofficialNames = [ "Aizkraukle" ]
       }
-    , { name = "Valmieras Aprinkis"
-      , code = "VM"
-      , unofficialNames = [ "Valmieras Aprinkis" ]
+    , { name = "Alūksnes novads"
+      , code = "007"
+      , unofficialNames = [ "Alūksne" ]
+      }
+    , { name = "Ādažu novads"
+      , code = "011"
+      , unofficialNames = [ "Ādaži" ]
+      }
+    , { name = "Balvu novads"
+      , code = "015"
+      , unofficialNames = [ "Balvi" ]
+      }
+    , { name = "Bauskas novads"
+      , code = "016"
+      , unofficialNames = [ "Bauska" ]
+      }
+    , { name = "Cēsu novads"
+      , code = "022"
+      , unofficialNames = [ "Cēsis" ]
+      }
+    , { name = "Dobeles novads"
+      , code = "026"
+      , unofficialNames = [ "Dobele" ]
+      }
+    , { name = "Gulbenes novads"
+      , code = "033"
+      , unofficialNames = [ "Gulbene" ]
+      }
+    , { name = "Jelgavas novads"
+      , code = "041"
+      , unofficialNames = [ "Jelgava" ]
+      }
+    , { name = "Jēkabpils novads"
+      , code = "042"
+      , unofficialNames = [ "Jēkabpils" ]
+      }
+    , { name = "Krāslavas novads"
+      , code = "047"
+      , unofficialNames = [ "Krāslava" ]
+      }
+    , { name = "Kuldīgas novads"
+      , code = "050"
+      , unofficialNames = [ "Kuldīga" ]
+      }
+    , { name = "Ķekavas novads"
+      , code = "052"
+      , unofficialNames = [ "Ķekava" ]
+      }
+    , { name = "Limbažu novads"
+      , code = "054"
+      , unofficialNames = [ "Limbaži" ]
+      }
+    , { name = "Līvānu novads"
+      , code = "056"
+      , unofficialNames = [ "Līvāni" ]
+      }
+    , { name = "Ludzas novads"
+      , code = "058"
+      , unofficialNames = [ "Ludza" ]
+      }
+    , { name = "Madonas novads"
+      , code = "059"
+      , unofficialNames = [ "Madona" ]
+      }
+    , { name = "Mārupes novads"
+      , code = "062"
+      , unofficialNames = [ "Mārupe" ]
+      }
+    , { name = "Ogres novads"
+      , code = "067"
+      , unofficialNames = [ "Ogre" ]
+      }
+    , { name = "Olaines novads"
+      , code = "068"
+      , unofficialNames = [ "Olaine" ]
+      }
+    , { name = "Preiļu novads"
+      , code = "073"
+      , unofficialNames = [ "Preiļi" ]
+      }
+    , { name = "Rēzeknes novads"
+      , code = "077"
+      , unofficialNames = [ "Rēzekne" ]
+      }
+    , { name = "Ropažu novads"
+      , code = "080"
+      , unofficialNames = [ "Ropaži" ]
+      }
+    , { name = "Salaspils novads"
+      , code = "087"
+      , unofficialNames = [ "Salaspils" ]
+      }
+    , { name = "Saldus novads"
+      , code = "088"
+      , unofficialNames = [ "Saldus" ]
+      }
+    , { name = "Saulkrastu novads"
+      , code = "089"
+      , unofficialNames = [ "Saulkrasti" ]
+      }
+    , { name = "Siguldas novads"
+      , code = "091"
+      , unofficialNames = [ "Sigulda" ]
+      }
+    , { name = "Smiltenes novads"
+      , code = "094"
+      , unofficialNames = [ "Smiltene" ]
+      }
+    , { name = "Talsu novads"
+      , code = "097"
+      , unofficialNames = [ "Talsi" ]
+      }
+    , { name = "Tukuma novads"
+      , code = "099"
+      , unofficialNames = [ "Tukums" ]
+      }
+    , { name = "Valkas novads"
+      , code = "101"
+      , unofficialNames = [ "Valka" ]
+      }
+    , { name = "Varakļānu novads"
+      , code = "102"
+      , unofficialNames = [ "Varakļāni" ]
+      }
+    , { name = "Ventspils novads"
+      , code = "106"
+      , unofficialNames = [ "Ventspils" ]
+      }
+    , { name = "Augšdaugavas novads"
+      , code = "111"
+      , unofficialNames = [ "Augšdaugava" ]
+      }
+    , { name = "Dienvidkurzemes Novads"
+      , code = "112"
+      , unofficialNames = [ "Dienvidkurzeme" ]
+      }
+    , { name = "Valmieras Novads"
+      , code = "113"
+      , unofficialNames = [ "Valmiera" ]
       }
     ]
 
@@ -20064,21 +21952,245 @@ countryMASubdivisions =
       , code = "ZAG"
       , unofficialNames = [ "Zagora" ]
       }
+    , { name = "مراكش"
+      , code = "MMD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "مراكش²"
+      , code = "MMN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "الرباط"
+      , code = "RAB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "طنجة تطوان"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "الغرب شراردة بني حسين"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "جهة تازة الحسيمة تاونات"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "الجهة الشرقية"
+      , code = "04"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "جهة فاس بولمان"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "مكناس تافيلالت"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "الرباط سلا زمور زعير"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "جهة الدار البيضاء الكبرى"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "الشاوية ورديغة"
+      , code = "09"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "دكالة عبدة"
+      , code = "10"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "جهة مراكش تانسيفت الحوز"
+      , code = "11"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "جهة تادلة أزيلال"
+      , code = "12"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "سوس ماسة درعة"
+      , code = "13"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "كلميم السمارة"
+      , code = "14"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "العيون بوجدور"
+      , code = "15"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "جهة وادي الذهب الكويرة"
+      , code = "16"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "عمالة إنزكان آيت ملول"
+      , code = "INE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "المحمدية"
+      , code = "MOH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Berrechid"
+      , code = "BRR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Driouch"
+      , code = "DRI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Fquih Ben Salah"
+      , code = "FQH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Guercif"
+      , code = "GUF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "M’diq-Fnideq"
+      , code = "MDF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Midelt"
+      , code = "MID"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ouezzane"
+      , code = "OUZ"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rehamna"
+      , code = "REH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sidi Bennour"
+      , code = "SIB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sidi Ifni"
+      , code = "SIF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sidi Slimane"
+      , code = "SIL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tarfaya (EH-partial)"
+      , code = "TAF"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tinghir"
+      , code = "TIN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Youssoufia"
+      , code = "YUS"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
 {-| -}
 countryMCSubdivisions : List Subdivision
 countryMCSubdivisions =
-    []
+    [ { name = "Monte-Carlo"
+      , code = "MC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Monaco-Ville"
+      , code = "MO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "La Condamine"
+      , code = "CO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Moneghetti"
+      , code = "MG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "La Colle"
+      , code = "CL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Fontvieille"
+      , code = "FO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Larvotto/Bas Moulins"
+      , code = "LA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "La Rousse"
+      , code = "SR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "jardin exotique de Monaco"
+      , code = "JE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Port Hercule"
+      , code = "PH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "La Gare"
+      , code = "GA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Malbousquet"
+      , code = "MA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Moulins"
+      , code = "MU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "église Sainte-Dévote"
+      , code = "SD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "La Source"
+      , code = "SO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Spélugues"
+      , code = "SP"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Vallon de la Rousse"
+      , code = "VR"
+      , unofficialNames = [ "" ]
+      }
+    ]
 
 
 {-| -}
 countryMDSubdivisions : List Subdivision
 countryMDSubdivisions =
-    [ { name = "Balti"
+    [ { name = "Anenii Noi"
+      , code = "AN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Balti"
       , code = "BA"
       , unofficialNames = [ "Balti" ]
+      }
+    , { name = "Bender [Tighina]"
+      , code = "BD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Briceni"
+      , code = "BR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Basarabeasca"
+      , code = "BS"
+      , unofficialNames = [ "" ]
       }
     , { name = "Cahul"
       , code = "CA"
@@ -20088,25 +22200,105 @@ countryMDSubdivisions =
       , code = "CH"
       , unofficialNames = [ "Chisinau City" ]
       }
+    , { name = "Călărași"
+      , code = "CL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cimișlia"
+      , code = "CM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Criuleni"
+      , code = "CR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Căușeni"
+      , code = "CS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cantemir"
+      , code = "CT"
+      , unofficialNames = [ "" ]
+      }
     , { name = "Chisinau"
       , code = "CU"
       , unofficialNames = [ "Chisinau" ]
+      }
+    , { name = "Dondușeni"
+      , code = "DO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Drochia"
+      , code = "DR"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Dubăsari"
+      , code = "DU"
+      , unofficialNames = [ "" ]
       }
     , { name = "Edinet"
       , code = "ED"
       , unofficialNames = [ "Edinet" ]
       }
+    , { name = "Fălești"
+      , code = "FA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Florești"
+      , code = "FL"
+      , unofficialNames = [ "" ]
+      }
     , { name = "Gagauzia, Unitate Teritoriala Autonoma (UTAG)"
       , code = "GA"
       , unofficialNames = [ "Gagauzia, Unitate Teritoriala Autonoma (UTAG)" ]
+      }
+    , { name = "Glodeni"
+      , code = "GL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hîncești"
+      , code = "HI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ialoveni"
+      , code = "IA"
+      , unofficialNames = [ "" ]
       }
     , { name = "Lapusna"
       , code = "LA"
       , unofficialNames = [ "Lapusna" ]
       }
+    , { name = "Leova"
+      , code = "LE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nisporeni"
+      , code = "NI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ocnița"
+      , code = "OC"
+      , unofficialNames = [ "" ]
+      }
     , { name = "Orhei"
       , code = "OR"
       , unofficialNames = [ "Orhei" ]
+      }
+    , { name = "Rezina"
+      , code = "RE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rîșcani"
+      , code = "RI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Șoldănești"
+      , code = "SD"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sîngerei"
+      , code = "SI"
+      , unofficialNames = [ "" ]
       }
     , { name = "Stînga Nistrului, unitatea teritoriala din"
       , code = "SN"
@@ -20116,9 +22308,21 @@ countryMDSubdivisions =
       , code = "SO"
       , unofficialNames = [ "Soroca" ]
       }
+    , { name = "Strășeni"
+      , code = "ST"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ștefan Vodă"
+      , code = "SV"
+      , unofficialNames = [ "" ]
+      }
     , { name = "Taraclia"
       , code = "TA"
       , unofficialNames = [ "Taraclia" ]
+      }
+    , { name = "Telenești"
+      , code = "TE"
+      , unofficialNames = [ "" ]
       }
     , { name = "Tighina [Bender]"
       , code = "TI"
@@ -20218,13 +22422,19 @@ countryMESubdivisions =
       , code = "21"
       , unofficialNames = [ "Žabljak" ]
       }
+    , { name = "Општина Гусиње"
+      , code = "22"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Општина Петњица"
+      , code = "23"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tuzi"
+      , code = "24"
+      , unofficialNames = [ "" ]
+      }
     ]
-
-
-{-| -}
-countryMFSubdivisions : List Subdivision
-countryMFSubdivisions =
-    []
 
 
 {-| -}
@@ -20360,351 +22570,339 @@ countryMHSubdivisions =
       , code = "WTJ"
       , unofficialNames = [ "Wotje" ]
       }
+    , { name = "Ralik Chain"
+      , code = "L"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ratak Chain"
+      , code = "T"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
 {-| -}
 countryMKSubdivisions : List Subdivision
 countryMKSubdivisions =
-    [ { name = "Aerodrom *"
-      , code = "AD"
-      , unofficialNames = [ "Aerodrom *" ]
-      }
-    , { name = "Saraj *"
-      , code = "AJ"
-      , unofficialNames = [ "Saraj *" ]
-      }
-    , { name = "Aracinovo"
-      , code = "AR"
-      , unofficialNames = [ "Aracinovo" ]
-      }
-    , { name = "Kavadarci"
-      , code = "AV"
-      , unofficialNames = [ "Kavadarci" ]
-      }
-    , { name = "Bogdanci"
-      , code = "BG"
-      , unofficialNames = [ "Bogdanci" ]
-      }
-    , { name = "Brvenica"
-      , code = "BN"
-      , unofficialNames = [ "Brvenica" ]
-      }
-    , { name = "Berovo"
-      , code = "BR"
-      , unofficialNames = [ "Berovo" ]
-      }
-    , { name = "Bosilovo"
-      , code = "BS"
-      , unofficialNames = [ "Bosilovo" ]
-      }
-    , { name = "Butel *"
-      , code = "BU"
-      , unofficialNames = [ "Butel *" ]
-      }
-    , { name = "Caška"
-      , code = "CA"
-      , unofficialNames = [ "Caška" ]
-      }
-    , { name = "Centar *"
-      , code = "CE"
-      , unofficialNames = [ "Centar *" ]
-      }
-    , { name = "Cešinovo-Obleševo"
-      , code = "CH"
-      , unofficialNames = [ "Cešinovo-Obleševo" ]
-      }
-    , { name = "Cair *"
-      , code = "CI"
-      , unofficialNames = [ "Cair *" ]
-      }
-    , { name = "Cucer Sandevo"
-      , code = "CS"
-      , unofficialNames = [ "Cucer Sandevo" ]
-      }
-    , { name = "Centar Župa"
-      , code = "CZ"
-      , unofficialNames = [ "Centar Župa" ]
-      }
-    , { name = "Debarca"
-      , code = "DA"
-      , unofficialNames = [ "Debarca" ]
-      }
-    , { name = "Debar"
-      , code = "DB"
-      , unofficialNames = [ "Debar" ]
-      }
-    , { name = "Dolneni"
-      , code = "DE"
-      , unofficialNames = [ "Dolneni" ]
-      }
-    , { name = "Demir Kapija"
-      , code = "DK"
-      , unofficialNames = [ "Demir Kapija" ]
-      }
-    , { name = "Delcevo"
-      , code = "DL"
-      , unofficialNames = [ "Delcevo" ]
-      }
-    , { name = "Demir Hisar"
-      , code = "DM"
-      , unofficialNames = [ "Murgaševo" ]
-      }
-    , { name = "Drugovo"
-      , code = "DR"
-      , unofficialNames = [ "Drugovo" ]
-      }
-    , { name = "Tetovo"
-      , code = "ET"
-      , unofficialNames = [ "Tetovo" ]
-      }
-    , { name = "Gazi Baba *"
-      , code = "GB"
-      , unofficialNames = [ "Gazi Baba *" ]
-      }
-    , { name = "Gjorce Petrov *"
-      , code = "GP"
-      , unofficialNames = [ "Gjorce Petrov *" ]
+    [ { name = "Veles"
+      , code = "101"
+      , unofficialNames = [ "Veles" ]
       }
     , { name = "Gradsko"
-      , code = "GR"
+      , code = "102"
       , unofficialNames = [ "Gradsko" ]
       }
-    , { name = "Gostivar"
-      , code = "GT"
-      , unofficialNames = [ "Gostivar" ]
+    , { name = "Demir Kapija"
+      , code = "103"
+      , unofficialNames = [ "Demir Kapija" ]
       }
-    , { name = "Gevgelija"
-      , code = "GV"
-      , unofficialNames = [ "Gevgelija" ]
+    , { name = "Kavadarci"
+      , code = "104"
+      , unofficialNames = [ "Kavadarci" ]
       }
-    , { name = "Ilinden"
-      , code = "IL"
-      , unofficialNames = [ "Ilinden" ]
+    , { name = "Lozovo"
+      , code = "105"
+      , unofficialNames = [ "Lozovo" ]
       }
-    , { name = "Jegunovce"
-      , code = "JG"
-      , unofficialNames = [ "Jegunovce" ]
+    , { name = "Negotino"
+      , code = "106"
+      , unofficialNames = [ "Negotino" ]
+      }
+    , { name = "Rosoman"
+      , code = "107"
+      , unofficialNames = [ "Rosoman" ]
+      }
+    , { name = "Sveti Nikole"
+      , code = "108"
+      , unofficialNames = [ "Sveti Nikole" ]
+      }
+    , { name = "Čaška"
+      , code = "109"
+      , unofficialNames = [ "Čaška" ]
+      }
+    , { name = "Berovo"
+      , code = "201"
+      , unofficialNames = [ "Berovo" ]
+      }
+    , { name = "Vinica"
+      , code = "202"
+      , unofficialNames = [ "Vinica" ]
+      }
+    , { name = "Delčevo"
+      , code = "203"
+      , unofficialNames = [ "Delčevo" ]
+      }
+    , { name = "Zrnovci"
+      , code = "204"
+      , unofficialNames = [ "Zrnovci" ]
       }
     , { name = "Karbinci"
-      , code = "KB"
+      , code = "205"
       , unofficialNames = [ "Karbinci" ]
       }
+    , { name = "Kočani"
+      , code = "206"
+      , unofficialNames = [ "Kočani" ]
+      }
+    , { name = "Makedonska Kamenica"
+      , code = "207"
+      , unofficialNames = [ "Makedonska Kamenica" ]
+      }
+    , { name = "Pehčevo"
+      , code = "208"
+      , unofficialNames = [ "Pehčevo" ]
+      }
+    , { name = "Probištip"
+      , code = "209"
+      , unofficialNames = [ "Probištip" ]
+      }
+    , { name = "Češinovo-Obleševo"
+      , code = "210"
+      , unofficialNames = [ "Češinovo-Obleševo" ]
+      }
+    , { name = "Štip"
+      , code = "211"
+      , unofficialNames = [ "Štip" ]
+      }
+    , { name = "Vevčani"
+      , code = "301"
+      , unofficialNames = [ "Vevčani" ]
+      }
+    , { name = "Debar"
+      , code = "303"
+      , unofficialNames = [ "Debar" ]
+      }
+    , { name = "Debarca"
+      , code = "304"
+      , unofficialNames = [ "Debarca" ]
+      }
+    , { name = "Kičevo"
+      , code = "307"
+      , unofficialNames = [ "Kičevo" ]
+      }
+    , { name = "Makedonski Brod"
+      , code = "308"
+      , unofficialNames = [ "Makedonski Brod" ]
+      }
+    , { name = "Ohrid"
+      , code = "310"
+      , unofficialNames = [ "Ohrid" ]
+      }
+    , { name = "Plasnica"
+      , code = "311"
+      , unofficialNames = [ "Plasnica" ]
+      }
+    , { name = "Struga"
+      , code = "312"
+      , unofficialNames = [ "Struga" ]
+      }
+    , { name = "Centar Župa"
+      , code = "313"
+      , unofficialNames = [ "Centar Župa" ]
+      }
+    , { name = "Bogdanci"
+      , code = "401"
+      , unofficialNames = [ "Bogdanci" ]
+      }
+    , { name = "Bosilovo"
+      , code = "402"
+      , unofficialNames = [ "Bosilovo" ]
+      }
+    , { name = "Valandovo"
+      , code = "403"
+      , unofficialNames = [ "Valandovo" ]
+      }
+    , { name = "Vasilevo"
+      , code = "404"
+      , unofficialNames = [ "Vasilevo" ]
+      }
+    , { name = "Gevgelija"
+      , code = "405"
+      , unofficialNames = [ "Gevgelija" ]
+      }
+    , { name = "Dojran"
+      , code = "406"
+      , unofficialNames = [ "Dojran" ]
+      }
+    , { name = "Konče"
+      , code = "407"
+      , unofficialNames = [ "Konče" ]
+      }
+    , { name = "Novo Selo"
+      , code = "408"
+      , unofficialNames = [ "Novo Selo" ]
+      }
+    , { name = "Radoviš"
+      , code = "409"
+      , unofficialNames = [ "Radoviš" ]
+      }
+    , { name = "Strumica"
+      , code = "410"
+      , unofficialNames = [ "Strumica" ]
+      }
+    , { name = "Bitola"
+      , code = "501"
+      , unofficialNames = [ "Bitola" ]
+      }
+    , { name = "Demir Hisar"
+      , code = "502"
+      , unofficialNames = [ "Murgaševo" ]
+      }
+    , { name = "Dolneni"
+      , code = "503"
+      , unofficialNames = [ "Dolneni" ]
+      }
     , { name = "Krivogaštani"
-      , code = "KG"
+      , code = "504"
       , unofficialNames = [ "Krivogaštani" ]
       }
-    , { name = "Kicevo"
-      , code = "KH"
-      , unofficialNames = [ "Kicevo" ]
-      }
-    , { name = "Konce"
-      , code = "KN"
-      , unofficialNames = [ "Konce" ]
-      }
     , { name = "Kruševo"
-      , code = "KS"
+      , code = "505"
       , unofficialNames = [ "Kruševo" ]
       }
-    , { name = "Karpoš *"
-      , code = "KX"
-      , unofficialNames = [ "Karpoš *" ]
+    , { name = "Mogila"
+      , code = "506"
+      , unofficialNames = [ "Mogila" ]
+      }
+    , { name = "Novaci"
+      , code = "507"
+      , unofficialNames = [ "Novaci" ]
+      }
+    , { name = "Prilep"
+      , code = "508"
+      , unofficialNames = [ "Prilep" ]
+      }
+    , { name = "Resen"
+      , code = "509"
+      , unofficialNames = [ "Resen" ]
+      }
+    , { name = "Bogovinje"
+      , code = "601"
+      , unofficialNames = [ "Bogovinje" ]
+      }
+    , { name = "Brvenica"
+      , code = "602"
+      , unofficialNames = [ "Brvenica" ]
+      }
+    , { name = "Vrapčište"
+      , code = "603"
+      , unofficialNames = [ "Vrapčište" ]
+      }
+    , { name = "Gostivar"
+      , code = "604"
+      , unofficialNames = [ "Gostivar" ]
+      }
+    , { name = "Želino"
+      , code = "605"
+      , unofficialNames = [ "Želino" ]
+      }
+    , { name = "Jegunovce"
+      , code = "606"
+      , unofficialNames = [ "Jegunovce" ]
+      }
+    , { name = "Mavrovo i Rostuša"
+      , code = "607"
+      , unofficialNames = [ "Mavrovo i Rostuša" ]
+      }
+    , { name = "Tearce"
+      , code = "608"
+      , unofficialNames = [ "Tearce" ]
+      }
+    , { name = "Tetovo"
+      , code = "609"
+      , unofficialNames = [ "Tetovo" ]
       }
     , { name = "Kratovo"
-      , code = "KY"
+      , code = "701"
       , unofficialNames = [ "Kratovo" ]
       }
     , { name = "Kriva Palanka"
-      , code = "KZ"
+      , code = "702"
       , unofficialNames = [ "Kriva Palanka" ]
       }
-    , { name = "Lipkovo"
-      , code = "LI"
-      , unofficialNames = [ "Lipkovo" ]
-      }
-    , { name = "Lozovo"
-      , code = "LO"
-      , unofficialNames = [ "Lozovo" ]
-      }
-    , { name = "Makedonski Brod"
-      , code = "MD"
-      , unofficialNames = [ "Makedonski Brod" ]
-      }
-    , { name = "Mogila"
-      , code = "MG"
-      , unofficialNames = [ "Mogila" ]
-      }
-    , { name = "Makedonska Kamenica"
-      , code = "MK"
-      , unofficialNames = [ "Makedonska Kamenica" ]
-      }
-    , { name = "Mavrovo-i-Rostuša"
-      , code = "MR"
-      , unofficialNames = [ "Mavrovo-i-Rostuša" ]
-      }
-    , { name = "Staro Nagoricane"
-      , code = "NA"
-      , unofficialNames = [ "Staro Nagoricane" ]
-      }
-    , { name = "Negotino"
-      , code = "NG"
-      , unofficialNames = [ "Negotino" ]
-      }
-    , { name = "Vinica"
-      , code = "NI"
-      , unofficialNames = [ "Vinica" ]
-      }
-    , { name = "Novo Selo"
-      , code = "NS"
-      , unofficialNames = [ "Novo Selo" ]
-      }
-    , { name = "Novaci"
-      , code = "NV"
-      , unofficialNames = [ "Novaci" ]
-      }
-    , { name = "Kocani"
-      , code = "OC"
-      , unofficialNames = [ "Kocani" ]
-      }
-    , { name = "Ohrid"
-      , code = "OD"
-      , unofficialNames = [ "Ohrid" ]
-      }
-    , { name = "Oslomej"
-      , code = "OS"
-      , unofficialNames = [ "Oslomej" ]
-      }
-    , { name = "Petrovec"
-      , code = "PE"
-      , unofficialNames = [ "Petrovec" ]
-      }
-    , { name = "Pehcevo"
-      , code = "PH"
-      , unofficialNames = [ "Pehcevo" ]
-      }
-    , { name = "Plasnica"
-      , code = "PN"
-      , unofficialNames = [ "Plasnica" ]
-      }
-    , { name = "Prilep"
-      , code = "PP"
-      , unofficialNames = [ "Prilep" ]
-      }
-    , { name = "Probištip"
-      , code = "PT"
-      , unofficialNames = [ "Probištip" ]
-      }
-    , { name = "Resen"
-      , code = "RE"
-      , unofficialNames = [ "Resen" ]
-      }
-    , { name = "Rosoman"
-      , code = "RM"
-      , unofficialNames = [ "Rosoman" ]
-      }
-    , { name = "Rankovce"
-      , code = "RN"
-      , unofficialNames = [ "Rankovce" ]
-      }
-    , { name = "Strumica"
-      , code = "RU"
-      , unofficialNames = [ "Strumica" ]
-      }
-    , { name = "Radoviš"
-      , code = "RV"
-      , unofficialNames = [ "Radoviš" ]
-      }
-    , { name = "Dojran"
-      , code = "SD"
-      , unofficialNames = [ "Dojran" ]
-      }
-    , { name = "Sveti Nikole"
-      , code = "SL"
-      , unofficialNames = [ "Sveti Nikole" ]
-      }
-    , { name = "Šuto Orizari *"
-      , code = "SO"
-      , unofficialNames = [ "Šuto Orizari *" ]
-      }
-    , { name = "Sopište"
-      , code = "SS"
-      , unofficialNames = [ "Sopište" ]
-      }
-    , { name = "Štip"
-      , code = "ST"
-      , unofficialNames = [ "Štip" ]
-      }
-    , { name = "Studenicani"
-      , code = "SU"
-      , unofficialNames = [ "Studenicani" ]
-      }
-    , { name = "Bitola"
-      , code = "TL"
-      , unofficialNames = [ "Bitola" ]
-      }
-    , { name = "Tearce"
-      , code = "TR"
-      , unofficialNames = [ "Tearce" ]
-      }
-    , { name = "Struga"
-      , code = "UG"
-      , unofficialNames = [ "Struga" ]
-      }
     , { name = "Kumanovo"
-      , code = "UM"
+      , code = "703"
       , unofficialNames = [ "Kumanovo" ]
       }
-    , { name = "Valandovo"
-      , code = "VA"
-      , unofficialNames = [ "Valandovo" ]
+    , { name = "Lipkovo"
+      , code = "704"
+      , unofficialNames = [ "Lipkovo" ]
       }
-    , { name = "Vraneštica"
-      , code = "VC"
-      , unofficialNames = [ "Vraneštica" ]
+    , { name = "Rankovce"
+      , code = "705"
+      , unofficialNames = [ "Rankovce" ]
       }
-    , { name = "Kisela Voda *"
-      , code = "VD"
-      , unofficialNames = [ "Kisela Voda *" ]
+    , { name = "Staro Nagoričane"
+      , code = "706"
+      , unofficialNames = [ "Staro Nagoričane" ]
       }
-    , { name = "Veles"
-      , code = "VE"
-      , unofficialNames = [ "Veles" ]
+    , { name = "Aerodrom †"
+      , code = "801"
+      , unofficialNames = [ "Aerodrom †" ]
       }
-    , { name = "Vrapcište"
-      , code = "VH"
-      , unofficialNames = [ "Vrapcište" ]
+    , { name = "Aračinovo"
+      , code = "802"
+      , unofficialNames = [ "Aracinovo" ]
       }
-    , { name = "Bogovinje"
-      , code = "VJ"
-      , unofficialNames = [ "Bogovinje" ]
+    , { name = "Butel †"
+      , code = "803"
+      , unofficialNames = [ "Butel †" ]
       }
-    , { name = "Vasilevo"
-      , code = "VL"
-      , unofficialNames = [ "Vasilevo" ]
+    , { name = "Gazi Baba †"
+      , code = "804"
+      , unofficialNames = [ "Gazi Baba †" ]
       }
-    , { name = "Vevcani"
-      , code = "VV"
-      , unofficialNames = [ "Vevcani" ]
-      }
-    , { name = "Skopje"
-      , code = "X1~"
-      , unofficialNames = [ "Skopje" ]
-      }
-    , { name = "Zajas"
-      , code = "ZA"
-      , unofficialNames = [ "Zajas" ]
-      }
-    , { name = "Želino"
-      , code = "ZE"
-      , unofficialNames = [ "Želino" ]
+    , { name = "Gjorče Petrov †"
+      , code = "805"
+      , unofficialNames = [ "Gjorče Petrov †" ]
       }
     , { name = "Zelenikovo"
-      , code = "ZK"
+      , code = "806"
       , unofficialNames = [ "Zelenikovo" ]
       }
-    , { name = "Zrnovci"
-      , code = "ZR"
-      , unofficialNames = [ "Zrnovci" ]
+    , { name = "Ilinden"
+      , code = "807"
+      , unofficialNames = [ "Ilinden" ]
+      }
+    , { name = "Karpoš †"
+      , code = "808"
+      , unofficialNames = [ "Karpoš †" ]
+      }
+    , { name = "Kisela Voda †"
+      , code = "809"
+      , unofficialNames = [ "Kisela Voda †" ]
+      }
+    , { name = "Petrovec"
+      , code = "810"
+      , unofficialNames = [ "Petrovec" ]
+      }
+    , { name = "Saraj †"
+      , code = "811"
+      , unofficialNames = [ "Saraj †" ]
+      }
+    , { name = "Sopište"
+      , code = "812"
+      , unofficialNames = [ "Sopište" ]
+      }
+    , { name = "Studeničani"
+      , code = "813"
+      , unofficialNames = [ "Studeničani" ]
+      }
+    , { name = "Centar †"
+      , code = "814"
+      , unofficialNames = [ "Centar †" ]
+      }
+    , { name = "Čair †"
+      , code = "815"
+      , unofficialNames = [ "Čair †" ]
+      }
+    , { name = "Čučer-Sandevo"
+      , code = "816"
+      , unofficialNames = [ "Čučer-Sandevo" ]
+      }
+    , { name = "Šuto Orizari †"
+      , code = "817"
+      , unofficialNames = [ "Šuto Orizari †" ]
       }
     ]
 
@@ -20747,6 +22945,14 @@ countryMLSubdivisions =
     , { name = "Bamako"
       , code = "BKO"
       , unofficialNames = [ "Bamako" ]
+      }
+    , { name = "Région de Ménaka"
+      , code = "9"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Région de Taoudénit"
+      , code = "10"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -20809,6 +23015,10 @@ countryMMSubdivisions =
     , { name = "Shan"
       , code = "17"
       , unofficialNames = [ "Shan" ]
+      }
+    , { name = "နေပြည်တော် ပြည်ထောင်စုနယ်မြေ"
+      , code = "18"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -20908,40 +23118,6 @@ countryMNSubdivisions =
 
 
 {-| -}
-countryMOSubdivisions : List Subdivision
-countryMOSubdivisions =
-    []
-
-
-{-| -}
-countryMPSubdivisions : List Subdivision
-countryMPSubdivisions =
-    [ { name = "Northern Islands"
-      , code = "N"
-      , unofficialNames = [ "Northern Islands" ]
-      }
-    , { name = "Rota"
-      , code = "R"
-      , unofficialNames = [ "Rota" ]
-      }
-    , { name = "Saipan"
-      , code = "S"
-      , unofficialNames = [ "Saipan" ]
-      }
-    , { name = "Tinian"
-      , code = "T"
-      , unofficialNames = [ "Tinian" ]
-      }
-    ]
-
-
-{-| -}
-countryMQSubdivisions : List Subdivision
-countryMQSubdivisions =
-    []
-
-
-{-| -}
 countryMRSubdivisions : List Subdivision
 countryMRSubdivisions =
     [ { name = "Hodh ech Chargui"
@@ -20996,23 +23172,17 @@ countryMRSubdivisions =
       , code = "NKC"
       , unofficialNames = [ "Anwāksūţ", "Nawakshut", "Nawākšūţ", "Nouakchott" ]
       }
-    ]
-
-
-{-| -}
-countryMSSubdivisions : List Subdivision
-countryMSSubdivisions =
-    [ { name = "Saint Anthony"
-      , code = "1"
-      , unofficialNames = [ "Saint Anthony" ]
+    , { name = "Nouakchott Ouest"
+      , code = "13"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Saint Georges"
-      , code = "2"
-      , unofficialNames = [ "Saint Georges" ]
+    , { name = "نواكشوط الشمالية"
+      , code = "14"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Saint Peter"
-      , code = "3"
-      , unofficialNames = [ "Saint Peter" ]
+    , { name = "نواكشوط الجنوبية"
+      , code = "15"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -21456,6 +23626,38 @@ countryMVSubdivisions =
       , code = "X1~"
       , unofficialNames = [ "Alif Atoll Uthuru", "Alif Dhâl", "Ari Atholhu Dhekunuburi", "South Ari Atoll" ]
       }
+    , { name = "Alif Dhaal"
+      , code = "00"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central Province"
+      , code = "CE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "North Central Province"
+      , code = "NC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "North Province"
+      , code = "NO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "South Central Province"
+      , code = "SC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "South Province"
+      , code = "SU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Upper North Province"
+      , code = "UN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Upper South Province"
+      , code = "US"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -21570,6 +23772,22 @@ countryMWSubdivisions =
       , code = "ZO"
       , unofficialNames = [ "Zomba" ]
       }
+    , { name = "Neno"
+      , code = "NE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central"
+      , code = "C"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Northern"
+      , code = "N"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Southern"
+      , code = "S"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -21606,7 +23824,7 @@ countryMXSubdivisions =
       }
     , { name = "Coahuila"
       , code = "COA"
-      , unofficialNames = [ "Coahuila" ]
+      , unofficialNames = [ "Coahuila de Zaragoza" ]
       }
     , { name = "Colima"
       , code = "COL"
@@ -21638,7 +23856,7 @@ countryMXSubdivisions =
       }
     , { name = "Michoacán"
       , code = "MIC"
-      , unofficialNames = [ "Michoacán" ]
+      , unofficialNames = [ "Michoacán de Ocampo" ]
       }
     , { name = "Morelos"
       , code = "MOR"
@@ -21694,7 +23912,7 @@ countryMXSubdivisions =
       }
     , { name = "Veracruz"
       , code = "VER"
-      , unofficialNames = [ "Veracruz" ]
+      , unofficialNames = [ "Veracruz de Ignacio de la Llave" ]
       }
     , { name = "Yucatán"
       , code = "YUC"
@@ -21885,24 +24103,6 @@ countryNASubdivisions =
     , { name = "Ohangwena"
       , code = "OW"
       , unofficialNames = [ "Ohangwena" ]
-      }
-    ]
-
-
-{-| -}
-countryNCSubdivisions : List Subdivision
-countryNCSubdivisions =
-    [ { name = "Nord"
-      , code = "N"
-      , unofficialNames = [ "Nord" ]
-      }
-    , { name = "Sud"
-      , code = "S"
-      , unofficialNames = [ "Sud" ]
-      }
-    , { name = "Iles Loyaute"
-      , code = "L"
-      , unofficialNames = [ "Iles Loyaute" ]
       }
     ]
 
@@ -22224,6 +24424,30 @@ countryNLSubdivisions =
       , code = "ZH"
       , unofficialNames = [ "Zuid-Holland" ]
       }
+    , { name = "Bonaire"
+      , code = "BQ1"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Saba"
+      , code = "BQ2"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sint Eustatius"
+      , code = "BQ3"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Aruba"
+      , code = "AW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Curaçao"
+      , code = "CW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sint Maarten"
+      , code = "SX"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -22344,6 +24568,54 @@ countryNPSubdivisions =
       , code = "SE"
       , unofficialNames = [ "Seti" ]
       }
+    , { name = "मध्यमाञ्चल विकास क्षेत्र"
+      , code = "1"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "मध्य-पश्चिमाञ्चल विकास क्षेत्र"
+      , code = "2"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "पश्चिमाञ्चल विकास क्षेत्र"
+      , code = "3"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "पूर्वाञ्चल विकास क्षेत्र"
+      , code = "4"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "सुदूर-पश्चिमाञ्चल विकास क्षेत्र"
+      , code = "5"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Province 1"
+      , code = "P1"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Province 2"
+      , code = "P2"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Province 3"
+      , code = "P3"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Gandaki²"
+      , code = "P4"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Province 5"
+      , code = "P5"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Karnali²"
+      , code = "P6"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Province 7"
+      , code = "P7"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -22424,6 +24696,10 @@ countryNZSubdivisions =
       , code = "CAN"
       , unofficialNames = [ "Canterbury" ]
       }
+    , { name = "Chatham Islands Territory"
+      , code = "CIT"
+      , unofficialNames = [ "" ]
+      }
     , { name = "Gisborne"
       , code = "GIS"
       , unofficialNames = [ "Gisborne" ]
@@ -22476,10 +24752,6 @@ countryNZSubdivisions =
       , code = "WTC"
       , unofficialNames = [ "West Coast" ]
       }
-    , { name = "Chatham Islands"
-      , code = "X1~"
-      , unofficialNames = [ "Chatham Islands" ]
-      }
     ]
 
 
@@ -22521,6 +24793,30 @@ countryOMSubdivisions =
     , { name = "Adh Dhahirah"
       , code = "ZA"
       , unofficialNames = [ "Adh Dhahirah" ]
+      }
+    , { name = "محافظة جنوب الباطنة"
+      , code = "BJ"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة شمال الباطنة"
+      , code = "BS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة البريمي"
+      , code = "BU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة جنوب الشرقية"
+      , code = "SJ"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة شمال الشرقية"
+      , code = "SS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة ظفار"
+      , code = "ZU"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -22694,32 +24990,6 @@ countryPESubdivisions =
 
 
 {-| -}
-countryPFSubdivisions : List Subdivision
-countryPFSubdivisions =
-    [ { name = "Austral Islands"
-      , code = "I"
-      , unofficialNames = [ "Austral Islands" ]
-      }
-    , { name = "Marquesas Islands"
-      , code = "M"
-      , unofficialNames = [ "Marquesas Islands" ]
-      }
-    , { name = "Leeward Islands"
-      , code = "S"
-      , unofficialNames = [ "Leeward Islands" ]
-      }
-    , { name = "Iles Tuamotu-Gambier"
-      , code = "T"
-      , unofficialNames = [ "Iles Tuamotu-Gambier" ]
-      }
-    , { name = "Windward Islands"
-      , code = "V"
-      , unofficialNames = [ "Windward Islands" ]
-      }
-    ]
-
-
-{-| -}
 countryPGSubdivisions : List Subdivision
 countryPGSubdivisions =
     [ { name = "Chimbu"
@@ -22801,6 +25071,18 @@ countryPGSubdivisions =
     , { name = "Western"
       , code = "WPD"
       , unofficialNames = [ "Papua West", "Western" ]
+      }
+    , { name = "Bougainville"
+      , code = "NSB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Hela"
+      , code = "HLA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Jiwaka"
+      , code = "JWK"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -23144,6 +25426,70 @@ countryPHSubdivisions =
       , code = "00"
       , unofficialNames = [ "National Capital Region", "Pambansang Punong Rehiyon" ]
       }
+    , { name = "Mimaropa"
+      , code = "41"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Muslim Mindanao"
+      , code = "14"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Eastern Visayas"
+      , code = "08"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Davao"
+      , code = "11"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ilocos"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cagayan Valley"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central Luzon"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bicol"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Western Visayas"
+      , code = "06"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central Visayas"
+      , code = "07"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Zamboanga Peninsula"
+      , code = "09"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Northern Mindanao"
+      , code = "10"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Soccsksargen"
+      , code = "12"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Caraga"
+      , code = "13"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cordillera Administrative"
+      , code = "15"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Calabarzon"
+      , code = "40"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -23182,6 +25528,14 @@ countryPKSubdivisions =
       , code = "TA"
       , unofficialNames = [ "Federally Administered Tribal Areas" ]
       }
+    , { name = "Gilgit-Baltistan"
+      , code = "GB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Khyber Pakhtunkhwa"
+      , code = "KP"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -23189,400 +25543,68 @@ countryPKSubdivisions =
 countryPLSubdivisions : List Subdivision
 countryPLSubdivisions =
     [ { name = "Dolnośląskie"
-      , code = "DS"
+      , code = "02"
       , unofficialNames = [ "dolnośląskie", "Dolnośląskie" ]
       }
     , { name = "Kujawsko-pomorskie"
-      , code = "KP"
+      , code = "04"
       , unofficialNames = [ "kujawsko-pomorskie", "Kujawsko-pomorskie" ]
       }
     , { name = "Lubelskie"
-      , code = "LU"
+      , code = "06"
       , unofficialNames = [ "lubelskie", "Lubelskie" ]
       }
     , { name = "Lubuskie"
-      , code = "LB"
+      , code = "08"
       , unofficialNames = [ "lubuskie", "Lubuskie" ]
       }
     , { name = "Łódzkie"
-      , code = "LD"
+      , code = "10"
       , unofficialNames = [ "łódzkie", "Łódzkie" ]
       }
     , { name = "Małopolskie"
-      , code = "MA"
+      , code = "12"
       , unofficialNames = [ "małopolskie", "Małopolskie" ]
       }
     , { name = "Mazowieckie"
-      , code = "MZ"
+      , code = "14"
       , unofficialNames = [ "mazowieckie", "Mazowieckie" ]
       }
     , { name = "Opolskie"
-      , code = "OP"
+      , code = "16"
       , unofficialNames = [ "opolskie", "Opolskie" ]
       }
     , { name = "Podkarpackie"
-      , code = "PK"
+      , code = "18"
       , unofficialNames = [ "podkarpackie", "Podkarpackie" ]
       }
     , { name = "Podlaskie"
-      , code = "PD"
+      , code = "20"
       , unofficialNames = [ "podlaskie", "Podlaskie" ]
       }
     , { name = "Pomorskie"
-      , code = "PM"
+      , code = "22"
       , unofficialNames = [ "pomorskie", "Pomorskie" ]
       }
     , { name = "Śląskie"
-      , code = "SL"
+      , code = "24"
       , unofficialNames = [ "śląskie", "Śląskie" ]
       }
     , { name = "Świętokrzyskie"
-      , code = "SK"
+      , code = "26"
       , unofficialNames = [ "świętokrzyskie", "Świętokrzyskie" ]
       }
     , { name = "Warmińsko-mazurskie"
-      , code = "WN"
+      , code = "28"
       , unofficialNames = [ "warmińsko-mazurskie", "Warmińsko-mazurskie" ]
       }
     , { name = "Wielkopolskie"
-      , code = "WP"
+      , code = "30"
       , unofficialNames = [ "wielkopolskie", "Wielkopolskie" ]
       }
     , { name = "Zachodniopomorskie"
-      , code = "ZP"
-      , unofficialNames = [ "zachodniopomorskie", "Zachodniopomorskie" ]
-      }
-    ]
-
-
-{-| -}
-countryPMSubdivisions : List Subdivision
-countryPMSubdivisions =
-    [ { name = "Miquelon"
-      , code = "M"
-      , unofficialNames = [ "Miquelon" ]
-      }
-    , { name = "Saint Pierre"
-      , code = "P"
-      , unofficialNames = [ "Saint Pierre" ]
-      }
-    ]
-
-
-{-| -}
-countryPRSubdivisions : List Subdivision
-countryPRSubdivisions =
-    [ { name = "Adjuntas"
-      , code = "1"
-      , unofficialNames = [ "Adjuntas" ]
-      }
-    , { name = "Aguada"
-      , code = "2"
-      , unofficialNames = [ "Aguada" ]
-      }
-    , { name = "Aguadilla"
-      , code = "3"
-      , unofficialNames = [ "Aguadilla" ]
-      }
-    , { name = "Aguas Buenas"
-      , code = "4"
-      , unofficialNames = [ "Aguas Buenas" ]
-      }
-    , { name = "Aibonito"
-      , code = "5"
-      , unofficialNames = [ "Aibonito" ]
-      }
-    , { name = "Anasco"
-      , code = "6"
-      , unofficialNames = [ "Anasco" ]
-      }
-    , { name = "Arecibo"
-      , code = "7"
-      , unofficialNames = [ "Arecibo" ]
-      }
-    , { name = "Arroyo"
-      , code = "8"
-      , unofficialNames = [ "Arroyo" ]
-      }
-    , { name = "Barceloneta"
-      , code = "9"
-      , unofficialNames = [ "Barceloneta" ]
-      }
-    , { name = "Barranquitas"
-      , code = "10"
-      , unofficialNames = [ "Barranquitas" ]
-      }
-    , { name = "Bayamon"
-      , code = "11"
-      , unofficialNames = [ "Bayamon" ]
-      }
-    , { name = "Cabo Rojo"
-      , code = "12"
-      , unofficialNames = [ "Cabo Rojo" ]
-      }
-    , { name = "Caguas"
-      , code = "13"
-      , unofficialNames = [ "Caguas" ]
-      }
-    , { name = "Camuy"
-      , code = "14"
-      , unofficialNames = [ "Camuy" ]
-      }
-    , { name = "Canovanas"
-      , code = "15"
-      , unofficialNames = [ "Canovanas" ]
-      }
-    , { name = "Carolina"
-      , code = "16"
-      , unofficialNames = [ "Carolina" ]
-      }
-    , { name = "Catano"
-      , code = "17"
-      , unofficialNames = [ "Catano" ]
-      }
-    , { name = "Cayey"
-      , code = "18"
-      , unofficialNames = [ "Cayey" ]
-      }
-    , { name = "Ceiba"
-      , code = "19"
-      , unofficialNames = [ "Ceiba" ]
-      }
-    , { name = "Ciales"
-      , code = "20"
-      , unofficialNames = [ "Ciales" ]
-      }
-    , { name = "Cidra"
-      , code = "21"
-      , unofficialNames = [ "Cidra" ]
-      }
-    , { name = "Coamo"
-      , code = "22"
-      , unofficialNames = [ "Coamo" ]
-      }
-    , { name = "Comerio"
-      , code = "23"
-      , unofficialNames = [ "Comerio" ]
-      }
-    , { name = "Corozal"
-      , code = "24"
-      , unofficialNames = [ "Corozal" ]
-      }
-    , { name = "Culebra"
-      , code = "25"
-      , unofficialNames = [ "Culebra" ]
-      }
-    , { name = "Dorado"
-      , code = "26"
-      , unofficialNames = [ "Dorado" ]
-      }
-    , { name = "Fajardo"
-      , code = "27"
-      , unofficialNames = [ "Fajardo" ]
-      }
-    , { name = "Florida"
-      , code = "28"
-      , unofficialNames = [ "Florida" ]
-      }
-    , { name = "Guanica"
-      , code = "29"
-      , unofficialNames = [ "Guanica" ]
-      }
-    , { name = "Guayama"
-      , code = "30"
-      , unofficialNames = [ "Guayama" ]
-      }
-    , { name = "Guayanilla"
-      , code = "31"
-      , unofficialNames = [ "Guayanilla" ]
-      }
-    , { name = "Guaynabo"
       , code = "32"
-      , unofficialNames = [ "Guaynabo" ]
-      }
-    , { name = "Gurabo"
-      , code = "33"
-      , unofficialNames = [ "Gurabo" ]
-      }
-    , { name = "Hatillo"
-      , code = "34"
-      , unofficialNames = [ "Hatillo" ]
-      }
-    , { name = "Hormigueros"
-      , code = "35"
-      , unofficialNames = [ "Hormigueros" ]
-      }
-    , { name = "Humacao"
-      , code = "36"
-      , unofficialNames = [ "Humacao" ]
-      }
-    , { name = "Isabela"
-      , code = "37"
-      , unofficialNames = [ "Isabela" ]
-      }
-    , { name = "Jayuya"
-      , code = "38"
-      , unofficialNames = [ "Jayuya" ]
-      }
-    , { name = "Juana Diaz"
-      , code = "39"
-      , unofficialNames = [ "Juana Diaz" ]
-      }
-    , { name = "Juncos"
-      , code = "40"
-      , unofficialNames = [ "Juncos" ]
-      }
-    , { name = "Lajas"
-      , code = "41"
-      , unofficialNames = [ "Lajas" ]
-      }
-    , { name = "Lares"
-      , code = "42"
-      , unofficialNames = [ "Lares" ]
-      }
-    , { name = "Las Marias"
-      , code = "43"
-      , unofficialNames = [ "Las Marias" ]
-      }
-    , { name = "Las Piedras"
-      , code = "44"
-      , unofficialNames = [ "Las Piedras" ]
-      }
-    , { name = "Loiza"
-      , code = "45"
-      , unofficialNames = [ "Loiza" ]
-      }
-    , { name = "Luquillo"
-      , code = "46"
-      , unofficialNames = [ "Luquillo" ]
-      }
-    , { name = "Manati"
-      , code = "47"
-      , unofficialNames = [ "Manati" ]
-      }
-    , { name = "Maricao"
-      , code = "48"
-      , unofficialNames = [ "Maricao" ]
-      }
-    , { name = "Maunabo"
-      , code = "49"
-      , unofficialNames = [ "Maunabo" ]
-      }
-    , { name = "Mayaguez"
-      , code = "50"
-      , unofficialNames = [ "Mayaguez" ]
-      }
-    , { name = "Moca"
-      , code = "51"
-      , unofficialNames = [ "Moca" ]
-      }
-    , { name = "Morovis"
-      , code = "52"
-      , unofficialNames = [ "Morovis" ]
-      }
-    , { name = "Naguabo"
-      , code = "53"
-      , unofficialNames = [ "Naguabo" ]
-      }
-    , { name = "Naranjito"
-      , code = "54"
-      , unofficialNames = [ "Naranjito" ]
-      }
-    , { name = "Orocovis"
-      , code = "55"
-      , unofficialNames = [ "Orocovis" ]
-      }
-    , { name = "Patillas"
-      , code = "56"
-      , unofficialNames = [ "Patillas" ]
-      }
-    , { name = "Penuelas"
-      , code = "57"
-      , unofficialNames = [ "Penuelas" ]
-      }
-    , { name = "Ponce"
-      , code = "58"
-      , unofficialNames = [ "Ponce" ]
-      }
-    , { name = "Quebradillas"
-      , code = "59"
-      , unofficialNames = [ "Quebradillas" ]
-      }
-    , { name = "Rincon"
-      , code = "60"
-      , unofficialNames = [ "Rincon" ]
-      }
-    , { name = "Rio Grande"
-      , code = "61"
-      , unofficialNames = [ "Rio Grande" ]
-      }
-    , { name = "Sabana Grande"
-      , code = "62"
-      , unofficialNames = [ "Sabana Grande" ]
-      }
-    , { name = "Salinas"
-      , code = "63"
-      , unofficialNames = [ "Salinas" ]
-      }
-    , { name = "San German"
-      , code = "64"
-      , unofficialNames = [ "San German" ]
-      }
-    , { name = "San Juan"
-      , code = "65"
-      , unofficialNames = [ "San Juan" ]
-      }
-    , { name = "San Lorenzo"
-      , code = "66"
-      , unofficialNames = [ "San Lorenzo" ]
-      }
-    , { name = "San Sebastian"
-      , code = "67"
-      , unofficialNames = [ "San Sebastian" ]
-      }
-    , { name = "Santa Isabel"
-      , code = "68"
-      , unofficialNames = [ "Santa Isabel" ]
-      }
-    , { name = "Toa Alta"
-      , code = "69"
-      , unofficialNames = [ "Toa Alta" ]
-      }
-    , { name = "Toa Baja"
-      , code = "70"
-      , unofficialNames = [ "Toa Baja" ]
-      }
-    , { name = "Trujillo Alto"
-      , code = "71"
-      , unofficialNames = [ "Trujillo Alto" ]
-      }
-    , { name = "Utuado"
-      , code = "72"
-      , unofficialNames = [ "Utuado" ]
-      }
-    , { name = "Vega Alta"
-      , code = "73"
-      , unofficialNames = [ "Vega Alta" ]
-      }
-    , { name = "Vega Baja"
-      , code = "74"
-      , unofficialNames = [ "Vega Baja" ]
-      }
-    , { name = "Vieques"
-      , code = "75"
-      , unofficialNames = [ "Vieques" ]
-      }
-    , { name = "Villalba"
-      , code = "76"
-      , unofficialNames = [ "Villalba" ]
-      }
-    , { name = "Yabucoa"
-      , code = "77"
-      , unofficialNames = [ "Yabucoa" ]
-      }
-    , { name = "Yauco"
-      , code = "78"
-      , unofficialNames = [ "Yauco" ]
+      , unofficialNames = [ "zachodniopomorskie", "Zachodniopomorskie" ]
       }
     ]
 
@@ -23590,7 +25612,71 @@ countryPRSubdivisions =
 {-| -}
 countryPSSubdivisions : List Subdivision
 countryPSSubdivisions =
-    []
+    [ { name = "محافظة بيت لحم"
+      , code = "BTH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "الوسطى"
+      , code = "DEB"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة غزة"
+      , code = "GZA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة الخليل"
+      , code = "HBN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "القدس"
+      , code = "JEM"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "جنين"
+      , code = "JEN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "أريحا"
+      , code = "JRH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة خان يونس"
+      , code = "KYS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة نابلس"
+      , code = "NBS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "شمال غزة"
+      , code = "NGZ"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة قلقيلية"
+      , code = "QQA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "رام الله والبيرة"
+      , code = "RBH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة رفح الفلسطينية"
+      , code = "RFH"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة سلفيت"
+      , code = "SLT"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة طوباس"
+      , code = "TBS"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "محافظة طولكرم"
+      , code = "TKM"
+      , unofficialNames = [ "" ]
+      }
+    ]
 
 
 {-| -}
@@ -23870,13 +25956,15 @@ countryQASubdivisions =
       , code = "X1~"
       , unofficialNames = [ "Mesaieed" ]
       }
+    , { name = "بلدية الضعاين"
+      , code = "ZA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "الشحانية"
+      , code = "SH"
+      , unofficialNames = [ "" ]
+      }
     ]
-
-
-{-| -}
-countryRESubdivisions : List Subdivision
-countryRESubdivisions =
-    []
 
 
 {-| -}
@@ -24175,6 +26263,14 @@ countryRSSubdivisions =
     , { name = "Kosovo-Pomoravlje"
       , code = "29"
       , unofficialNames = [ "Kosovo-Pomoravlje" ]
+      }
+    , { name = "Војводина"
+      , code = "VO"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Косово и Метохија"
+      , code = "KM"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -24742,6 +26838,22 @@ countrySCSubdivisions =
       , code = "23"
       , unofficialNames = [ "Takamaka" ]
       }
+    , { name = "Les Mamelles"
+      , code = "24"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Roche Caïman"
+      , code = "25"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ile Perseverance I"
+      , code = "26"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ile Perseverance II"
+      , code = "27"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -24953,6 +27065,10 @@ countrySHSubdivisions =
     , { name = "Tristan da Cunha"
       , code = "TA"
       , unofficialNames = [ "Tristan da Cunha" ]
+      }
+    , { name = "Saint Helena"
+      , code = "HL"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -25732,6 +27848,82 @@ countrySISubdivisions =
       , code = "194"
       , unofficialNames = [ "Šmartno pri Litiji" ]
       }
+    , { name = "Občina Ankaran"
+      , code = "213"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Apače"
+      , code = "195"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Cirkulane"
+      , code = "196"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Kostanjevica na Krki"
+      , code = "197"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Makole"
+      , code = "198"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Mokronog - Trebelno"
+      , code = "199"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Poljčane"
+      , code = "200"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Renče - Vogrsko"
+      , code = "201"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Središče ob Dravi"
+      , code = "202"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Straža"
+      , code = "203"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Sveta Trojica v Slovenskih goricah"
+      , code = "204"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Sveti Tomaž"
+      , code = "205"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Šmarješke Toplice"
+      , code = "206"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Gorje"
+      , code = "207"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Log - Dragomer"
+      , code = "208"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Rečica ob Savinji"
+      , code = "209"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Sveti Jurij v Slovenskih goricah"
+      , code = "210"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Občina Šentrupert"
+      , code = "211"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mirna"
+      , code = "212"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -25805,6 +27997,10 @@ countrySLSubdivisions =
     , { name = "Western Area (Freetown)"
       , code = "W"
       , unofficialNames = [ "Western Area (Freetown)" ]
+      }
+    , { name = "North Western"
+      , code = "NW"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -25897,6 +28093,18 @@ countrySNSubdivisions =
     , { name = "Ziguinchor"
       , code = "ZG"
       , unofficialNames = [ "Ziguinchor" ]
+      }
+    , { name = "Kaffrine"
+      , code = "KA"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kédougou"
+      , code = "KE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sédhiou"
+      , code = "SE"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -26028,7 +28236,47 @@ countrySRSubdivisions =
 {-| -}
 countrySSSubdivisions : List Subdivision
 countrySSSubdivisions =
-    []
+    [ { name = "شمال بحر الغزال"
+      , code = "BN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "غرب بحر الغزال"
+      , code = "BW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "وسط الاستوائية"
+      , code = "EC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "شرق الاستوائية"
+      , code = "EE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "غرب الاستوائية"
+      , code = "EW"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "جونقلي"
+      , code = "JG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "البحيرات"
+      , code = "LK"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "أعالي النيل"
+      , code = "NU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "الوحدة"
+      , code = "UY"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "واراب"
+      , code = "WR"
+      , unofficialNames = [ "" ]
+      }
+    ]
 
 
 {-| -}
@@ -26041,6 +28289,30 @@ countrySTSubdivisions =
     , { name = "São Tomé"
       , code = "S"
       , unofficialNames = [ "São Tomé" ]
+      }
+    , { name = "Água Grande"
+      , code = "01"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Cantagalo"
+      , code = "02"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Caué"
+      , code = "03"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lembá"
+      , code = "04"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lobata"
+      , code = "05"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mé-Zóchi"
+      , code = "06"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -26105,12 +28377,6 @@ countrySVSubdivisions =
       , unofficialNames = [ "Usulután" ]
       }
     ]
-
-
-{-| -}
-countrySXSubdivisions : List Subdivision
-countrySXSubdivisions =
-    []
 
 
 {-| -}
@@ -26272,27 +28538,29 @@ countryTDSubdivisions =
       , code = "WF"
       , unofficialNames = [ "Wadi Fira" ]
       }
-    ]
-
-
-{-| -}
-countryTFSubdivisions : List Subdivision
-countryTFSubdivisions =
-    [ { name = "Ile Saint-Paul et Ile Amsterdam"
-      , code = "X1~"
-      , unofficialNames = [ "Ile Saint-Paul et Ile Amsterdam" ]
+    , { name = "بحر الغزال"
+      , code = "BG"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Crozet Islands"
-      , code = "X2~"
-      , unofficialNames = [ "Crozet Islands" ]
+    , { name = "منطقة بوركو"
+      , code = "BO"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Kerguelen"
-      , code = "X3~"
-      , unofficialNames = [ "Kerguelen" ]
+    , { name = "منطقة سيلا"
+      , code = "SI"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Iles Eparses"
-      , code = "X4~"
-      , unofficialNames = [ "Iles Eparses" ]
+    , { name = "منطقة تبستي"
+      , code = "TI"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "إنيدي الشرقية"
+      , code = "EE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "إنيدي الغربية"
+      , code = "EO"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -26634,6 +28902,10 @@ countryTHSubdivisions =
       , code = "S"
       , unofficialNames = [ "Phatthaya" ]
       }
+    , { name = "จังหวัดบึงกาฬ"
+      , code = "38"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -26651,6 +28923,14 @@ countryTJSubdivisions =
     , { name = "Sughd"
       , code = "SU"
       , unofficialNames = [ "Chudjand", "Hucand", "Hudžand", "Hücand", "Khodzent", "Khodzhent", "Khudzhand", "Leninabad" ]
+      }
+    , { name = "Dushanbe"
+      , code = "DU"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nohiyahoi Tobei Jumhurí"
+      , code = "RA"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -26753,6 +29033,10 @@ countryTMSubdivisions =
     , { name = "Mary"
       , code = "M"
       , unofficialNames = [ "Mary", "Merv" ]
+      }
+    , { name = "Aşgabat"
+      , code = "S"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -27282,6 +29566,14 @@ countryTTSubdivisions =
       , code = "WTO"
       , unofficialNames = [ "Western Tobago" ]
       }
+    , { name = "Mayaro-Rio Claro"
+      , code = "MRC"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Tobago"
+      , code = "TOB"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -27319,6 +29611,10 @@ countryTVSubdivisions =
     , { name = "Vaitupu"
       , code = "VAI"
       , unofficialNames = [ "Vaitupu" ]
+      }
+    , { name = "Nui"
+      , code = "NUI"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -27417,6 +29713,18 @@ countryTWSubdivisions =
     , { name = "Yunlin"
       , code = "YUN"
       , unofficialNames = [ "Yunlin" ]
+      }
+    , { name = "金門縣"
+      , code = "KIN"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "連江縣"
+      , code = "LIE"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "New Taipei"
+      , code = "NWT"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -27527,6 +29835,26 @@ countryTZSubdivisions =
     , { name = "Manyara"
       , code = "26"
       , unofficialNames = [ "Manyara" ]
+      }
+    , { name = "Mkoa wa Geita"
+      , code = "27"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mkoa wa Katavi"
+      , code = "28"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mkoa wa Njombe"
+      , code = "29"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mkoa wa Simiyu"
+      , code = "30"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Songwe"
+      , code = "31"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -27968,6 +30296,242 @@ countryUGSubdivisions =
       , code = "419"
       , unofficialNames = [ "Buliisa" ]
       }
+    , { name = "Buikwe"
+      , code = "117"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bukomansibi"
+      , code = "118"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Butambala"
+      , code = "119"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Buvuma"
+      , code = "120"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Gomba"
+      , code = "121"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalungu"
+      , code = "122"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kyankwanzi"
+      , code = "123"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lwengo"
+      , code = "124"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bulambuli"
+      , code = "225"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Buyende"
+      , code = "226"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kibuku"
+      , code = "227"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kween"
+      , code = "228"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Luuka"
+      , code = "229"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Namayingo"
+      , code = "230"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ngora"
+      , code = "231"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Serere"
+      , code = "232"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Agago"
+      , code = "322"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Alebtong"
+      , code = "323"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Amudat"
+      , code = "324"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kole"
+      , code = "325"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Lamwo"
+      , code = "326"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Napak"
+      , code = "327"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nwoya"
+      , code = "328"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Otuke"
+      , code = "329"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Zombo²"
+      , code = "330"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Buhweju"
+      , code = "420"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kiryandongo"
+      , code = "421"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kyegegwa"
+      , code = "422"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Mitooma"
+      , code = "423"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Ntoroko"
+      , code = "424"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rubirizi"
+      , code = "425"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sheema"
+      , code = "426"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Central"
+      , code = "C"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Eastern"
+      , code = "E"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Northern"
+      , code = "N"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Western"
+      , code = "W"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Zombo"
+      , code = "331"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kyotera"
+      , code = "125"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Butebo"
+      , code = "233"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Namisindwa"
+      , code = "234"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Pakwach"
+      , code = "332"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kagadi"
+      , code = "427"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kakumiro"
+      , code = "428"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rubanda"
+      , code = "429"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bunyangabu"
+      , code = "430"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rukiga"
+      , code = "431"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kasanda"
+      , code = "126"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Bugweri"
+      , code = "235"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kapelebyong"
+      , code = "236"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kwania"
+      , code = "333"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Nabilatuk"
+      , code = "334"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kikuube"
+      , code = "432"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kalaki"
+      , code = "237"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Karenga"
+      , code = "335"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Madi-Okollo"
+      , code = "336"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Obongi"
+      , code = "337"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kazo"
+      , code = "433"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Kitagwenda"
+      , code = "434"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Rwampara"
+      , code = "435"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -28016,25 +30580,13 @@ countryUMSubdivisions =
 {-| -}
 countryUSSubdivisions : List Subdivision
 countryUSSubdivisions =
-    [ { name = "Armed Forces Americas"
-      , code = "AA"
-      , unofficialNames = [ "Armed Forces Americas" ]
-      }
-    , { name = "Armed Forces Europe"
-      , code = "AE"
-      , unofficialNames = [ "Armed Forces Europe" ]
-      }
-    , { name = "Alaska"
+    [ { name = "Alaska"
       , code = "AK"
       , unofficialNames = [ "Alaska" ]
       }
     , { name = "Alabama"
       , code = "AL"
       , unofficialNames = [ "Alabama" ]
-      }
-    , { name = "Armed Forces Pacific"
-      , code = "AP"
-      , unofficialNames = [ "Armed Forces Pacific" ]
       }
     , { name = "Arkansas"
       , code = "AR"
@@ -28540,24 +31092,6 @@ countryVESubdivisions =
 
 
 {-| -}
-countryVISubdivisions : List Subdivision
-countryVISubdivisions =
-    [ { name = "Saint Croix"
-      , code = "C"
-      , unofficialNames = [ "Saint Croix" ]
-      }
-    , { name = "Saint John"
-      , code = "J"
-      , unofficialNames = [ "Saint John" ]
-      }
-    , { name = "Saint Thomas"
-      , code = "T"
-      , unofficialNames = [ "Saint Thomas" ]
-      }
-    ]
-
-
-{-| -}
 countryVNSubdivisions : List Subdivision
 countryVNSubdivisions =
     [ { name = "Ho Chi Minh"
@@ -28848,7 +31382,19 @@ countryVUSubdivisions =
 {-| -}
 countryWFSubdivisions : List Subdivision
 countryWFSubdivisions =
-    []
+    [ { name = "Alo"
+      , code = "AL"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Sigave"
+      , code = "SG"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "Uvea"
+      , code = "UV"
+      , unofficialNames = [ "" ]
+      }
+    ]
 
 
 {-| -}
@@ -28980,79 +31526,17 @@ countryYESubdivisions =
       , code = "TA"
       , unofficialNames = [ "Taiz" ]
       }
-    ]
-
-
-{-| -}
-countryYTSubdivisions : List Subdivision
-countryYTSubdivisions =
-    [ { name = "Acoua"
-      , code = "1"
-      , unofficialNames = [ "Acoua" ]
+    , { name = "صنعاء"
+      , code = "SA"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Bandraboua"
-      , code = "2"
-      , unofficialNames = [ "Bandraboua" ]
+    , { name = "محافظة ريمة"
+      , code = "RA"
+      , unofficialNames = [ "" ]
       }
-    , { name = "Bandrele"
-      , code = "3"
-      , unofficialNames = [ "Bandrele" ]
-      }
-    , { name = "Boueni"
-      , code = "4"
-      , unofficialNames = [ "Boueni" ]
-      }
-    , { name = "Chiconi"
-      , code = "5"
-      , unofficialNames = [ "Chiconi" ]
-      }
-    , { name = "Chirongui"
-      , code = "6"
-      , unofficialNames = [ "Chirongui" ]
-      }
-    , { name = "Dembeni"
-      , code = "7"
-      , unofficialNames = [ "Dembeni" ]
-      }
-    , { name = "Dzaoudzi"
-      , code = "8"
-      , unofficialNames = [ "Dzaoudzi" ]
-      }
-    , { name = "Kani-Keli"
-      , code = "9"
-      , unofficialNames = [ "Kani-Keli" ]
-      }
-    , { name = "Koungou"
-      , code = "10"
-      , unofficialNames = [ "Koungou" ]
-      }
-    , { name = "Mamoudzou"
-      , code = "11"
-      , unofficialNames = [ "Mamoudzou" ]
-      }
-    , { name = "Mtsamboro"
-      , code = "12"
-      , unofficialNames = [ "Mtsamboro" ]
-      }
-    , { name = "M'Tsangamouji"
-      , code = "13"
-      , unofficialNames = [ "M'Tsangamouji" ]
-      }
-    , { name = "Ouangani"
-      , code = "14"
-      , unofficialNames = [ "Ouangani" ]
-      }
-    , { name = "Pamandzi"
-      , code = "15"
-      , unofficialNames = [ "Pamandzi" ]
-      }
-    , { name = "Sada"
-      , code = "16"
-      , unofficialNames = [ "Sada" ]
-      }
-    , { name = "Tsingoni"
-      , code = "17"
-      , unofficialNames = [ "Tsingoni" ]
+    , { name = "محافظة أرخبيل سقطرى"
+      , code = "SU"
+      , unofficialNames = [ "" ]
       }
     ]
 
@@ -29096,6 +31580,14 @@ countryZASubdivisions =
       , code = "WC"
       , unofficialNames = [ "Wes Kaap" ]
       }
+    , { name = "Gauteng"
+      , code = "GP"
+      , unofficialNames = [ "" ]
+      }
+    , { name = "KwaZulu-Natal"
+      , code = "KZN"
+      , unofficialNames = [ "" ]
+      }
     ]
 
 
@@ -29137,6 +31629,10 @@ countryZMSubdivisions =
     , { name = "Lusaka"
       , code = "09"
       , unofficialNames = [ "Lusaka" ]
+      }
+    , { name = "Muchinga"
+      , code = "10"
+      , unofficialNames = [ "" ]
       }
     ]
 
